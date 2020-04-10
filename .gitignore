@@ -4,3 +4,4 @@ appsettings.Development.json
 .vscode/tasks.json
 bin/
 obj/
+node_modules/
