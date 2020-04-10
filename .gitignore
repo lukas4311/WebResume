@@ -2,3 +2,5 @@ appsettings.json
 appsettings.Development.json
 .vscode/launch.json
 .vscode/tasks.json
+bin/
+obj/
