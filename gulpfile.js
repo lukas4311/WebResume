@@ -19,10 +19,10 @@ gulp.task('default', function () {
         entries: [app.entry],
     });
 
-    b.external(['react', 'react-dom'])
-    b.plugin(tsify);
+    b.exclude(['react', 'react-dom'])
+    b.plugin(tsify,getJsonFile(app.tsconfig).compilerOptions);
     b.transform(babelify, {
-        presets: ['env', 'react']
+        presets: ['es2015', 'react']
     });
 
     return b.bundle()
