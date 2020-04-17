@@ -10,7 +10,7 @@ class AppComponent extends React.Component<{}, {}> {
     render() {
         return (
             <div className="flex">
-                <div className="w-1/3">
+                <div className="w-1/2">
                     <div className="flex">
                         <div className="w-2/10">
                             <LeftMenuComponent />
@@ -20,7 +20,7 @@ class AppComponent extends React.Component<{}, {}> {
                         </div>
                     </div>
                 </div>
-                <div className="w-2/3">
+                <div className="w-1/2">
                     <span>OBSAH</span>
                 </div>
             </div>
