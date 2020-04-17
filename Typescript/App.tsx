@@ -16,7 +16,7 @@ class AppComponent extends React.Component<{}, {}> {
                             <LeftMenuComponent />
                         </div>
                         <div className="w-8/10">
-                            <img src='./images/photo.jpg' />
+                            <img src='./image/photo.jpg' />
                         </div>
                     </div>
                 </div>
