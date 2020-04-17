@@ -2,8 +2,7 @@
     mode: "production",
     //mode: "development",
     entry: {
-        app: './Typescript/main.tsx',
-        //search: './src/search.js'
+        app: './Typescript/App.tsx'
     },
     output: {
         filename: "[name].js",
