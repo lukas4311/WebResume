@@ -1,8 +1,15 @@
 let gulp = require('gulp');
+var sass = require('gulp-sass');
 const webpack_stream = require('webpack-stream');
 const webpack_config = require('./webpack.config.js');
 
 gulp.task('webpack', () => {
     return webpack_stream(webpack_config)
         .pipe(gulp.dest('./wwwroot/js/'));
+});
+
+gulp.task('sass', function () {
+    return gulp.src('./Sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./wwwroot/css/'));
 });
