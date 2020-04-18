@@ -19,7 +19,7 @@ export default class LeftMenuComponent extends React.Component<any, any>{
     render() {
         return (
             <div>
-                {this.icons.map((item, i) => (<img src={item.Url} alt="personIcon" />))}
+                {this.icons.map((item, i) => (<img className="mx-auto" src={item.Url} alt="personIcon" />))}
             </div>)
             ;
     }
