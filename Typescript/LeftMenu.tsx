@@ -13,14 +13,14 @@ export default class LeftMenuComponent extends React.Component<any, any>{
     }
 
     initIcons() {
-        this.icons = [{ Url: "./icons/person.svg" }];
+        this.icons = [{ Url: "./icons/person.svg" }, { Url: "./icons/smartphone.svg" }, { Url: "./icons/download.svg"}];
     }
 
     render() {
         return (
-            <ul>
+            <div>
                 {this.icons.map((item, i) => (<img src={item.Url} alt="personIcon" />))}
-            </ul>)
+            </div>)
             ;
     }
 }
