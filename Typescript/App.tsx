@@ -1,5 +1,6 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import LeftMenuComponent from "./LeftMenu"
 import AboutMeComponent from "./AboutMe"
 import ContactComponent from "./Contacts"
@@ -10,6 +11,8 @@ interface AppState {
 }
 
 class AppComponent extends React.Component<{}, AppState> {
+    showMessage = true;
+
     constructor(props: {}) {
         super(props);
         this.state = { activeTab: Tabs.PersonalInfo }
@@ -24,10 +27,10 @@ class AppComponent extends React.Component<{}, AppState> {
     render() {
         let shownComponent = <AboutMeComponent />
         if (this.state.activeTab == Tabs.PersonalInfo) {
-            shownComponent = <AboutMeComponent/>
+            shownComponent = <AboutMeComponent />
         }
         else {
-            shownComponent = <ContactComponent/>
+            shownComponent = <ContactComponent />
         }
 
         return (
@@ -35,7 +38,7 @@ class AppComponent extends React.Component<{}, AppState> {
                 <div className="w-1/2 h-full">
                     <div className="flex h-full">
                         <div className="w-1/6 my-20 bg-mainGray">
-                            <LeftMenuComponent setNewActiveTab={this.tabClick}/>
+                            <LeftMenuComponent setNewActiveTab={this.tabClick} />
                         </div>
                         <div className="w-5/6 text-white text-center" id="photoDiv">
                             <h1 className="text-5xl mt-24">Lukáš SALFICKÝ</h1>
@@ -43,9 +46,11 @@ class AppComponent extends React.Component<{}, AppState> {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2 my-20 bg-mainGray">
-                    {shownComponent}
-                </div>
+                <CSSTransition in={this.showMessage} timeout={700} classNames="fade">
+                    <div className="w-1/2 my-20 bg-mainGray">
+                        {shownComponent}
+                    </div>
+                </CSSTransition>
             </div>
         )
     }
