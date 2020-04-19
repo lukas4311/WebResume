@@ -1,6 +1,6 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
 import LeftMenuComponent from "./LeftMenu"
 import AboutMeComponent from "./AboutMe"
 import ContactComponent from "./Contacts"
@@ -20,7 +20,6 @@ class AppComponent extends React.Component<{}, AppState> {
     }
 
     tabClick(tab: Tabs) {
-        alert(tab);
         this.setState({ activeTab: tab });
     }
 
@@ -46,11 +45,11 @@ class AppComponent extends React.Component<{}, AppState> {
                         </div>
                     </div>
                 </div>
-                <CSSTransition in={this.showMessage} timeout={700} classNames="fade">
-                    <div className="w-1/2 my-20 bg-mainGray">
-                        {shownComponent}
-                    </div>
-                </CSSTransition>
+                <div className="w-1/2 my-20 bg-mainGray">
+                    <CSSTransition in={true} timeout={700} classNames="fade" appear={true}>
+                        <AboutMeComponent tabCode={this.state.activeTab}/>
+                    </CSSTransition>
+                </div>
             </div>
         )
     }

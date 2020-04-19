@@ -6,6 +6,10 @@ export default class ContactComponent extends React.Component<any, any>{
     }
 
     render() {
-        return (<h1 className="text-center text-white text-5xl">Kontakty</h1>)
+        return (
+            <div>
+                <h1 className="text-center text-white text-5xl">Kontakty</h1>
+            </div>
+        )
     }
 }

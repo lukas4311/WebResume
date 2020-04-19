@@ -43,7 +43,7 @@ export default class LeftMenuComponent extends React.Component<any, any>{
         return (
             <div className="flex flex-col h-full">
                 {
-                    this.icons.map((item, i) => (<div className={`text-center p-2 ${item.itemClass}`}><a className="tabLink inline-block cursor-pointer" onClick={(e) => this.tabClick(item.TabCode, e)}>{item.SvgIcon}</a></div>))
+                    this.icons.map((item, i) => (<div key={i} className={`text-center p-2 ${item.itemClass}`}><a className="tabLink inline-block cursor-pointer" onClick={(e) => this.tabClick(item.TabCode, e)}>{item.SvgIcon}</a></div>))
                 }
             </div>);
     }

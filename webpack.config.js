@@ -1,6 +1,6 @@
 ﻿module.exports = {
-    mode: "production",
-    //mode: "development",
+    //mode: "production",
+    mode: "development",
     entry: {
         app: './Typescript/App.tsx'
     },
@@ -11,7 +11,7 @@
     devtool: "source-map",
 
     resolve: {
-        extensions: [".ts", ".tsx"]
+        extensions: [".ts", ".tsx", ".js", "jsx"]
     },
 
     module: {
@@ -32,10 +32,9 @@
             }
         ]
     },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM",
-        "react-transition-group": "CSSTransition",
-        "react-transition-group": "TransitionGroup"
-    }
+    //externals: {
+    //    "react": "React",
+    //    "react-dom": "ReactDOM",
+    //    "react-transition-group/CSSTransition": "CSSTransition"
+    //}
 };
