@@ -1,18 +1,35 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import LeftMenuComponent from "./LeftMenu"
+import AboutMeComponent from "./AboutMe"
+import ContactComponent from "./Contacts"
 import { Tabs } from './Tabs'
 
-class AppComponent extends React.Component<{}, {}> {
+interface AppState {
+    activeTab: Tabs;
+}
+
+class AppComponent extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props);
+        this.state = { activeTab: Tabs.PersonalInfo }
+        this.tabClick = this.tabClick.bind(this);
     }
 
     tabClick(tab: Tabs) {
         alert(tab);
+        this.setState({ activeTab: tab });
     }
 
     render() {
+        let shownComponent = <AboutMeComponent />
+        if (this.state.activeTab == Tabs.PersonalInfo) {
+            shownComponent = <AboutMeComponent/>
+        }
+        else {
+            shownComponent = <ContactComponent/>
+        }
+
         return (
             <div className="flex h-full">
                 <div className="w-1/2 h-full">
@@ -27,7 +44,7 @@ class AppComponent extends React.Component<{}, {}> {
                     </div>
                 </div>
                 <div className="w-1/2 my-20 bg-mainGray">
-                    <h1 className="text-center text-white text-5xl">OBSAH</h1>
+                    {shownComponent}
                 </div>
             </div>
         )
