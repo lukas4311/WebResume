@@ -20,7 +20,7 @@ class AppComponent extends React.Component<{}, {}> {
                         <div className="w-1/6 my-20 bg-mainGray">
                             <LeftMenuComponent setNewActiveTab={this.tabClick}/>
                         </div>
-                        <div className="w-5/6 border-8 border-mainGray text-white text-center" id="photoDiv">
+                        <div className="w-5/6 text-white text-center" id="photoDiv">
                             <h1 className="text-5xl mt-24">Lukáš SALFICKÝ</h1>
                             <h2 className="mt-6">.NET developer</h2>
                         </div>
