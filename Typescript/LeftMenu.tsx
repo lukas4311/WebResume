@@ -6,10 +6,13 @@ const smartphoneSvg = <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 
 const downloadSvg = <svg version="1.1" id="Capa_1" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 950 950"><g><g><path d="M230.493,737.135L451.89,940.982C458.42,946.994,466.71,950,475,950s16.58-3.006,23.11-9.018l221.396-203.85c9.227-8.492,3.216-23.893-9.325-23.893h-59.098V292.99c0-17.739-14.38-32.119-32.119-32.119h-289.62c-16.805,0-30.429,13.623-30.429,30.429v421.938h-59.099C227.277,713.24,221.268,728.641,230.493,737.135z" /><path d="M618.965,130.299h-289.62c-16.805,0-30.429,13.623-30.429,30.429v37.384c0,16.806,13.624,30.429,30.429,30.429h289.62c17.739,0,32.119-14.38,32.119-32.119v-34.005C651.084,144.679,636.704,130.299,618.965,130.299z" /><path d="M651.084,32.119C651.084,14.38,636.704,0,618.965,0h-289.62c-16.805,0-30.429,13.623-30.429,30.429v37.385c0,16.806,13.624,30.429,30.429,30.429h289.62c17.739,0,32.119-14.38,32.119-32.119V32.119z" /></g></g></svg>
 
 interface Icon {
-    Url: string;
-    TabCode?: Tabs;
-    SvgIcon: JSX.Element;
+    url: string;
+    tabCode?: Tabs;
+    svgIcon: JSX.Element;
     itemClass: string;
+    href: string;
+    download: string;
+    target: string;
 }
 
 export default class LeftMenuComponent extends React.Component<any, any>{
@@ -25,25 +28,28 @@ export default class LeftMenuComponent extends React.Component<any, any>{
 
     initIcons() {
         this.icons = [
-            { Url: "./icons/person.svg", TabCode: Tabs.PersonalInfo, SvgIcon: personSvg, itemClass: 'mt-12' },
-            { Url: "./icons/smartphone.svg", TabCode: Tabs.Contacts, SvgIcon: smartphoneSvg, itemClass: '' },
-            { Url: "./icons/download.svg", TabCode: Tabs.DownloadResume, SvgIcon: downloadSvg, itemClass: 'mt-auto' }
+            { url: "./icons/person.svg", tabCode: Tabs.PersonalInfo, svgIcon: personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { url: "./icons/smartphone.svg", tabCode: Tabs.Contacts, svgIcon: smartphoneSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { url: "./icons/download.svg", tabCode: Tabs.DownloadResume, svgIcon: downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
         ];
     }
 
-    tabClick(tabCode: Tabs, event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-        this.props.setNewActiveTab(tabCode);
+    tabClick(tabCode: Tabs, _: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 
-        if (tabCode == Tabs.DownloadResume) {
-
-        }
+        if (tabCode != Tabs.DownloadResume)
+            this.props.setNewActiveTab(tabCode);
     }
 
     render() {
         return (
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full justify-center">
                 {
-                    this.icons.map((item, i) => (<div key={i} className={`text-center p-2 ${item.itemClass}`}><a className="tabLink inline-block cursor-pointer" onClick={(e) => this.tabClick(item.TabCode, e)}>{item.SvgIcon}</a></div>))
+                    this.icons.map((item, i) => (
+                        <div key={i} className={`text-center p-2 ${item.itemClass}`}>
+                            <a href={item.href} className="tabLink inline-block cursor-pointer" onClick={(e) => this.tabClick(item.tabCode, e)} target={item.target} download={item.download}>
+                                {item.svgIcon}
+                            </a>
+                        </div>))
                 }
             </div>);
     }

@@ -104,20 +104,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
-const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 class AboutMeComponent extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        let content = "O mě";
-        if (this.props.tabCode != Tabs_1.Tabs.Contacts) {
-            content = "Kontakty";
-        }
-        return (React.createElement(react_transition_group_1.SwitchTransition, null,
-            React.createElement(react_transition_group_1.CSSTransition, { key: this.props.tabCode, timeout: 700, classNames: "fade" },
-                React.createElement("h1", { className: "text-center text-white text-5xl" }, content))));
+        return (React.createElement("div", { className: "text-white px-12" },
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "O m\u011B"),
+            React.createElement("div", { className: "flex w-5/12 italic justify-between" },
+                React.createElement("span", null, "Pardubice"),
+                React.createElement("span", null, "/"),
+                React.createElement("span", null, "Developer"),
+                React.createElement("span", null, "/"),
+                React.createElement("span", null, "29y")),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F.")));
     }
 }
 exports.default = AboutMeComponent;
@@ -147,10 +147,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 const ReactDOM = __importStar(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
-const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const LeftMenu_1 = __importDefault(__webpack_require__(/*! ./LeftMenu */ "./Typescript/LeftMenu.tsx"));
-const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
-const Contacts_1 = __importDefault(__webpack_require__(/*! ./Contacts */ "./Typescript/Contacts.tsx"));
+const ContentCard_1 = __importDefault(__webpack_require__(/*! ./ContentCard */ "./Typescript/ContentCard.tsx"));
 const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
 class AppComponent extends React.Component {
     constructor(props) {
@@ -163,24 +161,19 @@ class AppComponent extends React.Component {
         this.setState({ activeTab: tab });
     }
     render() {
-        let shownComponent = React.createElement(AboutMe_1.default, null);
-        if (this.state.activeTab == Tabs_1.Tabs.PersonalInfo) {
-            shownComponent = React.createElement(AboutMe_1.default, null);
-        }
-        else {
-            shownComponent = React.createElement(Contacts_1.default, null);
-        }
         return (React.createElement("div", { className: "flex h-full" },
-            React.createElement("div", { className: "w-1/2 h-full" },
+            React.createElement("div", { className: "w-2/5 h-full" },
                 React.createElement("div", { className: "flex h-full" },
                     React.createElement("div", { className: "w-1/6 my-20 bg-mainGray" },
                         React.createElement(LeftMenu_1.default, { setNewActiveTab: this.tabClick })),
-                    React.createElement("div", { className: "w-5/6 text-white text-center", id: "photoDiv" },
+                    React.createElement("div", { className: "w-5/6 text-white text-center flex flex-col", id: "photoDiv" },
                         React.createElement("h1", { className: "text-5xl mt-24" }, "Luk\u00E1\u0161 SALFICK\u00DD"),
-                        React.createElement("h2", { className: "mt-6" }, ".NET developer")))),
-            React.createElement("div", { className: "w-1/2 my-20 bg-mainGray" },
-                React.createElement(react_transition_group_1.CSSTransition, { in: true, timeout: 700, classNames: "fade", appear: true },
-                    React.createElement(AboutMe_1.default, { tabCode: this.state.activeTab })))));
+                        React.createElement("h2", { className: "mt-6" }, ".NET developer"),
+                        React.createElement("a", { href: "http://www.linkedin.com/in/salfickylukas", target: "_blank", className: "inline-block mx-auto mt-auto mb-12" },
+                            React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", fill: "white", viewBox: "0 0 24 24" },
+                                React.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" })))))),
+            React.createElement("div", { className: "w-3/5 my-20 bg-mainGray" },
+                React.createElement(ContentCard_1.default, { tabCode: this.state.activeTab }))));
     }
 }
 ReactDOM.render(React.createElement(AppComponent, null), document.getElementById('app'));
@@ -216,6 +209,52 @@ class ContactComponent extends React.Component {
     }
 }
 exports.default = ContactComponent;
+
+
+/***/ }),
+
+/***/ "./Typescript/ContentCard.tsx":
+/*!************************************!*\
+  !*** ./Typescript/ContentCard.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
+const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
+const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
+const Contacts_1 = __importDefault(__webpack_require__(/*! ./Contacts */ "./Typescript/Contacts.tsx"));
+class ContentCardComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        let content = null;
+        if (this.props.tabCode == Tabs_1.Tabs.Contacts) {
+            content = React.createElement(Contacts_1.default, null);
+        }
+        else if (this.props.tabCode == Tabs_1.Tabs.PersonalInfo) {
+            content = React.createElement(AboutMe_1.default, null);
+        }
+        return (React.createElement(react_transition_group_1.SwitchTransition, null,
+            React.createElement(react_transition_group_1.CSSTransition, { key: this.props.tabCode, timeout: 700, classNames: "fade" }, content)));
+    }
+}
+exports.default = ContentCardComponent;
 
 
 /***/ }),
@@ -264,19 +303,18 @@ class LeftMenuComponent extends React.Component {
     }
     initIcons() {
         this.icons = [
-            { Url: "./icons/person.svg", TabCode: Tabs_1.Tabs.PersonalInfo, SvgIcon: personSvg, itemClass: 'mt-12' },
-            { Url: "./icons/smartphone.svg", TabCode: Tabs_1.Tabs.Contacts, SvgIcon: smartphoneSvg, itemClass: '' },
-            { Url: "./icons/download.svg", TabCode: Tabs_1.Tabs.DownloadResume, SvgIcon: downloadSvg, itemClass: 'mt-auto' }
+            { url: "./icons/person.svg", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { url: "./icons/smartphone.svg", tabCode: Tabs_1.Tabs.Contacts, svgIcon: smartphoneSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { url: "./icons/download.svg", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
         ];
     }
-    tabClick(tabCode, event) {
-        this.props.setNewActiveTab(tabCode);
-        if (tabCode == Tabs_1.Tabs.DownloadResume) {
-        }
+    tabClick(tabCode, _) {
+        if (tabCode != Tabs_1.Tabs.DownloadResume)
+            this.props.setNewActiveTab(tabCode);
     }
     render() {
-        return (React.createElement("div", { className: "flex flex-col h-full" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
-            React.createElement("a", { className: "tabLink inline-block cursor-pointer", onClick: (e) => this.tabClick(item.TabCode, e) }, item.SvgIcon))))));
+        return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
+            React.createElement("a", { href: item.href, className: "tabLink inline-block cursor-pointer", onClick: (e) => this.tabClick(item.tabCode, e), target: item.target, download: item.download }, item.svgIcon))))));
     }
 }
 exports.default = LeftMenuComponent;
