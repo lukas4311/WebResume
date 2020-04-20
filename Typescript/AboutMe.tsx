@@ -1,6 +1,6 @@
 ﻿import * as React from 'react';
 import { Tabs } from './Tabs'
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 export default class AboutMeComponent extends React.Component<any, any>{
     constructor(props: any) {
@@ -15,11 +15,11 @@ export default class AboutMeComponent extends React.Component<any, any>{
         }
 
         return (
-            <TransitionGroup className="transitionContainer">
+            <SwitchTransition>
                 <CSSTransition key={this.props.tabCode} timeout={700} classNames="fade">
                         <h1 className="text-center text-white text-5xl">{content}</h1>
                 </CSSTransition>
-            </TransitionGroup>
+            </SwitchTransition>
         );
     }
 }

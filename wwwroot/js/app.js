@@ -115,8 +115,9 @@ class AboutMeComponent extends React.Component {
         if (this.props.tabCode != Tabs_1.Tabs.Contacts) {
             content = "Kontakty";
         }
-        return (React.createElement(react_transition_group_1.CSSTransition, { key: this.props.tabCode, timeout: 700, classNames: "fade" },
-            React.createElement("h1", { className: "text-center text-white text-5xl" }, content)));
+        return (React.createElement(react_transition_group_1.SwitchTransition, null,
+            React.createElement(react_transition_group_1.CSSTransition, { key: this.props.tabCode, timeout: 700, classNames: "fade" },
+                React.createElement("h1", { className: "text-center text-white text-5xl" }, content))));
     }
 }
 exports.default = AboutMeComponent;
