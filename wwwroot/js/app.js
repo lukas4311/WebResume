@@ -117,7 +117,12 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F.")));
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F."),
+            React.createElement("section", null,
+                React.createElement("h2", { className: "text-xl" }, "Z\u00E1jmy"),
+                React.createElement("p", null,
+                    "Rodina / Programov\u00E1n\u00ED / Sport / Knihy / ",
+                    React.createElement("span", { className: "italic text-bold" }, "Bonus one click to reveal")))));
     }
 }
 exports.default = AboutMeComponent;
@@ -171,7 +176,8 @@ class AppComponent extends React.Component {
                         React.createElement("h2", { className: "mt-6" }, ".NET developer"),
                         React.createElement("a", { href: "http://www.linkedin.com/in/salfickylukas", target: "_blank", className: "inline-block mx-auto mt-auto mb-12" },
                             React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", fill: "white", viewBox: "0 0 24 24" },
-                                React.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" })))))),
+                                React.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" }))),
+                        React.createElement("span", { className: "italic" }, "Only a life lived for others is a life worthwhile.")))),
             React.createElement("div", { className: "w-3/5 my-20 bg-mainGray" },
                 React.createElement(ContentCard_1.default, { tabCode: this.state.activeTab }))));
     }

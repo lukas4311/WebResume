@@ -13,3 +13,11 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./wwwroot/css/'));
 });
+
+gulp.task('watchsass', function () {
+    gulp.watch('./Sass/**/*.scss', gulp.series('sass'));
+});
+
+gulp.task('watchwebpack', function () {
+    gulp.watch('./Typescript/**/*.{tsx,ts,js,jsx}', gulp.series('webpack'));
+});
