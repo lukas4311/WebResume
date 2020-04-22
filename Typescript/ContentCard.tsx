@@ -2,7 +2,7 @@
 import { Tabs } from './Tabs'
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import AboutMeComponent from "./AboutMe"
-import ContactComponent from "./Contacts"
+import WorkAndSchoolComponent from "./WorkAndSchool"
 
 interface IProps {
     tabCode: Tabs;
@@ -17,7 +17,7 @@ export default class ContentCardComponent extends React.Component<IProps, any>{
         let content = null;
 
         if (this.props.tabCode == Tabs.Contacts) {
-            content = <ContactComponent />;
+            content = <WorkAndSchoolComponent />;
         }
         else if (this.props.tabCode == Tabs.PersonalInfo) {
             content = <AboutMeComponent />;

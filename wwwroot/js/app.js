@@ -224,38 +224,6 @@ ReactDOM.render(React.createElement(AppComponent, null), document.getElementById
 
 /***/ }),
 
-/***/ "./Typescript/Contacts.tsx":
-/*!*********************************!*\
-  !*** ./Typescript/Contacts.tsx ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-class ContactComponent extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (React.createElement("div", null,
-            React.createElement("h1", { className: "text-center text-white text-5xl" }, "Kontakty")));
-    }
-}
-exports.default = ContactComponent;
-
-
-/***/ }),
-
 /***/ "./Typescript/ContentCard.tsx":
 /*!************************************!*\
   !*** ./Typescript/ContentCard.tsx ***!
@@ -280,7 +248,7 @@ const React = __importStar(__webpack_require__(/*! react */ "./node_modules/reac
 const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
-const Contacts_1 = __importDefault(__webpack_require__(/*! ./Contacts */ "./Typescript/Contacts.tsx"));
+const WorkAndSchool_1 = __importDefault(__webpack_require__(/*! ./WorkAndSchool */ "./Typescript/WorkAndSchool.tsx"));
 class ContentCardComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -288,7 +256,7 @@ class ContentCardComponent extends React.Component {
     render() {
         let content = null;
         if (this.props.tabCode == Tabs_1.Tabs.Contacts) {
-            content = React.createElement(Contacts_1.default, null);
+            content = React.createElement(WorkAndSchool_1.default, null);
         }
         else if (this.props.tabCode == Tabs_1.Tabs.PersonalInfo) {
             content = React.createElement(AboutMe_1.default, null);
@@ -415,6 +383,38 @@ var Tabs;
     Tabs[Tabs["Skills"] = 2] = "Skills";
     Tabs[Tabs["DownloadResume"] = 3] = "DownloadResume";
 })(Tabs = exports.Tabs || (exports.Tabs = {}));
+
+
+/***/ }),
+
+/***/ "./Typescript/WorkAndSchool.tsx":
+/*!**************************************!*\
+  !*** ./Typescript/WorkAndSchool.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+class WorkAndSchoolComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (React.createElement("div", { className: "text-white px-12" },
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED")));
+    }
+}
+exports.default = WorkAndSchoolComponent;
 
 
 /***/ }),
