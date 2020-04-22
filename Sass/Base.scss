@@ -31,7 +31,7 @@ html {
 }
 
 
-.fade-appear{
+.fade-appear {
     opacity: 0;
 }
 
@@ -40,7 +40,7 @@ html {
     transition: opacity 700ms linear;
 }
 
-.fade-exit{
+.fade-exit {
     opacity: 1;
 }
 
@@ -53,11 +53,32 @@ html {
     opacity: 0;
 }
 
-.fade-enter{
+.fade-enter {
     opacity: 0;
 }
 
 .fade-enter.fade-enter-active {
     opacity: 1;
     transition: opacity 700ms linear;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    /*background: #f1f1f1;*/
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.motto {
+    font-family: 'Indie Flower';
 }
