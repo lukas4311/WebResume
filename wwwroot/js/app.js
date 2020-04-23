@@ -411,7 +411,19 @@ class WorkAndSchoolComponent extends React.Component {
     }
     render() {
         return (React.createElement("div", { className: "text-white px-12" },
-            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED")));
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
+            React.createElement("div", { className: "flex" },
+                React.createElement("div", { className: "w-1/2" },
+                    React.createElement("h2", null, "Zku\u0161enosti"),
+                    React.createElement("div", { className: "flex" },
+                        React.createElement("div", { className: "w-1/4" },
+                            React.createElement("h3", { className: "text-2xl" }, "Erzasoft s.r.o."),
+                            React.createElement("span", null, "05/2013 \u2013 03/2014"),
+                            React.createElement("p", null, "Programov\u00E1n\u00ED a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek za pomoci jazyka C# a technologi\u00ED ASP.NET MVC 5. Dal\u0161\u00ED technologie: EntityFramework, MS SQL, Telerik (UI for ASP.NET MVC), Javascript, HTML5, CSS3 (Sass, Compass), Team foundation server, Adobe Photoshop")),
+                        "TRS s.r.o. 03/2014 \u2013 12/2014 Software developer Programov\u00E1n\u00ED Windows Forms aplikac\u00ED za pomoci jazyka C# PROFI CREDIT Czech, a. s.01/2015 - 01/2017 Software developer Programov\u00E1n\u00ED .NET aplikac\u00ED v\u0161eho druhu, ale prim\u00E1rn\u011B jde o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie WPF a ASP.NET MVC 5 a postaven\u00E9 nad MSSQL. Dal\u0161\u00ED technologie: JIRA, ASP.NET Core Web API, Javascript, HTML5, CSS3, Team foundation server, WCF, WinService, PHP. PROFI CREDIT Czech, a. s.01/2015 - 01/2017 Software developer Programov\u00E1n\u00ED .NET aplikac\u00ED v\u0161eho druhu, ale prim\u00E1rn\u011B jde o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie WPF a ASP.NET MVC 5 a postaven\u00E9 nad MSSQL. Dal\u0161\u00ED technologie: JIRA, ASP.NET Core Web API, Javascript, HTML5, CSS3, Team foundation server, WCF, WinService, PHP."))),
+            React.createElement("div", { className: "w-1/2" },
+                React.createElement("h2", null, "Vzd\u011Bl\u00E1n\u00ED"),
+                React.createElement("div", { className: "flex" }, "Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky"))));
     }
 }
 exports.default = WorkAndSchoolComponent;
