@@ -270,6 +270,43 @@ exports.default = ContentCardComponent;
 
 /***/ }),
 
+/***/ "./Typescript/ExperienceCard.tsx":
+/*!***************************************!*\
+  !*** ./Typescript/ExperienceCard.tsx ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+class ExperienceCardComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (React.createElement("div", { className: "w-1/4" },
+            React.createElement("h3", { className: "text-xl" }, this.props.Name),
+            React.createElement("span", null,
+                this.props.From,
+                " - ",
+                this.props.To),
+            React.createElement("p", null, this.props.Description)));
+    }
+}
+exports.ExperienceCardComponent = ExperienceCardComponent;
+
+
+/***/ }),
+
 /***/ "./Typescript/InterestsCard.tsx":
 /*!**************************************!*\
   !*** ./Typescript/InterestsCard.tsx ***!
@@ -405,25 +442,57 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const ExperienceCard_1 = __webpack_require__(/*! ./ExperienceCard */ "./Typescript/ExperienceCard.tsx");
 class WorkAndSchoolComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.erzasoftWork = {
+            Description: "Programování a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.",
+            From: "05/2013",
+            To: "03/2014",
+            Name: "Erzasoft s.r.o.",
+            Technologies: ["EntityFramework", "MS SQL", "Telerik (UI for ASP.NET MVC)", "Javascript", "HTML5", "CSS3", "Sass", "TFS", "Adobe Photoshop"],
+            Position: "Software developer"
+        };
+        this.trsWork = {
+            Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
+            From: "03/2014",
+            To: "12/2014",
+            Name: "TRS s.r.o.",
+            Technologies: ["EntityFramework", "MS SQL", "Telerik (UI for ASP.NET MVC)", "Javascript", "HTML5", "CSS3", "Sass", "TFS", "Adobe Photoshop"],
+            Position: "Software developer"
+        };
+        this.proficreditSoftwareDeveloperWork = {
+            Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+            From: "03/2014",
+            To: "12/2014",
+            Name: "PROFI CREDIT Czech, a. s.",
+            Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
+            Position: "Software developer"
+        };
+        this.proficreditDevelopmentLeaderWork = {
+            Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+            From: "01/2015",
+            To: "01/2017",
+            Name: "PROFI CREDIT Czech, a. s.",
+            Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
+            Position: "Software developer"
+        };
     }
     render() {
         return (React.createElement("div", { className: "text-white px-12" },
             React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
-            React.createElement("div", { className: "flex" },
-                React.createElement("div", { className: "w-1/2" },
-                    React.createElement("h2", null, "Zku\u0161enosti"),
-                    React.createElement("div", { className: "flex" },
-                        React.createElement("div", { className: "w-1/4" },
-                            React.createElement("h3", { className: "text-2xl" }, "Erzasoft s.r.o."),
-                            React.createElement("span", null, "05/2013 \u2013 03/2014"),
-                            React.createElement("p", null, "Programov\u00E1n\u00ED a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek za pomoci jazyka C# a technologi\u00ED ASP.NET MVC 5. Dal\u0161\u00ED technologie: EntityFramework, MS SQL, Telerik (UI for ASP.NET MVC), Javascript, HTML5, CSS3 (Sass, Compass), Team foundation server, Adobe Photoshop")),
-                        "TRS s.r.o. 03/2014 \u2013 12/2014 Software developer Programov\u00E1n\u00ED Windows Forms aplikac\u00ED za pomoci jazyka C# PROFI CREDIT Czech, a. s.01/2015 - 01/2017 Software developer Programov\u00E1n\u00ED .NET aplikac\u00ED v\u0161eho druhu, ale prim\u00E1rn\u011B jde o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie WPF a ASP.NET MVC 5 a postaven\u00E9 nad MSSQL. Dal\u0161\u00ED technologie: JIRA, ASP.NET Core Web API, Javascript, HTML5, CSS3, Team foundation server, WCF, WinService, PHP. PROFI CREDIT Czech, a. s.01/2015 - 01/2017 Software developer Programov\u00E1n\u00ED .NET aplikac\u00ED v\u0161eho druhu, ale prim\u00E1rn\u011B jde o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie WPF a ASP.NET MVC 5 a postaven\u00E9 nad MSSQL. Dal\u0161\u00ED technologie: JIRA, ASP.NET Core Web API, Javascript, HTML5, CSS3, Team foundation server, WCF, WinService, PHP."))),
-            React.createElement("div", { className: "w-1/2" },
-                React.createElement("h2", null, "Vzd\u011Bl\u00E1n\u00ED"),
-                React.createElement("div", { className: "flex" }, "Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky"))));
+            React.createElement("div", { className: "flex flex-col" },
+                React.createElement("div", { className: "w-full" },
+                    React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
+                    React.createElement("div", { className: "flex mt-4" },
+                        React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, this.erzasoftWork)),
+                        React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, this.trsWork)),
+                        React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, this.proficreditSoftwareDeveloperWork)),
+                        React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, this.proficreditDevelopmentLeaderWork)))),
+                React.createElement("div", { className: "w-full mt-12" },
+                    React.createElement("h2", { className: "text-2xl" }, "Vzd\u011Bl\u00E1n\u00ED"),
+                    React.createElement("div", { className: "flex mt-4" }, "Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky")))));
     }
 }
 exports.default = WorkAndSchoolComponent;
