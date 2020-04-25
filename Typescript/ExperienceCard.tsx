@@ -16,14 +16,15 @@ export class ExperienceCardComponent extends React.Component<IExperienceCardProp
 
     render() {
         return (
-            <div>
-                <h3 className="text-xl">{this.props.Name}</h3>
-                <span>{this.props.From} - {this.props.To}</span>
-                <p>
+            <React.Fragment>
+                <h3 className="text-lg text-center">{this.props.Name}</h3>
+                <span className="inline-block">{this.props.Position}</span>
+                <span className="text-sm inline-block">{this.props.From} - {this.props.To}</span>
+                {/* <p>
                     {this.props.Description}
-                </p>
+                </p> */}
                 {/* {this.props.Technologies.map((t, i) => <span key={i}>{t}</span>)} */}
-            </div>
+            </React.Fragment>
         );
     }
 }

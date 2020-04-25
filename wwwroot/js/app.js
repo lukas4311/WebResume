@@ -293,13 +293,13 @@ class ExperienceCardComponent extends React.Component {
         super(props);
     }
     render() {
-        return (React.createElement("div", null,
-            React.createElement("h3", { className: "text-xl" }, this.props.Name),
-            React.createElement("span", null,
+        return (React.createElement(React.Fragment, null,
+            React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
+            React.createElement("span", { className: "inline-block" }, this.props.Position),
+            React.createElement("span", { className: "text-sm inline-block" },
                 this.props.From,
                 " - ",
-                this.props.To),
-            React.createElement("p", null, this.props.Description)));
+                this.props.To)));
     }
 }
 exports.ExperienceCardComponent = ExperienceCardComponent;
@@ -325,6 +325,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const ExperienceCard_1 = __webpack_require__(/*! ./ExperienceCard */ "./Typescript/ExperienceCard.tsx");
 const iconSize = '30px';
 const arrowLeft = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
@@ -335,6 +336,7 @@ class ExperinceCardSliderComponent extends React.Component {
     constructor(props) {
         super(props);
         this.maxItems = 3;
+        this.animationDirection = 'flex left';
         this.itemsCount = props.cards.length;
         if (this.itemsCount < this.maxItems)
             this.maxItems = this.itemsCount;
@@ -358,6 +360,7 @@ class ExperinceCardSliderComponent extends React.Component {
     }
     clickLeft() {
         let newIndex = this.state.actualIndex - 1;
+        this.animationDirection = 'flex left ' + newIndex;
         if (newIndex < 0)
             newIndex = this.itemsCount - 1;
         this.setState((s, _) => ({ actualIndex: newIndex }));
@@ -365,16 +368,20 @@ class ExperinceCardSliderComponent extends React.Component {
     }
     clickRight() {
         let newIndex = this.state.actualIndex + 1;
+        this.animationDirection = 'flex right ' + newIndex;
         if (newIndex > this.itemsCount - 1)
             newIndex = 0;
         this.setState((s, _) => ({ actualIndex: newIndex }));
         this.showCards(newIndex);
     }
     render() {
-        return (React.createElement("div", { className: "flex items-center" },
+        const timeout = { enter: 800, exit: 400 };
+        return (React.createElement("div", { className: "flex items-center w-full" },
             React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft),
-            React.createElement("div", { className: "flex" }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: "w-1/3", key: i },
-                React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))),
+            React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full" },
+                React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
+                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: "w-1/3 page p-2 bg-buttonsGray rounded-lg m-4", key: i },
+                        React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
             React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight)));
     }
 }
@@ -546,19 +553,35 @@ class WorkAndSchoolComponent extends React.Component {
         };
         this.proficreditSoftwareDeveloperWork = {
             Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
-            From: "03/2014",
-            To: "12/2014",
-            Name: "PROFI CREDIT Czech, a. s.",
-            Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
-            Position: "Software developer"
-        };
-        this.proficreditDevelopmentLeaderWork = {
-            Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
             From: "01/2015",
             To: "01/2017",
             Name: "PROFI CREDIT Czech, a. s.",
             Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
             Position: "Software developer"
+        };
+        this.proficreditDevelopmentLeaderWork = {
+            Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
+            From: "01/2017",
+            To: "současnost",
+            Name: "PROFI CREDIT Czech, a. s.",
+            Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
+            Position: "Developement leader"
+        };
+        this.highSchool = {
+            Description: "",
+            From: "05/2006",
+            To: "05/2010",
+            Name: "Střední průmyslová škola elektrotechnická",
+            Technologies: [],
+            Position: ""
+        };
+        this.university = {
+            Description: "",
+            From: "05/2010",
+            To: "05/2014",
+            Name: "Univerzita Pardubice - Fakulta elektrotechniky a informatiky",
+            Technologies: [],
+            Position: ""
         };
     }
     render() {
@@ -571,7 +594,8 @@ class WorkAndSchoolComponent extends React.Component {
                         React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { cards: [this.erzasoftWork, this.trsWork, this.proficreditSoftwareDeveloperWork, this.proficreditDevelopmentLeaderWork] }))),
                 React.createElement("div", { className: "w-full mt-12" },
                     React.createElement("h2", { className: "text-2xl" }, "Vzd\u011Bl\u00E1n\u00ED"),
-                    React.createElement("div", { className: "flex mt-4" }, "Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky Univerzita Pardubice 05/2010 - 05/2014 Fakulta elektrotechniky a informatiky")))));
+                    React.createElement("div", { className: "flex mt-4" },
+                        React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { cards: [this.highSchool, this.university] }))))));
     }
 }
 exports.default = WorkAndSchoolComponent;

@@ -1,0 +1,65 @@
+.fade-appear {
+    opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 700ms linear;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 700ms linear;
+}
+
+.fade-exit-done {
+    opacity: 0;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 700ms linear;
+}
+
+
+.pageSlider-enter.left > .page{
+    transform: translate3d(-100%, 0, 0);
+}
+
+.pageSlider-enter.right > .page{
+    transform: translate3d(100%, 0, 0);
+}
+
+.pageSlider-exit.left > .page {
+    display: none;
+}
+
+.pageSlider-exit.right > .page {
+    display:none;
+}
+
+.pageSlider-enter.pageSlider-enter-active.left > .page{
+     transform: translate3d(0, 0, 0);
+    transition: 800ms ease-in-out;
+}
+
+.pageSlider-enter.pageSlider-exit-active.left > .page {
+    opacity: 0;
+}
+
+.pageSlider-enter.pageSlider-enter-active.right > .page{
+    transform: translate3d(0, 0, 0);
+    transition: 800ms ease-in-out;
+}
+
+.pageSlider-enter.pageSlider-exit-active.right > .page{
+    opacity:0;
+}
