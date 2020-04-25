@@ -211,7 +211,7 @@ class AppComponent extends React.Component {
                         React.createElement("h1", { className: "text-5xl mt-24" }, "Luk\u00E1\u0161 SALFICK\u00DD"),
                         React.createElement("h2", { className: "mt-2" }, ".NET developer"),
                         React.createElement("a", { href: "http://www.linkedin.com/in/salfickylukas", target: "_blank", className: "inline-block mx-auto mt-auto mb-12" },
-                            React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", fill: "white", viewBox: "0 0 24 24" },
+                            React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", className: "fill-current text-white hover:text-mainBlue duration-500 ease-in-out", viewBox: "0 0 24 24" },
                                 React.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" }))),
                         React.createElement("span", { className: "italic motto" }, "\"only a life lived for others is a life worthwhile\""),
                         React.createElement("span", { className: "italic motto ml-auto mr-4" }, "Albert Einstein")))),
@@ -328,9 +328,9 @@ const React = __importStar(__webpack_require__(/*! react */ "./node_modules/reac
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const ExperienceCard_1 = __webpack_require__(/*! ./ExperienceCard */ "./Typescript/ExperienceCard.tsx");
 const iconSize = '30px';
-const arrowLeft = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
+const arrowLeft = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
     React.createElement("path", { d: "M7.701,14.276l9.586-9.585c0.879-0.878,2.317-0.878,3.195,0l0.801,0.8c0.878,0.877,0.878,2.316,0,3.194  L13.968,16l7.315,7.315c0.878,0.878,0.878,2.317,0,3.194l-0.801,0.8c-0.878,0.879-2.316,0.879-3.195,0l-9.586-9.587  C7.229,17.252,7.02,16.62,7.054,16C7.02,15.38,7.229,14.748,7.701,14.276z" }));
-const arrowRight = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
+const arrowRight = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
     React.createElement("path", { d: "M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z" }));
 class ExperinceCardSliderComponent extends React.Component {
     constructor(props) {
@@ -378,7 +378,7 @@ class ExperinceCardSliderComponent extends React.Component {
         const timeout = { enter: 800, exit: 400 };
         return (React.createElement("div", { className: "flex items-center w-full" },
             React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft),
-            React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full" },
+            React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
                     React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: "w-1/3 page p-2 bg-buttonsGray rounded-lg m-4", key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
