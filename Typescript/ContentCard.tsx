@@ -16,7 +16,7 @@ export default class ContentCardComponent extends React.Component<IProps, any>{
     render() {
         let content = null;
 
-        if (this.props.tabCode == Tabs.Contacts) {
+        if (this.props.tabCode == Tabs.WorkEducation) {
             content = <WorkAndSchoolComponent />;
         }
         else if (this.props.tabCode == Tabs.PersonalInfo) {

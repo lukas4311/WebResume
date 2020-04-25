@@ -2,5 +2,6 @@
     PersonalInfo,
     Contacts,
     Skills,
-    DownloadResume
+    DownloadResume,
+    WorkEducation
 }

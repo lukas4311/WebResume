@@ -1,5 +1,6 @@
 ﻿import * as React from 'react';
-import { ExperienceCardComponent, IExperienceCardProps } from './ExperienceCard';
+import { IExperienceCardProps } from './ExperienceCard';
+import { ExperinceCardSliderComponent} from './ExperienceCardSlider'
 
 export default class WorkAndSchoolComponent extends React.Component<any, any>{
     erzasoftWork: IExperienceCardProps = {
@@ -47,10 +48,7 @@ export default class WorkAndSchoolComponent extends React.Component<any, any>{
                     <div className="w-full">
                         <h2 className="text-2xl">Zkušenosti</h2>
                         <div className="flex mt-4">
-                            <ExperienceCardComponent  {...this.erzasoftWork} />
-                            <ExperienceCardComponent  {...this.trsWork} />
-                            <ExperienceCardComponent  {...this.proficreditSoftwareDeveloperWork} />
-                            <ExperienceCardComponent  {...this.proficreditDevelopmentLeaderWork} />
+                            <ExperinceCardSliderComponent cards={[this.erzasoftWork, this.trsWork, this.proficreditSoftwareDeveloperWork, this.proficreditDevelopmentLeaderWork]} />
                         </div>
                     </div>
                     <div className="w-full mt-12">

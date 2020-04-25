@@ -16,7 +16,7 @@ export class ExperienceCardComponent extends React.Component<IExperienceCardProp
 
     render() {
         return (
-            <div className="w-1/4">
+            <div>
                 <h3 className="text-xl">{this.props.Name}</h3>
                 <span>{this.props.From} - {this.props.To}</span>
                 <p>
