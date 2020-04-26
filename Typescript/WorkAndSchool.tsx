@@ -36,22 +36,21 @@ export default class WorkAndSchoolComponent extends React.Component<any, any>{
         Position: "Developement leader"
     };
     highSchool: IExperienceCardProps = {
-        Description: "",
+        Description: undefined,
         From: "05/2006",
         To: "05/2010",
         Name: "Střední průmyslová škola elektrotechnická",
         Technologies: [],
-        Position: ""
+        Position: undefined
     };
     university: IExperienceCardProps = {
-        Description: "",
+        Description: undefined,
         From: "05/2010",
         To: "05/2014",
         Name: "Univerzita Pardubice - Fakulta elektrotechniky a informatiky",
         Technologies: [],
-        Position: ""
+        Position: undefined
     };
-
 
     constructor(props: any) {
         super(props);

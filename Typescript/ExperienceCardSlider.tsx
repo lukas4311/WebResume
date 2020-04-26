@@ -78,7 +78,7 @@ export class ExperinceCardSliderComponent extends React.Component<IExperinceCard
                     <CSSTransition key={this.animationDirection} timeout={timeout} classNames="pageSlider" mountOnEnter={false} unmountOnExit={true}>
                         <div className={this.animationDirection}>
                             {this.state.cardsToShow.map((card: IExperienceCardProps, i: number) => (
-                                <div className="w-1/3 page p-2 bg-buttonsGray rounded-lg m-4" key={i}>
+                                <div className="w-1/3 page p-2 bg-buttonsGray rounded-lg m-2" key={i}>
                                     <ExperienceCardComponent {...card} />
                                 </div>
                             ))}
