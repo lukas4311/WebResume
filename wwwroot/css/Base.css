@@ -122,5 +122,8 @@ html {
 .tabLink:hover svg {
   fill: #20639B; }
 
+.tabLink:hover + span {
+  opacity: 1; }
+
 .motto {
   font-family: 'Indie Flower'; }

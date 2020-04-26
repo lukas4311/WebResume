@@ -3,6 +3,7 @@ import { Tabs } from './Tabs'
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import AboutMeComponent from "./AboutMe"
 import WorkAndSchoolComponent from "./WorkAndSchool"
+import SkillsComponent from './Skills'
 
 interface IProps {
     tabCode: Tabs;
@@ -21,6 +22,9 @@ export default class ContentCardComponent extends React.Component<IProps, any>{
         }
         else if (this.props.tabCode == Tabs.PersonalInfo) {
             content = <AboutMeComponent />;
+        }
+        else if(this.props.tabCode == Tabs.Skills){
+            content = <AboutMeComponent/>
         }
 
         return (
