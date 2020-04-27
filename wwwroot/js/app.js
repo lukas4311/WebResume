@@ -292,6 +292,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const Modal_1 = __webpack_require__(/*! ./Modal */ "./Typescript/Modal.tsx");
 const descIcon = React.createElement("svg", { version: "1.1", id: "Layer_1", x: "0px", y: "0px", width: "15px", className: "text-white fill-current inline-block ml-auto", viewBox: "0 0 512 512" },
     React.createElement("path", { d: "M448,0H64C46.328,0,32,14.313,32,32v448c0,17.688,14.328,32,32,32h288l128-128V32C480,14.313,465.688,0,448,0z M352,466.75V384h82.75L352,466.75z M448,352h-96c-17.688,0-32,14.313-32,32v96H64V32h384V352z M96,112c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,128,96,120.844,96,112z M96,208c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,224,96,216.844,96,208z M96,304c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,320,96,312.844,96,304z" }));
 const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "0px", y: "0px", width: "15px", className: "text-white fill-current inline-block ml-auto mt-auto", viewBox: "0 0 488 488" },
@@ -361,39 +362,43 @@ const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "
     React.createElement("g", null,
         React.createElement("g", null,
             React.createElement("rect", { x: "440", y: "19.859", width: "16", height: "16" }))));
-const Modal = function (props) {
-    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
-    return (React.createElement("div", { className: showHideClassName },
-        React.createElement("div", { className: "modal-main text-black flex flex-col" },
-            React.createElement("div", { className: "ml-auto mr-4" },
-                React.createElement("button", { onClick: props.handleClose }, "X")),
-            React.createElement("div", null, props.children))));
-};
 class ExperienceCardComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.showModal = () => {
-            this.setState({ show: true });
+        this.showDescription = () => {
+            this.setState({ showDescriptionModal: true });
         };
-        this.hideModal = () => {
-            this.setState({ show: false });
+        this.hideDescription = () => {
+            this.setState({ showDescriptionModal: false });
         };
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
-        this.state = { show: false };
+        this.showTechnologies = () => {
+            this.setState({ showTechnologiesModal: true });
+        };
+        this.hideTechnologies = () => {
+            this.setState({ showTechnologiesModal: false });
+        };
+        this.showDescription = this.showDescription.bind(this);
+        this.hideDescription = this.hideDescription.bind(this);
+        this.showTechnologies = this.showTechnologies.bind(this);
+        this.hideTechnologies = this.hideTechnologies.bind(this);
+        this.state = { showDescriptionModal: false, showTechnologiesModal: false };
     }
     render() {
         let iconsColumn;
         if (this.props.Description != undefined || this.props.Technologies.length != 0) {
             iconsColumn = (React.createElement("div", { className: "w-6 flex flex-col" },
-                this.props.Description != undefined ? React.createElement("a", { onClick: this.showModal, className: "ml-auto inline-block cursor-pointer experienceCard" }, descIcon) : "",
-                this.props.Technologies.length != 0 ? React.createElement("a", { className: "ml-auto inline-block mt-auto cursor-pointer experienceCard" }, techIcon) : ""));
+                this.props.Description != undefined ? React.createElement("a", { onClick: this.showDescription, className: "ml-auto inline-block cursor-pointer experienceCard" }, descIcon) : "",
+                this.props.Technologies.length != 0 ? React.createElement("a", { onClick: this.showTechnologies, className: "ml-auto inline-block mt-auto cursor-pointer experienceCard" }, techIcon) : ""));
         }
         return (React.createElement("div", { className: "flex" },
-            React.createElement(Modal, { show: this.state.show, handleClose: this.hideModal },
+            React.createElement(Modal_1.Modal, { show: this.state.showDescriptionModal, handleClose: this.hideDescription },
                 React.createElement("div", { className: "text-center" },
                     React.createElement("h2", { className: "text-2xl text-center" }, "Popis pr\u00E1ce"),
                     React.createElement("p", null, this.props.Description))),
+            React.createElement(Modal_1.Modal, { show: this.state.showTechnologiesModal, handleClose: this.hideTechnologies },
+                React.createElement("div", { className: "text-center" },
+                    React.createElement("h2", { className: "text-2xl text-center" }, "Pou\u017E\u00EDvan\u00E9 technologie"),
+                    this.props.Technologies.map((item) => React.createElement("span", { className: "px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal" }, item)))),
             React.createElement("div", { className: "w-full" },
                 React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
                 React.createElement("span", { className: "inline-block" }, this.props.Position),
@@ -599,6 +604,36 @@ class LeftMenuComponent extends React.Component {
     }
 }
 exports.default = LeftMenuComponent;
+
+
+/***/ }),
+
+/***/ "./Typescript/Modal.tsx":
+/*!******************************!*\
+  !*** ./Typescript/Modal.tsx ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+exports.Modal = function (props) {
+    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
+    return (React.createElement("div", { className: showHideClassName },
+        React.createElement("div", { className: "modal-main text-black flex flex-col" },
+            React.createElement("div", { className: "ml-auto mr-4" },
+                React.createElement("button", { onClick: props.handleClose }, "X")),
+            React.createElement("div", null, props.children))));
+};
 
 
 /***/ }),
