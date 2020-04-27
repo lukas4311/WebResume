@@ -364,9 +364,10 @@ const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "
 const Modal = function (props) {
     const showHideClassName = props.show ? "modal display-block" : "modal display-none";
     return (React.createElement("div", { className: showHideClassName },
-        React.createElement("section", { className: "modal-main text-black" },
-            props.children,
-            React.createElement("button", { onClick: props.handleClose }, "close"))));
+        React.createElement("div", { className: "modal-main text-black flex flex-col" },
+            React.createElement("div", { className: "ml-auto mr-4" },
+                React.createElement("button", { onClick: props.handleClose }, "X")),
+            React.createElement("div", null, props.children))));
 };
 class ExperienceCardComponent extends React.Component {
     constructor(props) {

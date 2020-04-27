@@ -21,10 +21,14 @@ const Modal = function (props: IModalProps) {
 
     return (
         <div className={showHideClassName}>
-            <section className="modal-main text-black">
-                {props.children}
-                <button onClick={props.handleClose}>close</button>
-            </section>
+            <div className="modal-main text-black flex flex-col">
+                <div className="ml-auto mr-4">
+                    <button onClick={props.handleClose}>X</button>
+                </div>
+                <div>
+                    {props.children}
+                </div>
+            </div>
         </div>
     );
 }
@@ -71,10 +75,6 @@ export class ExperienceCardComponent extends React.Component<IExperienceCardProp
                     <span className="text-sm inline-block">{this.props.From} - {this.props.To}</span>
                 </div>
                 {iconsColumn}
-                {/* <p>
-                    {this.props.Description}
-                </p> */}
-                {/* {this.props.Technologies.map((t, i) => <span key={i}>{t}</span>)} */}
             </div>
         );
     }
