@@ -249,6 +249,7 @@ const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
 const WorkAndSchool_1 = __importDefault(__webpack_require__(/*! ./WorkAndSchool */ "./Typescript/WorkAndSchool.tsx"));
+const Skills_1 = __importDefault(__webpack_require__(/*! ./Skills */ "./Typescript/Skills.tsx"));
 class ContentCardComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -262,7 +263,7 @@ class ContentCardComponent extends React.Component {
             content = React.createElement(AboutMe_1.default, null);
         }
         else if (this.props.tabCode == Tabs_1.Tabs.Skills) {
-            content = React.createElement(AboutMe_1.default, null);
+            content = React.createElement(Skills_1.default, null);
         }
         return (React.createElement(react_transition_group_1.SwitchTransition, null,
             React.createElement(react_transition_group_1.CSSTransition, { key: this.props.tabCode, timeout: 700, classNames: "fade" }, content)));
@@ -291,9 +292,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-const descIcon = React.createElement("svg", { version: "1.1", id: "Layer_1", x: "0px", y: "0px", width: "15px", className: "float-right text-white fill-current inline-block", viewBox: "0 0 512 512" },
+const descIcon = React.createElement("svg", { version: "1.1", id: "Layer_1", x: "0px", y: "0px", width: "15px", className: "text-white fill-current inline-block ml-auto", viewBox: "0 0 512 512" },
     React.createElement("path", { d: "M448,0H64C46.328,0,32,14.313,32,32v448c0,17.688,14.328,32,32,32h288l128-128V32C480,14.313,465.688,0,448,0z M352,466.75V384h82.75L352,466.75z M448,352h-96c-17.688,0-32,14.313-32,32v96H64V32h384V352z M96,112c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,128,96,120.844,96,112z M96,208c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,224,96,216.844,96,208z M96,304c0-8.844,7.156-16,16-16h288c8.844,0,16,7.156,16,16s-7.156,16-16,16H112C103.156,320,96,312.844,96,304z" }));
-const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "0px", y: "0px", width: "15px", className: "float-right text-white fill-current inline-block", viewBox: "0 0 488 488" },
+const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "0px", y: "0px", width: "15px", className: "text-white fill-current inline-block ml-auto mt-auto", viewBox: "0 0 488 488" },
     React.createElement("g", null,
         React.createElement("g", null,
             React.createElement("path", { d: "M414.61,211.775c-3.406-9.558-12.463-15.933-22.61-15.915c-10.137,0.031-19.158,6.438-22.526,16H320v-32h32c4.417,0.001,7.999-3.579,8-7.996c0-0.001,0-0.003,0-0.004v-33.474c12.497-4.418,19.047-18.13,14.629-30.628c-4.418-12.497-18.13-19.047-30.628-14.629s-19.047,18.13-14.629,30.628c2.416,6.835,7.793,12.212,14.628,14.629v25.475h-24v-16c0.001-4.417-3.579-7.999-7.996-8c-0.001,0-0.003,0-0.004,0h-16V98.385c12.497-4.418,19.047-18.13,14.629-30.628c-4.418-12.497-18.13-19.047-30.628-14.629c-12.497,4.418-19.047,18.13-14.629,30.628c2.416,6.835,7.793,12.212,14.628,14.629v41.475h-32V12.141c0.001-4.417-3.579-7.999-7.996-8c-0.001,0-0.003,0-0.004,0c-98.691,0-176,71.453-176,162.664c0,43.328,17.199,100.695,44.891,149.703c4.973,8.797,11.461,18.047,18.328,27.844c14.521,20.699,30.681,43.976,32.438,64.238c-6.15,4.347-9.749,11.458-9.61,18.988c0.023,5.409,1.891,10.649,5.295,14.853c-4.735,4.672-7.383,11.058-7.342,17.71c0.014,13.249,10.751,23.986,24,24h136c13.339-0.083,24.086-10.963,24.003-24.302c-0.001-0.087-0.002-0.174-0.003-0.261c-0.005-6.507-2.664-12.73-7.363-17.232c3.448-4.366,5.321-9.768,5.316-15.331c-0.024-12.671-10.315-22.923-22.986-22.899c-0.338,0.001-0.676,0.009-1.014,0.024H248V251.859h16v24c-0.001,4.417,3.579,7.999,7.996,8c0.001,0,0.003,0,0.004,0h24v9.474c-12.497,4.418-19.046,18.131-14.627,30.627s18.131,19.046,30.627,14.627c12.497-4.418,19.046-18.131,14.627-30.627c-2.416-6.835-7.793-12.211-14.627-14.627v-17.474c0.001-4.417-3.579-7.999-7.996-8c-0.001,0-0.003,0-0.004,0h-24v-16h32c4.417,0.001,7.999-3.579,8-7.996c0-0.001,0-0.003,0-0.004v-16h49.475c4.442,12.464,18.146,18.967,30.61,14.525C412.548,237.943,419.051,224.239,414.61,211.775z M352,107.859c4.418,0,8,3.582,8,8s-3.582,8-8,8s-8-3.582-8-8C344.004,111.443,347.584,107.864,352,107.859z M140.32,335.164c-6.641-9.469-12.91-18.406-17.5-26.531C96.809,262.594,80,206.922,80,166.805c0-79.781,66.137-142.797,152-146.492v55.888c-2.124,0.159-4.291,0.352-6.609,0.636c-3.396,0.413-6.153,2.941-6.859,6.289l-2.438,11.594c-2.008,0.477-4.01,1.016-6.008,1.617l-7.973-8.891c-2.284-2.555-5.942-3.369-9.094-2.023c-8.954,3.861-17.405,8.796-25.168,14.695c-2.733,2.06-3.852,5.631-2.785,8.883l3.672,11.188c-1.512,1.422-2.984,2.898-4.41,4.406l-11.176-3.672c-3.251-1.053-6.813,0.062-8.883,2.781c-5.907,7.765-10.846,16.22-14.707,25.18c-1.344,3.152-0.53,6.809,2.023,9.094l8.895,7.969c-0.598,1.977-1.133,3.958-1.605,5.945l-12.441,2.484c-3.74,0.746-6.433,4.03-6.433,7.844V209.5c0,3.814,2.693,7.098,6.434,7.844l12.441,2.484c0.473,1.984,1.008,3.966,1.605,5.945l-8.898,7.969c-2.55,2.287-3.363,5.942-2.023,9.094c3.862,8.959,8.8,17.415,14.707,25.18c2.068,2.722,5.632,3.837,8.883,2.781l11.176-3.672c1.43,1.508,2.898,2.984,4.41,4.406l-3.672,11.172c-1.066,3.251,0.051,6.82,2.781,8.883c7.763,5.908,16.218,10.848,25.176,14.711c3.152,1.338,6.806,0.525,9.094-2.023l7.973-8.891c1.996,0.602,3.999,1.141,6.008,1.617l2.434,11.586c0.703,3.351,3.461,5.883,6.859,6.297c2.321,0.284,4.489,0.477,6.613,0.636v88.622h-56.69C172.041,380.564,155.341,356.581,140.32,335.164z M168,195.859c0.051,36.644,27.587,67.419,64,71.528v27.511l-1.324-6.297c-0.668-3.189-3.203-5.655-6.41-6.234c-4.742-0.863-9.404-2.12-13.937-3.758c-0.869-0.309-1.785-0.467-2.707-0.469c-2.274,0-4.441,0.969-5.957,2.664l-7.523,8.391c-4.169-2.083-8.192-4.446-12.043-7.07l3.473-10.57c1.017-3.098,0.054-6.502-2.434-8.609c-3.689-3.123-7.114-6.546-10.238-10.234c-2.113-2.471-5.506-3.427-8.598-2.422l-10.566,3.477c-2.626-3.852-4.989-7.877-7.074-12.047l8.398-7.523c2.422-2.175,3.288-5.599,2.191-8.664c-1.636-4.534-2.893-9.196-3.758-13.937c-0.584-3.233-3.086-5.78-6.309-6.422L136,202.938v-14.156l11.184-2.234c3.222-0.641,5.725-3.189,6.309-6.422c0.865-4.744,2.122-9.409,3.757-13.946c1.099-3.066,0.231-6.491-2.195-8.664L146.664,150c2.087-4.168,4.449-8.193,7.07-12.047l10.57,3.477c3.092,1.004,6.484,0.049,8.598-2.422c3.132-3.691,6.559-7.121,10.246-10.258c2.478-2.103,3.436-5.498,2.422-8.586l-3.469-10.57c3.851-2.623,7.873-4.985,12.039-7.07l7.523,8.391c2.176,2.42,5.598,3.287,8.664,2.195c4.533-1.639,9.195-2.896,13.937-3.758c3.206-0.576,5.741-3.039,6.41-6.227L232,96.828v27.503C195.587,128.441,168.051,159.215,168,195.859z M232,140.498V251.22c-30.575-4.377-51.813-32.712-47.436-63.287C188.085,163.341,207.407,144.019,232,140.498z M316,460.141c-0.004,4.416-3.584,7.996-8,8H172c-4.499-0.076-8.085-3.785-8.009-8.284c0.002-0.093,0.005-0.186,0.009-0.279c0.004-4.416,3.584-7.996,8-8h136c4.499,0.076,8.085,3.785,8.009,8.284C316.008,459.955,316.005,460.048,316,460.141z M305.953,420.141c4.03-0.372,7.599,2.595,7.97,6.625c0.025,0.27,0.035,0.541,0.03,0.812c-0.004,4.416-3.584,7.996-8,8H174.047c-4.499-0.076-8.085-3.784-8.009-8.284c0.002-0.093,0.005-0.186,0.009-0.279c0.171-3.988,3.543-7.082,7.531-6.91c0.157,0.007,0.313,0.019,0.469,0.035H305.953z M304,307.859c4.418,0,8,3.582,8,8s-3.582,8-8,8s-8-3.582-8-8C296.004,311.443,299.584,307.864,304,307.859z M288,67.859c4.418,0,8,3.582,8,8s-3.582,8-8,8s-8-3.582-8-8C280.004,71.443,283.584,67.864,288,67.859z M304,235.859h-56v-80h56V235.859z M392,227.859c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8C399.996,224.276,396.416,227.855,392,227.859z" }))),
@@ -360,18 +361,38 @@ const techIcon = React.createElement("svg", { version: "1.1", id: "Capa_1", x: "
     React.createElement("g", null,
         React.createElement("g", null,
             React.createElement("rect", { x: "440", y: "19.859", width: "16", height: "16" }))));
+const Modal = function (props) {
+    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
+    return (React.createElement("div", { className: showHideClassName },
+        React.createElement("section", { className: "modal-main text-black" },
+            props.children,
+            React.createElement("button", { onClick: props.handleClose }, "close"))));
+};
 class ExperienceCardComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.showModal = () => {
+            this.setState({ show: true });
+        };
+        this.hideModal = () => {
+            this.setState({ show: false });
+        };
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
+        this.state = { show: false };
     }
     render() {
         let iconsColumn;
         if (this.props.Description != undefined || this.props.Technologies.length != 0) {
-            iconsColumn = (React.createElement("div", { className: "w-6" },
-                this.props.Description != undefined ? descIcon : "",
-                this.props.Technologies.length != 0 ? techIcon : ""));
+            iconsColumn = (React.createElement("div", { className: "w-6 flex flex-col" },
+                this.props.Description != undefined ? React.createElement("a", { onClick: this.showModal, className: "ml-auto inline-block cursor-pointer experienceCard" }, descIcon) : "",
+                this.props.Technologies.length != 0 ? React.createElement("a", { className: "ml-auto inline-block mt-auto cursor-pointer experienceCard" }, techIcon) : ""));
         }
         return (React.createElement("div", { className: "flex" },
+            React.createElement(Modal, { show: this.state.show, handleClose: this.hideModal },
+                React.createElement("div", { className: "text-center" },
+                    React.createElement("h2", { className: "text-2xl text-center" }, "Popis pr\u00E1ce"),
+                    React.createElement("p", null, this.props.Description))),
             React.createElement("div", { className: "w-full" },
                 React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
                 React.createElement("span", { className: "inline-block" }, this.props.Position),
@@ -577,6 +598,38 @@ class LeftMenuComponent extends React.Component {
     }
 }
 exports.default = LeftMenuComponent;
+
+
+/***/ }),
+
+/***/ "./Typescript/Skills.tsx":
+/*!*******************************!*\
+  !*** ./Typescript/Skills.tsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+class SkillsComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (React.createElement("div", { className: "text-white px-12" },
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills")));
+    }
+}
+exports.default = SkillsComponent;
 
 
 /***/ }),

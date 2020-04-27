@@ -24,7 +24,7 @@ export default class ContentCardComponent extends React.Component<IProps, any>{
             content = <AboutMeComponent />;
         }
         else if(this.props.tabCode == Tabs.Skills){
-            content = <AboutMeComponent/>
+            content = <SkillsComponent/>
         }
 
         return (

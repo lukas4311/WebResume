@@ -119,6 +119,14 @@ html {
   -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7)); }
 
+.experienceCard svg {
+  transition: .5s ease-out;
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7)); }
+
+.experienceCard:hover svg {
+  fill: #20639B; }
+
 .tabLink:hover svg {
   fill: #20639B; }
 
@@ -127,3 +135,27 @@ html {
 
 .motto {
   font-family: 'Indie Flower'; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 40%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.display-block {
+  display: block; }
+
+.display-none {
+  display: none; }
