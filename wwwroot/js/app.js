@@ -638,6 +638,53 @@ exports.Modal = function (props) {
 
 /***/ }),
 
+/***/ "./Typescript/ProgressLine.tsx":
+/*!*************************************!*\
+  !*** ./Typescript/ProgressLine.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
+    {
+        percentage: "0",
+        color: "white"
+    }
+] }) => {
+    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
+        return "0";
+    }));
+    react_1.useEffect(() => {
+        requestAnimationFrame(() => {
+            setWidths(visualParts.map(item => {
+                return item.percentage;
+            }));
+        });
+    }, [visualParts]);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
+        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2", style: { backgroundColor } }, visualParts.map((item, index) => {
+            return (react_1.default.createElement("div", { key: index, style: {
+                    width: widths[index]
+                }, className: "progressVisualPart h-4" }));
+        }))));
+};
+exports.default = ProgressLine;
+
+
+/***/ }),
+
 /***/ "./Typescript/Skills.tsx":
 /*!*******************************!*\
   !*** ./Typescript/Skills.tsx ***!
@@ -654,8 +701,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
 // const proggrammingSkillSet: Array<ISkill> = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
 class SkillComponentState {
 }
@@ -666,11 +717,12 @@ class SkillsComponent extends React.Component {
     }
     renderProgressBarForSkill(item, index) {
         return (React.createElement("div", null,
-            React.createElement("p", null, item.name),
-            React.createElement("div", { className: "w-full bg-gray-300" },
-                React.createElement("div", { className: `bg-mainBlue text-xs leading-none py-1 text-center text-white w-${item.ratingPercent / 10}/10` },
-                    item.ratingPercent,
-                    "%"))));
+            React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
+                    {
+                        percentage: `${item.ratingPercent}%`,
+                        color: "#20639B"
+                    }
+                ] })));
     }
     render() {
         return (React.createElement("div", { className: "text-white px-12" },

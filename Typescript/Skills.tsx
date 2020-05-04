@@ -1,4 +1,5 @@
 import * as React from 'react'
+import ProgressLine from "./ProgressLine";
 
 interface ISkill {
     name: string;
@@ -20,10 +21,16 @@ export default class SkillsComponent extends React.Component<any, SkillComponent
     renderProgressBarForSkill(item: ISkill, index: number) {
         return (
             <div>
-                <p>{item.name}</p>
-                <div className="w-full bg-gray-300">
-                    <div className={`bg-mainBlue text-xs leading-none py-1 text-center text-white w-${item.ratingPercent/10}/10`}>{item.ratingPercent}%</div>
-                </div>
+                <ProgressLine
+                    label={item.name}
+                    backgroundColor="white"
+                    visualParts={[
+                        {
+                            percentage: `${item.ratingPercent}%`,
+                            color: "#20639B"
+                        }
+                    ]}
+                />
             </div>
         );
     }
