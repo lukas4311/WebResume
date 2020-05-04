@@ -1,9 +1,11 @@
 ﻿@import 'fonts';
 @import 'scroll';
 @import 'animations';
+@import 'cursor';
 
 html {
-    font-family: 'Baloo Bhaina 2'
+    font-family: 'Baloo Bhaina 2';
+    cursor: none;
 }
 
 #photoDiv {

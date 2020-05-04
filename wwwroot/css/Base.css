@@ -102,8 +102,31 @@
   transition: width 3s;
   background-image: linear-gradient(45deg, #4482AF, #20639B); }
 
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 1000; }
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #3282b8; }
+
+.cursor-dot-outline {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(101, 161, 202, 0.5); }
+
 html {
-  font-family: 'Baloo Bhaina 2'; }
+  font-family: 'Baloo Bhaina 2';
+  cursor: none; }
 
 #photoDiv {
   background-image: url(../image/PhotoTrim.jpg);
