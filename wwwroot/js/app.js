@@ -656,10 +656,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-const proggrammingSkillSet = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
+// const proggrammingSkillSet: Array<ISkill> = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
+class SkillComponentState {
+}
 class SkillsComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }] };
     }
     renderProgressBarForSkill(item, index) {
         return (React.createElement("div", null,
@@ -676,7 +679,7 @@ class SkillsComponent extends React.Component {
             React.createElement("div", { className: "flex mt-6" },
                 React.createElement("div", { className: "w-1/2" },
                     React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
-                    proggrammingSkillSet.map((item, i) => this.renderProgressBarForSkill(item, i))),
+                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
                 React.createElement("div", { className: "w-1/2" }))));
     }
 }

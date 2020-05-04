@@ -5,11 +5,16 @@ interface ISkill {
     ratingPercent: number;
 }
 
-const proggrammingSkillSet: Array<ISkill> = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
+// const proggrammingSkillSet: Array<ISkill> = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
 
-export default class SkillsComponent extends React.Component<any, any>{
+class SkillComponentState{
+    skills: Array<ISkill>
+}
+
+export default class SkillsComponent extends React.Component<any, SkillComponentState>{
     constructor(props: any) {
         super(props);
+        this.state = {skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }]}
     }
 
     renderProgressBarForSkill(item: ISkill, index: number) {
@@ -33,7 +38,7 @@ export default class SkillsComponent extends React.Component<any, any>{
                 <div className="flex mt-6">
                     <div className="w-1/2">
                         <h2 className="text-2xl">Zkušenosti</h2>
-                        {proggrammingSkillSet.map((item, i) => this.renderProgressBarForSkill(item, i))}
+                        {this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))}
                     </div>
                     <div className="w-1/2">
 
