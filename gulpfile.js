@@ -21,3 +21,8 @@ gulp.task('watchsass', function () {
 gulp.task('watchwebpack', function () {
     gulp.watch('./Typescript/**/*.{tsx,ts,js,jsx}', gulp.series('webpack'));
 });
+
+gulp.task('watchall', function () {
+    gulp.watch('./Sass/**/*.scss', gulp.series('sass'));
+    gulp.watch('./Typescript/**/*.{tsx,ts,js,jsx}', gulp.series('webpack'));
+});

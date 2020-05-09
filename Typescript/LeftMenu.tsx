@@ -49,7 +49,7 @@ export default class LeftMenuComponent extends React.Component<any, any>{
                 {
                     this.icons.map((item, i) => (
                         <div key={i} className={`text-center p-2 ${item.itemClass}`}>
-                            <a href={item.href} className="tabLink inline-block cursor-pointer" onClick={(e) => this.tabClick(item.tabCode, e)} target={item.target} download={item.download}>
+                            <a href={item.href} className="tabLink inline-block" onClick={(e) => this.tabClick(item.tabCode, e)} target={item.target} download={item.download}>
                                 {item.svgIcon}
                             </a>
                             <span className="text-white leading-none block opacity-0 duration-500">{item.title}</span>

@@ -10,9 +10,11 @@
 </head>
 <body class="h-full min-h-full flex bg-black">
     <div id="particles-js" class="fixed w-full h-full" style="z-index:-1"></div>
-    <div class="min-h-full flex w-4/5 m-auto" id="mainCointainer">
+    
+    <div class="min-h-full flex w-full lg:w-4/5 lg:m-auto m-0" id="mainCointainer">
         @RenderBody()
     </div>
+
     <div class="cursor-dot-outline"></div>
     <div class="cursor-dot"></div>
 
@@ -22,6 +24,7 @@
     <script src="~/js/cursor.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
 <script type="text/javascript">
     $(function () {
         particlesJS.load('particles-js', 'assets/particles.json', function () {
@@ -29,4 +32,5 @@
         });
     });
 </script>
+
 </html>
