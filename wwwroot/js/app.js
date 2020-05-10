@@ -443,7 +443,7 @@ const arrowRight = React.createElement("svg", { id: "Layer_1", className: "curso
 class ExperinceCardSliderComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.maxItems = 3;
+        this.maxItems = 2;
         this.animationDirection = 'flex left';
         this.itemsCount = props.cards.length;
         if (this.itemsCount < this.maxItems)
@@ -488,7 +488,7 @@ class ExperinceCardSliderComponent extends React.Component {
             React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft),
             React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
-                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: "w-1/3 page p-2 bg-buttonsGray rounded-lg m-2", key: i },
+                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: "w-1/2 page p-2 bg-buttonsGray rounded-lg m-2", key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
             React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight)));
     }
