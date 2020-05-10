@@ -216,7 +216,7 @@ class AppComponent extends React.Component {
                                     React.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" }))),
                             React.createElement("span", { className: "italic motto" }, "\"only a life lived for others is a life worthwhile\""),
                             React.createElement("span", { className: "italic motto ml-auto mr-4" }, "Albert Einstein")))),
-                React.createElement("div", { className: "w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray overflow-auto", id: "scrollArea" },
+                React.createElement("div", { className: "w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray lg:overflow-auto h-gull", id: "scrollArea" },
                     React.createElement(ContentCard_1.default, { tabCode: this.state.activeTab })))));
     }
 }
@@ -521,7 +521,7 @@ class InterestsCard extends React.Component {
         super(props);
     }
     render() {
-        return (React.createElement("div", { className: "p-6 rounded-lg bg-buttonsGray w-1/4 m-6 text-center hover:shadow-2xl duration-500" },
+        return (React.createElement("div", { className: "p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center hover:shadow-2xl duration-500" },
             this.props.svgIcon,
             React.createElement("p", null, this.props.title)));
     }

@@ -70,7 +70,7 @@ export default class WorkAndSchoolComponent extends React.Component<any, any>{
                     <div className="w-full mt-12">
                         <h2 className="text-2xl">Vzdělání</h2>
                         <div className="flex mt-4">
-                        <ExperinceCardSliderComponent cards={[this.highSchool, this.university]} />
+                            <ExperinceCardSliderComponent cards={[this.highSchool, this.university]} />
                         </div>
                     </div>
                 </div>

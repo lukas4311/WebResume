@@ -12,7 +12,7 @@ export class InterestsCard extends React.Component<any, any>{
 
     render() {
         return (
-            <div className="p-6 rounded-lg bg-buttonsGray w-1/4 m-6 text-center hover:shadow-2xl duration-500">
+            <div className="p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center hover:shadow-2xl duration-500">
                 {this.props.svgIcon}
                 <p>{this.props.title}</p>
             </div>

@@ -42,7 +42,7 @@ class AppComponent extends React.Component<{}, AppState> {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray overflow-auto" id="scrollArea">
+                    <div className="w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray lg:overflow-auto h-gull" id="scrollArea">
                         <ContentCardComponent tabCode={this.state.activeTab} />
                     </div>
                 </div>
