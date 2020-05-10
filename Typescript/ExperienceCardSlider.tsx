@@ -9,16 +9,18 @@ const arrowRight = <svg id="Layer_1" className="cursor-pointer fill-current text
 
 export interface IExperinceCardSliderComponent {
     cards: IExperienceCardProps[]
+    ,maxItemsCount:number
 }
 
 export class ExperinceCardSliderComponent extends React.Component<IExperinceCardSliderComponent, any>{
     itemsCount: number;
-    maxItems: number = 2;
+    maxItems: number;
     animationDirection: string = 'flex left';
 
     constructor(props: IExperinceCardSliderComponent) {
         super(props);
         this.itemsCount = props.cards.length;
+        this.maxItems = props.maxItemsCount;
 
         if (this.itemsCount < this.maxItems)
             this.maxItems = this.itemsCount;
@@ -78,7 +80,7 @@ export class ExperinceCardSliderComponent extends React.Component<IExperinceCard
                     <CSSTransition key={this.animationDirection} timeout={timeout} classNames="pageSlider" mountOnEnter={false} unmountOnExit={true}>
                         <div className={this.animationDirection}>
                             {this.state.cardsToShow.map((card: IExperienceCardProps, i: number) => (
-                                <div className="w-1/2 page p-2 bg-buttonsGray rounded-lg m-2" key={i}>
+                                <div className={`w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2`} key={i}>
                                     <ExperienceCardComponent {...card} />
                                 </div>
                             ))}
