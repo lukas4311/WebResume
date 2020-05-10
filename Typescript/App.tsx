@@ -25,7 +25,7 @@ class AppComponent extends React.Component<{}, AppState> {
     render() {
         return (
             <React.Fragment>
-                <div className="flex h-full float-left lg:w-10/12 w-full lg:float-none">
+                <div className="flex h-full float-left w-full lg:float-none">
                     <div className="lg:w-2/5 h-full">
                         <div className="flex h-full">
                             <div className="w-full lg:w-1/6 my-20 lg:bg-mainGray">

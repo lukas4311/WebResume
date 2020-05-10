@@ -53,7 +53,9 @@ const university: IExperienceCardProps = {
 };
 
 const WorkAndSchoolComponent = (props: any) => {
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' })
+    const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
+    const isTablet = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' })
+    const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })
 
     return (
         <div className="text-white px-12">
@@ -62,15 +64,17 @@ const WorkAndSchoolComponent = (props: any) => {
                 <div className="w-full">
                     <h2 className="text-2xl">Zkušenosti</h2>
                     <div className="flex mt-4">
-                        {!isTabletOrMobile && <ExperinceCardSliderComponent maxItemsCount={2} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
-                        {isTabletOrMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
+                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
+                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
+                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
                     </div>
                 </div>
                 <div className="w-full mt-12">
                     <h2 className="text-2xl">Vzdělání</h2>
                     <div className="flex mt-4">
-                        { !isTabletOrMobile && <ExperinceCardSliderComponent maxItemsCount={2} cards={[highSchool, university]} />}
-                        { isTabletOrMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[highSchool, university]} />}
+                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={[highSchool, university]} />}
+                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={[highSchool, university]} />}
+                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[highSchool, university]} />}
                     </div>
                 </div>
             </div>

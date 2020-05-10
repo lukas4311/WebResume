@@ -203,7 +203,7 @@ class AppComponent extends React.Component {
     }
     render() {
         return (React.createElement(React.Fragment, null,
-            React.createElement("div", { className: "flex h-full float-left lg:w-10/12 w-full lg:float-none" },
+            React.createElement("div", { className: "flex h-full float-left w-full lg:float-none" },
                 React.createElement("div", { className: "lg:w-2/5 h-full" },
                     React.createElement("div", { className: "flex h-full" },
                         React.createElement("div", { className: "w-full lg:w-1/6 my-20 lg:bg-mainGray" },
@@ -835,20 +835,24 @@ const university = {
     Position: undefined
 };
 const WorkAndSchoolComponent = (props) => {
-    const isTabletOrMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 1024px)' });
+    const isMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 640px)' });
+    const isTablet = react_responsive_1.useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' });
+    const isDesktop = react_responsive_1.useMediaQuery({ query: '(min-width: 1024px)' });
     return (React.createElement("div", { className: "text-white px-12" },
         React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
         React.createElement("div", { className: "flex flex-col" },
             React.createElement("div", { className: "w-full" },
                 React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
                 React.createElement("div", { className: "flex mt-4" },
-                    !isTabletOrMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
-                    isTabletOrMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }))),
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }))),
             React.createElement("div", { className: "w-full mt-12" },
                 React.createElement("h2", { className: "text-2xl" }, "Vzd\u011Bl\u00E1n\u00ED"),
                 React.createElement("div", { className: "flex mt-4" },
-                    !isTabletOrMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [highSchool, university] }),
-                    isTabletOrMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [highSchool, university] }))))));
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [highSchool, university] }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [highSchool, university] }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [highSchool, university] }))))));
 };
 exports.default = WorkAndSchoolComponent;
 
