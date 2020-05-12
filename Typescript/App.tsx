@@ -25,7 +25,7 @@ class AppComponent extends React.Component<{}, AppState> {
     render() {
         return (
             <React.Fragment>
-                <div className="flex h-full float-left w-full lg:float-none">
+                <div className="flex h-full min-h-full float-left w-full lg:float-none">
                     <div className="lg:w-2/5 h-full">
                         <div className="flex h-full">
                             <div className="w-full lg:w-1/6 my-20 lg:bg-mainGray">
@@ -42,7 +42,7 @@ class AppComponent extends React.Component<{}, AppState> {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray lg:overflow-auto h-gull" id="scrollArea">
+                    <div className="w-full lg:w-3/5 my-0 lg:my-20 bg-mainGray lg:overflow-auto min-h-full md:min-h-0" id="scrollArea">
                         <ContentCardComponent tabCode={this.state.activeTab} />
                     </div>
                 </div>
