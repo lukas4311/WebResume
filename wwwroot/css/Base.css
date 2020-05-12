@@ -100,7 +100,7 @@
 .progressVisualPart {
   /* Number of the seconds for complete animation */
   transition: width 3s;
-  background-image: linear-gradient(45deg, #4482AF, #20639B); }
+  background-image: linear-gradient(45deg, #6abffc, #20639B); }
 
 .cursor-dot,
 .cursor-dot-outline {
@@ -191,6 +191,11 @@ html {
 
 .display-none {
   display: none; }
+
+.shadow {
+  -webkit-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75); }
 
 .shadows:hover {
   -webkit-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);

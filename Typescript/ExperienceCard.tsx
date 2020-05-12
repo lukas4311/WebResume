@@ -62,7 +62,7 @@ export class ExperienceCardComponent extends React.Component<IExperienceCardProp
                 <Modal show={this.state.showTechnologiesModal} handleClose={this.hideTechnologies}>
                     <div className="text-center">
                         <h2 className="text-2xl text-center">Používané technologie</h2>
-                        {this.props.Technologies.map((item) => <span className="px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal">{item}</span>)}
+                        {this.props.Technologies.map((item:string, i:number) => <span key={i} className="px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal">{item}</span>)}
                     </div>
                 </Modal>
                 <div className="w-full">

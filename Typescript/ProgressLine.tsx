@@ -38,7 +38,7 @@ const ProgressLine = ({
     return (
         <>
             <div className="progressLabel h-4">{label}</div>
-            <div className="flex h-4 mb-4 mt-2" style={{ backgroundColor }}>
+            <div className="flex h-4 mb-4 mt-2 shadow" style={{ backgroundColor }}>
                 {visualParts.map((item, index) => {                    
                     return (
                         <div                           

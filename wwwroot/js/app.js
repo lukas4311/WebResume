@@ -209,7 +209,7 @@ class AppComponent extends React.Component {
                         React.createElement("div", { className: "w-full lg:w-1/6 my-20 lg:bg-mainGray" },
                             React.createElement(LeftMenu_1.default, { setNewActiveTab: this.tabClick })),
                         React.createElement("div", { className: "invisible lg:visible w-0 lg:w-5/6 text-white text-center lg:flex lg:flex-col", id: "photoDiv" },
-                            React.createElement("h1", { className: "text-5xl mt-24" }, "Luk\u00E1\u0161 SALFICK\u00DD"),
+                            React.createElement("h1", { className: "text-5xl mt-24" }, "Bc. Luk\u00E1\u0161 SALFICK\u00DD"),
                             React.createElement("h2", { className: "mt-2" }, ".NET developer"),
                             React.createElement("a", { href: "http://www.linkedin.com/in/salfickylukas", target: "_blank", className: "inline-block mx-auto mt-auto mb-12" },
                                 React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", className: "fill-current text-white hover:text-mainBlue duration-500 ease-in-out", viewBox: "0 0 24 24" },
@@ -399,7 +399,7 @@ class ExperienceCardComponent extends React.Component {
             React.createElement(Modal_1.Modal, { show: this.state.showTechnologiesModal, handleClose: this.hideTechnologies },
                 React.createElement("div", { className: "text-center" },
                     React.createElement("h2", { className: "text-2xl text-center" }, "Pou\u017E\u00EDvan\u00E9 technologie"),
-                    this.props.Technologies.map((item) => React.createElement("span", { className: "px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal" }, item)))),
+                    this.props.Technologies.map((item, i) => React.createElement("span", { key: i, className: "px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal" }, item)))),
             React.createElement("div", { className: "w-full" },
                 React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
                 React.createElement("span", { className: "inline-block" }, this.props.Position),
@@ -484,13 +484,14 @@ class ExperinceCardSliderComponent extends React.Component {
     }
     render() {
         const timeout = { enter: 800, exit: 400 };
+        let showArrows = this.props.cards.length > this.maxItems;
         return (React.createElement("div", { className: "flex items-center w-full" },
-            React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft),
+            showArrows ? React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft) : "",
             React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
                     React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2`, key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
-            React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight)));
+            showArrows ? React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight) : ""));
     }
 }
 exports.ExperinceCardSliderComponent = ExperinceCardSliderComponent;
@@ -675,7 +676,7 @@ const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
     }, [visualParts]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
-        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2", style: { backgroundColor } }, visualParts.map((item, index) => {
+        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
             return (react_1.default.createElement("div", { key: index, style: {
                     width: widths[index]
                 }, className: "progressVisualPart h-4" }));

@@ -72,10 +72,11 @@ export class ExperinceCardSliderComponent extends React.Component<IExperinceCard
 
     render() {
         const timeout = { enter: 800, exit: 400 };
+        let showArrows:boolean = this.props.cards.length > this.maxItems;
 
         return (
             <div className="flex items-center w-full">
-                <div onClick={this.clickLeft} className="w-8">{arrowLeft}</div>
+                { showArrows ? <div onClick={this.clickLeft} className="w-8">{arrowLeft}</div> : "" }
                 <TransitionGroup component="div" className="app border-t border-white pt-4 w-full overflow-hidden">
                     <CSSTransition key={this.animationDirection} timeout={timeout} classNames="pageSlider" mountOnEnter={false} unmountOnExit={true}>
                         <div className={this.animationDirection}>
@@ -87,7 +88,7 @@ export class ExperinceCardSliderComponent extends React.Component<IExperinceCard
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
-                <div className="w-8" onClick={this.clickRight}>{arrowRight}</div>
+                { showArrows ? <div className="w-8" onClick={this.clickRight}>{arrowRight}</div> : "" }
             </div>
         );
     }
