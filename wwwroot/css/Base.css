@@ -180,11 +180,15 @@ html {
 .modal-main {
   position: fixed;
   background: white;
-  width: 40%;
+  width: 75%;
   height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+
+@media (min-width: 1024px) {
+  .modal-main {
+    width: 40%; } }
 
 .display-block {
   display: block; }
@@ -201,3 +205,13 @@ html {
   -webkit-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75); }
+
+.menuIcon {
+  width: 35px; }
+
+@media (min-width: 1024px) {
+  .menuIcon {
+    width: 50px; } }
+
+.mobileMenuBtn:hover div {
+  background-color: #20639B; }

@@ -10,3 +10,19 @@
 
 <!-- Main -->
 <script src="~/js/app.js"></script>
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $(".mobileMenuBtn").click(function () {
+                $("#menu").toggle("slow");
+            });
+
+            function reportWindowSize() {
+                if (window.innerWidth > 1024)
+                    $("#menu").show();
+            }
+
+            window.addEventListener('resize', reportWindowSize);
+        });
+    </script>
+}
