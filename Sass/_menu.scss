@@ -1,0 +1,18 @@
+﻿$iconSize: 35px;
+$iconSizeDesktop: 50px;
+
+.menuIcon {
+    width: $iconSize;
+    height: $iconSize;
+}
+
+@media (min-width: 1024px) {
+    .menuIcon {
+        width: $iconSizeDesktop;
+        height: $iconSizeDesktop;
+    }
+}
+
+.mobileMenuBtn:hover div {
+    background-color: #20639B;
+}

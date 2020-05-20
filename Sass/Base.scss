@@ -2,6 +2,9 @@
 @import 'scroll';
 @import 'animations';
 @import 'cursor';
+@import 'menu';
+
+$expericeCardColor: #20639B;
 
 html {
     font-family: 'Baloo Bhaina 2';
@@ -29,26 +32,27 @@ html {
     min-height: 100%;
 }
 
+.svgIconShadows {
+    transition: .5s ease-out;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
 
 .tabLink svg {
     fill: white;
-    transition: .5s ease-out;
-    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    @extend .svgIconShadows;
 }
 
 .experienceCard svg {
-    transition: .5s ease-out;
-    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    @extend .svgIconShadows;
 }
 
 .experienceCard:hover svg {
-    fill: #20639B;
+    fill: $expericeCardColor;
 }
 
 .tabLink:hover svg {
-    fill: #20639B;
+    fill: $expericeCardColor;
 }
 
 .tabLink:hover + span {
@@ -105,23 +109,4 @@ html {
 
 .shadows:hover {
     @include defaultShadows
-}
-
-$iconSize: 35px;
-$iconSizeDesktop: 50px;
-
-.menuIcon {
-    width: $iconSize;
-    height: $iconSize;
-}
-
-@media (min-width: 1024px) {
-    .menuIcon {
-        width: $iconSizeDesktop;
-        height: $iconSizeDesktop;
-    }
-}
-
-.mobileMenuBtn:hover div {
-    background-color: #20639B;
 }
