@@ -1,6 +1,5 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { CSSTransition } from "react-transition-group";
 import LeftMenuComponent from "./LeftMenu"
 import ContentCardComponent from "./ContentCard"
 import { Tabs } from './Tabs'

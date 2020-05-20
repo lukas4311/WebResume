@@ -124,6 +124,18 @@
   height: 30px;
   background-color: rgba(101, 161, 202, 0.5); }
 
+.menuIcon {
+  width: 35px;
+  height: 35px; }
+
+@media (min-width: 1024px) {
+  .menuIcon {
+    width: 50px;
+    height: 50px; } }
+
+.mobileMenuBtn:hover div {
+  background-color: #20639B; }
+
 html {
   font-family: 'Baloo Bhaina 2';
   cursor: none; }
@@ -145,16 +157,13 @@ html {
 #mainCointainer {
   min-height: 100%; }
 
-.tabLink svg {
-  fill: white;
+.svgIconShadows, .tabLink svg, .experienceCard svg {
   transition: .5s ease-out;
   -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7)); }
 
-.experienceCard svg {
-  transition: .5s ease-out;
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
-  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7)); }
+.tabLink svg {
+  fill: white; }
 
 .experienceCard:hover svg {
   fill: #20639B; }
@@ -205,15 +214,3 @@ html {
   -webkit-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75); }
-
-.menuIcon {
-  width: 35px;
-  height: 35px; }
-
-@media (min-width: 1024px) {
-  .menuIcon {
-    width: 35px;
-    height: 35px; } }
-
-.mobileMenuBtn:hover div {
-  background-color: #20639B; }

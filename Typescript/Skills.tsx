@@ -6,8 +6,6 @@ interface ISkill {
     ratingPercent: number;
 }
 
-// const proggrammingSkillSet: Array<ISkill> = [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }];
-
 class SkillComponentState{
     skills: Array<ISkill>
 }
