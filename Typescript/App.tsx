@@ -31,7 +31,7 @@ class AppComponent extends React.Component<{}, AppState> {
                         <div className="h-2 my-1 mx-2 bg-white duration-500"></div>
                         <div className="h-2 my-1 mx-2 bg-white duration-500"></div>
                     </div>
-                    <div className="w-1/10 lg:w-2/5 h-full bg-black md:bg-transparent fixed md:relative" id="menu">
+                    <div className="w-2/10 lg:w-2/5 h-full bg-black md:bg-transparent fixed md:relative" id="menu">
                         <div className="flex h-full">
                             <div className="w-full lg:w-1/6 my-20 lg:bg-mainGray">
                                 <LeftMenuComponent setNewActiveTab={this.tabClick} />

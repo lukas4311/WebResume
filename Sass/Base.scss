@@ -107,13 +107,18 @@ html {
     @include defaultShadows
 }
 
+$iconSize: 35px;
+$iconSizeDesktop: 50px;
+
 .menuIcon {
-    width: 35px;
+    width: $iconSize;
+    height: $iconSize;
 }
 
 @media (min-width: 1024px) {
     .menuIcon {
-        width: 50px;
+        width: $iconSizeDesktop;
+        height: $iconSizeDesktop;
     }
 }
 

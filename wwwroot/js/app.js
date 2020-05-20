@@ -208,7 +208,7 @@ class AppComponent extends React.Component {
                     React.createElement("div", { className: "h-2 my-1 mx-2 bg-white duration-500" }),
                     React.createElement("div", { className: "h-2 my-1 mx-2 bg-white duration-500" }),
                     React.createElement("div", { className: "h-2 my-1 mx-2 bg-white duration-500" })),
-                React.createElement("div", { className: "w-1/10 lg:w-2/5 h-full bg-black md:bg-transparent fixed md:relative", id: "menu" },
+                React.createElement("div", { className: "w-2/10 lg:w-2/5 h-full bg-black md:bg-transparent fixed md:relative", id: "menu" },
                     React.createElement("div", { className: "flex h-full" },
                         React.createElement("div", { className: "w-full lg:w-1/6 my-20 lg:bg-mainGray" },
                             React.createElement(LeftMenu_1.default, { setNewActiveTab: this.tabClick })),
@@ -555,9 +555,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
-const personSvg = React.createElement("svg", { className: "menuIcon", height: "50px", id: "Layer_1", version: "1.1", viewBox: "0 0 512 512", xmlns: "http://www.w3.org/2000/svg" },
+const personSvg = React.createElement("svg", { className: "menuIcon", id: "Layer_1", version: "1.1", viewBox: "0 0 512 512", xmlns: "http://www.w3.org/2000/svg" },
     React.createElement("path", { d: "M448,448c0,0,0-26.4-2.2-40.2c-1.8-10.9-16.9-25.3-81.1-48.9c-63.2-23.2-59.3-11.9-59.3-54.6c0-27.7,14.1-11.6,23.1-64.2  c3.5-20.7,6.3-6.9,13.9-40.1c4-17.4-2.7-18.7-1.9-27c0.8-8.3,1.6-15.7,3.1-32.7C345.4,119.3,325.9,64,256,64  c-69.9,0-89.4,55.3-87.5,76.4c1.5,16.9,2.3,24.4,3.1,32.7c0.8,8.3-5.9,9.6-1.9,27c7.6,33.1,10.4,19.3,13.9,40.1  c9,52.6,23.1,36.5,23.1,64.2c0,42.8,3.9,31.5-59.3,54.6c-64.2,23.5-79.4,38-81.1,48.9C64,421.6,64,448,64,448h192H448z" }));
-const downloadSvg = React.createElement("svg", { className: "menuIcon", version: "1.1", id: "Capa_1", x: "0px", y: "0px", height: "50px", viewBox: "0 0 950 950" },
+const downloadSvg = React.createElement("svg", { className: "menuIcon", version: "1.1", id: "Capa_1", x: "0px", y: "0px", viewBox: "0 0 950 950" },
     React.createElement("g", null,
         React.createElement("g", null,
             React.createElement("path", { d: "M230.493,737.135L451.89,940.982C458.42,946.994,466.71,950,475,950s16.58-3.006,23.11-9.018l221.396-203.85c9.227-8.492,3.216-23.893-9.325-23.893h-59.098V292.99c0-17.739-14.38-32.119-32.119-32.119h-289.62c-16.805,0-30.429,13.623-30.429,30.429v421.938h-59.099C227.277,713.24,221.268,728.641,230.493,737.135z" }),

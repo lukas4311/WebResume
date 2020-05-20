@@ -207,11 +207,13 @@ html {
   box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75); }
 
 .menuIcon {
-  width: 35px; }
+  width: 35px;
+  height: 35px; }
 
 @media (min-width: 1024px) {
   .menuIcon {
-    width: 50px; } }
+    width: 35px;
+    height: 35px; } }
 
 .mobileMenuBtn:hover div {
   background-color: #20639B; }
