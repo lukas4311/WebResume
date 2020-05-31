@@ -769,7 +769,7 @@ SvgIcons.techIcon = react_1.default.createElement("svg", { version: "1.1", id: "
     react_1.default.createElement("g", null,
         react_1.default.createElement("g", null,
             react_1.default.createElement("rect", { x: "440", y: "19.859", width: "16", height: "16" }))));
-SvgIcons.linkedInIcon = react_1.default.createElement("svg", { width: "24", height: "24", className: "fill-current text-white hover:text-mainBlue duration-500 ease-in-out", viewBox: "0 0 24 24" },
+SvgIcons.linkedInIcon = react_1.default.createElement("svg", { width: "50px", className: "m-auto fill-current text-white hover:text-mainBlue duration-500 ease-in-out", viewBox: "0 0 24 24" },
     react_1.default.createElement("path", { d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" }));
 SvgIcons.phoneIcon = react_1.default.createElement("svg", { version: "1.1", id: "Capa_1", x: "0px", y: "0px", width: "50px", viewBox: "0 0 405.908 405.908", className: "m-auto fill-current text-white hover:text-mainBlue duration-500 ease-in-out" },
     react_1.default.createElement("g", null,
