@@ -32,9 +32,8 @@
             }
         ]
     },
-    //externals: {
-    //    "react": "React",
-    //    "react-dom": "ReactDOM",
-    //    "react-transition-group/CSSTransition": "CSSTransition"
-    //}
+    externals: {
+       "react": "React",
+       "react-dom": "ReactDOM",
+    }
 };
