@@ -26,9 +26,9 @@ class AppComponent extends React.Component<{}, AppState> {
             <React.Fragment>
                 <div className="flex h-full min-h-full float-left w-full lg:float-none">
                     <div className="visible lg:invisible absolute w-1/10 text-white mobileMenuBtn z-50">
-                        <div className="h-2 my-1 mx-2 bg-white duration-500"></div>
-                        <div className="h-2 my-1 mx-2 bg-white duration-500"></div>
-                        <div className="h-2 my-1 mx-2 bg-white duration-500"></div>
+                        <div className="h-1 my-1 mx-2 bg-white duration-500"></div>
+                        <div className="h-1 my-1 mx-2 bg-white duration-500"></div>
+                        <div className="h-1 my-1 mx-2 bg-white duration-500"></div>
                     </div>
                     <div className="w-2/10 lg:w-2/5 h-full bg-black md:bg-transparent fixed md:relative" id="menu">
                         <div className="flex h-full">
