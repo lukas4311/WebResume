@@ -26,7 +26,6 @@ const trsWork: IExperienceCardProps = {
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork: IExperienceCardProps = {
-    // Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
     Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
     DescriptionHtml:
         <div>

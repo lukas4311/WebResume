@@ -492,8 +492,10 @@ class LeftMenuComponent extends React.Component {
         ];
     }
     tabClick(tabCode, _) {
-        if (tabCode != Tabs_1.Tabs.DownloadResume)
+        if (tabCode != Tabs_1.Tabs.DownloadResume) {
             this.props.setNewActiveTab(tabCode);
+            document.getElementById("menu").style.display = "none";
+        }
     }
     render() {
         return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
@@ -862,7 +864,6 @@ const trsWork = {
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork = {
-    // Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
     Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
     DescriptionHtml: React.createElement("div", null,
         React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Aplikace spolupracovaly s MSSQL datab\u00E1z\u00ED.")),

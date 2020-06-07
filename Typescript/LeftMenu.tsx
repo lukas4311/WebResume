@@ -34,8 +34,10 @@ export default class LeftMenuComponent extends React.Component<any, any>{
 
     tabClick(tabCode: Tabs, _: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 
-        if (tabCode != Tabs.DownloadResume)
+        if (tabCode != Tabs.DownloadResume) {
             this.props.setNewActiveTab(tabCode);
+            document.getElementById("menu").style.display = "none";
+        }
     }
 
     render() {
