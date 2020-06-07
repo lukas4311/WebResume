@@ -5,6 +5,11 @@ import { useMediaQuery } from 'react-responsive'
 
 const erzasoftWork: IExperienceCardProps = {
     Description: "Programování a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.",
+    DescriptionHtml:
+        <p>
+            V Erasoftu jsme se věnovi vývoji a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.
+            Mimo tyto technologie jsem používal také HTML5, Javascript, Sass pro kódování stránek.
+        </p>,
     From: "05/2013",
     To: "03/2014",
     Name: "Erzasoft s.r.o.",
@@ -13,6 +18,7 @@ const erzasoftWork: IExperienceCardProps = {
 };
 const trsWork: IExperienceCardProps = {
     Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
+    DescriptionHtml: <p>Programování Windows Forms aplikací za pomoci jazyka C#</p>,
     From: "03/2014",
     To: "12/2014",
     Name: "TRS s.r.o.",
@@ -20,7 +26,16 @@ const trsWork: IExperienceCardProps = {
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork: IExperienceCardProps = {
-    Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+    // Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+    Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
+    DescriptionHtml:
+        <div>
+            <p>
+                Jako software developer jsem se podílel na vývoji různých typů aplikací na .NET platformě.
+                Primárně se jednalo o aplikace vytvořené pomocí technologie ASP NET MVC 5, WPF a WCF. K verzování zdrojového kódu jsem využívali TFS.
+                Aplikace spolupracovaly s MSSQL databází.
+            </p>
+        </div>,
     From: "01/2015",
     To: "01/2017",
     Name: "PROFI CREDIT Czech, a. s.",
@@ -29,6 +44,15 @@ const proficreditSoftwareDeveloperWork: IExperienceCardProps = {
 };
 const proficreditDevelopmentLeaderWork: IExperienceCardProps = {
     Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
+    DescriptionHtml:
+        <div>
+            <p>
+                S novou pozicí přišla nová zodpovědnost. Po rozšíření IT oddělení a rozdělení na malé teamy jsem se stal development leaderem jednoho z nich.
+                I s novou pozicí jsem se primárně věnoval programování projektů, které jsem v teamu měli na starost. Vyvíjeli jsme primárně ASP NET Core MVC, ASP NET Core WebApi a WPF.
+                Mimo to jsem se začal věnovat code review pro programátory v našem teamu a jako developement leader jsem měl možnost rozhodovat o architektuře aplikace a použité technologii.
+                Také jsem se více zapojoval co vývoje našich core projektů a diskuze o těchto projektech. V našem teamu probíhal vývoj plně agilně.
+            </p>
+        </div>,
     From: "01/2017",
     To: "současnost",
     Name: "PROFI CREDIT Czech, a. s.",

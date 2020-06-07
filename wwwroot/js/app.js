@@ -845,6 +845,7 @@ const ExperienceCardSlider_1 = __webpack_require__(/*! ./ExperienceCardSlider */
 const react_responsive_1 = __webpack_require__(/*! react-responsive */ "./node_modules/react-responsive/dist/react-responsive.js");
 const erzasoftWork = {
     Description: "Programování a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.",
+    DescriptionHtml: React.createElement("p", null, "V Erasoftu jsme se v\u011Bnovi v\u00FDvoji a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek za pomoci jazyka C# a technologi\u00ED ASP.NET MVC 5. Mimo tyto technologie jsem pou\u017E\u00EDval tak\u00E9 HTML5, Javascript, Sass pro k\u00F3dov\u00E1n\u00ED str\u00E1nek."),
     From: "05/2013",
     To: "03/2014",
     Name: "Erzasoft s.r.o.",
@@ -853,6 +854,7 @@ const erzasoftWork = {
 };
 const trsWork = {
     Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
+    DescriptionHtml: React.createElement("p", null, "Programov\u00E1n\u00ED Windows Forms aplikac\u00ED za pomoci jazyka C#"),
     From: "03/2014",
     To: "12/2014",
     Name: "TRS s.r.o.",
@@ -860,7 +862,10 @@ const trsWork = {
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork = {
-    Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+    // Description: "Programování .NET aplikací všeho druhu, ale primárně jde o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 a postavené nad MSSQL.",
+    Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
+    DescriptionHtml: React.createElement("div", null,
+        React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Aplikace spolupracovaly s MSSQL datab\u00E1z\u00ED.")),
     From: "01/2015",
     To: "01/2017",
     Name: "PROFI CREDIT Czech, a. s.",
@@ -869,6 +874,8 @@ const proficreditSoftwareDeveloperWork = {
 };
 const proficreditDevelopmentLeaderWork = {
     Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
+    DescriptionHtml: React.createElement("div", null,
+        React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval co v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B.")),
     From: "01/2017",
     To: "současnost",
     Name: "PROFI CREDIT Czech, a. s.",
