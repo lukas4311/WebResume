@@ -277,58 +277,38 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const Modal_1 = __webpack_require__(/*! ./Modal */ "./Typescript/Modal.tsx");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
 class ExperienceCardComponent extends React.Component {
     constructor(props) {
         super(props);
         this.showDescription = () => {
-            this.setState({ showDescriptionModal: true });
+            if (this.props.Description != undefined)
+                this.setState({ showDescriptionModal: true });
         };
         this.hideDescription = () => {
             this.setState({ showDescriptionModal: false });
         };
-        this.showTechnologies = () => {
-            this.setState({ showTechnologiesModal: true });
-        };
-        this.hideTechnologies = () => {
-            this.setState({ showTechnologiesModal: false });
-        };
         this.showDescription = this.showDescription.bind(this);
         this.hideDescription = this.hideDescription.bind(this);
-        this.showTechnologies = this.showTechnologies.bind(this);
-        this.hideTechnologies = this.hideTechnologies.bind(this);
-        this.state = { showDescriptionModal: false, showTechnologiesModal: false };
+        this.state = { showDescriptionModal: false };
     }
     render() {
-        let iconsColumn;
-        if (this.props.Description != undefined || this.props.Technologies.length != 0) {
-            iconsColumn = (React.createElement("div", { className: "w-6 flex flex-col" },
-                this.props.Description != undefined ? React.createElement("a", { onClick: this.showDescription, className: "ml-auto inline-block cursor-pointer experienceCard" }, SvgIcons_1.default.descIcon) : "",
-                this.props.Technologies.length != 0 ? React.createElement("a", { onClick: this.showTechnologies, className: "ml-auto inline-block mt-auto cursor-pointer experienceCard" }, SvgIcons_1.default.techIcon) : ""));
-        }
         return (React.createElement("div", { className: "flex" },
             React.createElement(Modal_1.Modal, { show: this.state.showDescriptionModal, handleClose: this.hideDescription },
-                React.createElement("div", { className: "text-center" },
+                React.createElement("div", { className: "text-center p-6" },
                     React.createElement("h2", { className: "text-2xl text-center" }, "Popis pr\u00E1ce"),
-                    React.createElement("p", null, this.props.Description))),
-            React.createElement(Modal_1.Modal, { show: this.state.showTechnologiesModal, handleClose: this.hideTechnologies },
-                React.createElement("div", { className: "text-center" },
-                    React.createElement("h2", { className: "text-2xl text-center" }, "Pou\u017E\u00EDvan\u00E9 technologie"),
+                    this.props.DescriptionHtml,
+                    React.createElement("h2", { className: "text-2xl text-center pt-10" }, "Tech stack"),
                     this.props.Technologies.map((item, i) => React.createElement("span", { key: i, className: "px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal" }, item)))),
-            React.createElement("div", { className: "w-full" },
+            React.createElement("div", { className: "w-full", onClick: this.showDescription },
                 React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
                 React.createElement("span", { className: "inline-block" }, this.props.Position),
                 React.createElement("span", { className: "text-sm inline-block" },
                     this.props.From,
                     " - ",
-                    this.props.To)),
-            iconsColumn));
+                    this.props.To))));
     }
 }
 exports.ExperienceCardComponent = ExperienceCardComponent;
@@ -410,7 +390,7 @@ class ExperinceCardSliderComponent extends React.Component {
             showArrows ? React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft) : "",
             React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
-                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2`, key: i },
+                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2 shadows duration-500`, key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
             showArrows ? React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight) : ""));
     }
