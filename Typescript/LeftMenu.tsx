@@ -36,7 +36,10 @@ export default class LeftMenuComponent extends React.Component<any, any>{
 
         if (tabCode != Tabs.DownloadResume) {
             this.props.setNewActiveTab(tabCode);
-            document.getElementById("menu").style.display = "none";
+            if(window.matchMedia('(max-width: 1024px)').matches)
+            {
+                document.getElementById("menu").style.display = "none";
+            }
         }
     }
 

@@ -494,7 +494,9 @@ class LeftMenuComponent extends React.Component {
     tabClick(tabCode, _) {
         if (tabCode != Tabs_1.Tabs.DownloadResume) {
             this.props.setNewActiveTab(tabCode);
-            document.getElementById("menu").style.display = "none";
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                document.getElementById("menu").style.display = "none";
+            }
         }
     }
     render() {
