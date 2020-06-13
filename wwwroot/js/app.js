@@ -125,7 +125,7 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED v .NETu. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se sna\u017E\u00EDm na sob\u011B pracovat ,vylpe\u0161ovat s roz\u0161i\u0159ovat svoje dovednosti."),
             React.createElement("section", { className: "mt-8 pb-8 border-b border-white" },
                 React.createElement("h2", { className: "text-xl" }, "Kontakty"),
                 React.createElement("div", { className: "flex justify-around" },

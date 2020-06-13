@@ -24,7 +24,8 @@ export default class AboutMeComponent extends React.Component<any, any>{
                     <span>29y</span>
                 </div>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
-                    Jsem nadšený .NET a MSSQL developer, který se snaží neustále na sobě makat. Baví mě poznávat nové technologie a zkoušet je v praxi. Mám rád práci v týmu, protože můžu předávat svoje znalosti a poznatky dalším a zároveň čerpat ty jejich. Svoje vědomosti se snažím rozšiřovat čtením odborných knih a článků.
+                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí v .NETu. Baví mě poznávat nové technologie a zkoušet je v praxi. Neustále se snažím na sobě pracovat
+                    ,vylpešovat s rozšiřovat svoje dovednosti.
                 </section>
                 <section className="mt-8 pb-8 border-b border-white">
                     <h2 className="text-xl">Kontakty</h2>
