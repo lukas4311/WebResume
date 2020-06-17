@@ -41,8 +41,10 @@ export default class SkillsComponent extends React.Component<any, SkillComponent
             <div className="text-white px-12">
                 <h1 className="text-left text-5xl mt-6">Skills</h1>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
-                    Jsem nadšený .NET a MSSQL developer, který se snaží neustále na sobě makat. Baví mě poznávat nové technologie a zkoušet je v praxi. Mám rád práci v týmu, 
-                    protože můžu předávat svoje znalosti a poznatky dalším a zároveň čerpat ty jejich. Svoje vědomosti se snažím rozšiřovat čtením odborných knih a článků.
+                    Svoje dovednosti se snažím neustále rozšiřovat a vylepšovat.
+                    Často sleduji nerůznější přednášky a čtu blogy známých programátorů, ze kterých čerpu nové znalosti.
+                    Nově nabyté dovednosti se snažím zkoušet v praxi a to ať už v pracovních projektech nebo v soukromých testovacích projektech.
+                    Mám rád práci v týmu, protože můžu předávat svoje znalosti a poznatky dalším a zároveň čerpat ty jejich.
                 </section>
                 <div className="flex mt-6">
                     <div className="w-1/2">
