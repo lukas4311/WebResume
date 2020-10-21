@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import { IExperienceCardProps, ExperienceCardComponent } from './ExperienceCard'
+import { ExperienceCardComponent } from './ExperienceCard'
+import { IExperienceCardProps } from "./IExperienceCardProps";
 
 const iconSize: string = '30px';
 

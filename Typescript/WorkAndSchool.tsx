@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { IExperienceCardProps } from './ExperienceCard';
+import { IExperienceCardProps } from "./IExperienceCardProps";
 import { ExperinceCardSliderComponent } from './ExperienceCardSlider'
 import { useMediaQuery } from 'react-responsive'
 
@@ -16,6 +16,7 @@ const erzasoftWork: IExperienceCardProps = {
     Technologies: ["EntityFramework", "MS SQL", "Telerik (UI for ASP.NET MVC)", "Javascript", "HTML5", "CSS3", "Sass", "TFS", "Adobe Photoshop"],
     Position: "Software developer"
 };
+
 const trsWork: IExperienceCardProps = {
     Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
     DescriptionHtml: <p>Zde jsem se věnoval vývoji Windows Forms aplikace za pomoci jazyka C#.</p>,
@@ -25,6 +26,7 @@ const trsWork: IExperienceCardProps = {
     Technologies: ["Windows Forms"],
     Position: "Software developer"
 };
+
 const proficreditSoftwareDeveloperWork: IExperienceCardProps = {
     Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
     DescriptionHtml:
@@ -44,6 +46,7 @@ const proficreditSoftwareDeveloperWork: IExperienceCardProps = {
     Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
     Position: "Software developer"
 };
+
 const proficreditDevelopmentLeaderWork: IExperienceCardProps = {
     Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
     DescriptionHtml:
@@ -64,6 +67,7 @@ const proficreditDevelopmentLeaderWork: IExperienceCardProps = {
     Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
     Position: "Developement leader"
 };
+
 const highSchool: IExperienceCardProps = {
     Description: undefined,
     From: "05/2006",
@@ -72,6 +76,7 @@ const highSchool: IExperienceCardProps = {
     Technologies: [],
     Position: undefined
 };
+
 const university: IExperienceCardProps = {
     Description: undefined,
     From: "05/2010",
@@ -81,7 +86,7 @@ const university: IExperienceCardProps = {
     Position: undefined
 };
 
-const WorkAndSchoolComponent = (props: any) => {
+const WorkAndSchoolComponent = (props: {}) => {
     const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
     const isTablet = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' })
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })

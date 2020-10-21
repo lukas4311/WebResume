@@ -1,15 +1,7 @@
 import * as React from 'react';
-import { IModalProps, Modal } from './Modal'
-
-export interface IExperienceCardProps {
-    Name: string;
-    From: string;
-    To: string;
-    Description: string;
-    DescriptionHtml?: JSX.Element;
-    Technologies: string[];
-    Position: string;
-}
+import { Modal } from './Modal'
+import { IModalProps } from "./IModalProps";
+import { IExperienceCardProps } from './IExperienceCardProps';
 
 export class ExperienceCardComponent extends React.Component<IExperienceCardProps, any>{
     constructor(props: IExperienceCardProps) {

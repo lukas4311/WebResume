@@ -125,7 +125,7 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED v .NETu. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se sna\u017E\u00EDm na sob\u011B pracovat ,vylpe\u0161ovat s roz\u0161i\u0159ovat svoje dovednosti."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED a z\u00E1jmem o kryptom\u011Bny a ekonomiku. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se sna\u017E\u00EDm na sob\u011B pracovat ,vylpe\u0161ovat a roz\u0161i\u0159ovat svoje dovednosti."),
             React.createElement("section", { className: "mt-8 pb-8 border-b border-white" },
                 React.createElement("h2", { className: "text-xl" }, "Kontakty"),
                 React.createElement("div", { className: "flex justify-around" },
@@ -589,8 +589,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
-class SkillComponentState {
-}
 class SkillsComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -611,7 +609,7 @@ class SkillsComponent extends React.Component {
     render() {
         return (React.createElement("div", { className: "text-white px-12" },
             React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills"),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Svoje dovednosti se sna\u017E\u00EDm neust\u00E1le roz\u0161i\u0159ovat a vylep\u0161ovat. \u010Casto sleduji ner\u016Fzn\u011Bj\u0161\u00ED p\u0159edn\u00E1\u0161ky a \u010Dtu blogy zn\u00E1m\u00FDch program\u00E1tor\u016F, ze kter\u00FDch \u010Derpu nov\u00E9 znalosti. Nov\u011B nabyt\u00E9 dovednosti se sna\u017E\u00EDm zkou\u0161et v praxi a to a\u0165 u\u017E v pracovn\u00EDch projektech nebo v soukrom\u00FDch testovac\u00EDch projektech. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich."),
             React.createElement("div", { className: "flex mt-6" },
                 React.createElement("div", { className: "w-1/2" },
                     React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
@@ -829,7 +827,7 @@ const ExperienceCardSlider_1 = __webpack_require__(/*! ./ExperienceCardSlider */
 const react_responsive_1 = __webpack_require__(/*! react-responsive */ "./node_modules/react-responsive/dist/react-responsive.js");
 const erzasoftWork = {
     Description: "Programování a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.",
-    DescriptionHtml: React.createElement("p", null, "V Erasoftu jsme se v\u011Bnovi v\u00FDvoji a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek za pomoci jazyka C# a technologi\u00ED ASP.NET MVC 5. Mimo tyto technologie jsem pou\u017E\u00EDval tak\u00E9 HTML5, Javascript, Sass pro k\u00F3dov\u00E1n\u00ED str\u00E1nek."),
+    DescriptionHtml: React.createElement("p", null, "V Erasoftu jsme se v\u011Bnovi v\u00FDvoji a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek na m\u00FAru za pomoci jazyka C# a technologie ASP.NET MVC 5. Mimo tyto technologie jsem tak\u00E9 b\u011B\u017Ene pou\u017E\u00EDval tak\u00E9 HTML5, Javascript, Sass pro k\u00F3dov\u00E1n\u00ED str\u00E1nek."),
     From: "05/2013",
     To: "03/2014",
     Name: "Erzasoft s.r.o.",
@@ -838,17 +836,17 @@ const erzasoftWork = {
 };
 const trsWork = {
     Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
-    DescriptionHtml: React.createElement("p", null, "Programov\u00E1n\u00ED Windows Forms aplikac\u00ED za pomoci jazyka C#"),
+    DescriptionHtml: React.createElement("p", null, "Zde jsem se v\u011Bnoval v\u00FDvoji Windows Forms aplikace za pomoci jazyka C#."),
     From: "03/2014",
     To: "12/2014",
     Name: "TRS s.r.o.",
-    Technologies: ["EntityFramework", "MS SQL", "Telerik (UI for ASP.NET MVC)", "Javascript", "HTML5", "CSS3", "Sass", "TFS", "Adobe Photoshop"],
+    Technologies: ["Windows Forms"],
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork = {
     Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
     DescriptionHtml: React.createElement("div", null,
-        React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Aplikace spolupracovaly s MSSQL datab\u00E1z\u00ED.")),
+        React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Data jsem ukl\u00E1dali do MSSSQL datab\u00E1ze. M\u016Fj prvn\u00ED v\u011Bt\u0161\u00ED projekt byl klientsk\u00FD port\u00E1l, na kter\u00E9m jsem d\u011Blal vyv\u00EDjel jsem ho pomoci technologie ASP .NET MVC 5. Tento projekt jsem p\u0159ed sv\u00FDm odchodem p\u0159episoval do .NET Core. Tak\u00E9 jsme se pod\u00EDlel na v\u00FDvoji na\u0161eho SOAP API pomoc\u00ED WCF technologie. Mimo to se n\u00E1\u0161 t\u00FDm v\u011Bnoval v\u00FDvoji REST API za pomoci ASP NET Core WebAPI, co\u017E byl tak\u00E9 prvn\u00ED .NET Core projekt v na\u0161\u00ED firm\u011B, kter\u00FD se produk\u010Dn\u011B nasadil. Mimo to jsem se v\u011Bnoval v\u00FDvoji modul\u016F do na\u0161eho intern\u00EDho syst\u00E9mu napsan\u00E9ho v WPF techonologii a MVVM patternu.")),
     From: "01/2015",
     To: "01/2017",
     Name: "PROFI CREDIT Czech, a. s.",
@@ -858,7 +856,7 @@ const proficreditSoftwareDeveloperWork = {
 const proficreditDevelopmentLeaderWork = {
     Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
     DescriptionHtml: React.createElement("div", null,
-        React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval co v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B.")),
+        React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Pod ruma n\u00E1m pro\u0161la spousta vel\u00FDch jako nov\u00E9 REST API pomoc\u00ED technologie ASP .NET Core WebAPI nov\u00E9 moduly pro n\u00E1\u0161 intern\u00ED syst\u00E9m nebo p\u0159epis klientsk\u00E9ho port\u00E1lu do .NET Core. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a sna\u017Eil jsem se hl\u00EDdat, aby k\u00F3d kter\u00FD odpo\u0161t\u011Bl n\u00E1\u0161 t\u00FDm byl \u010Dist\u00FD a spol\u0148oval SOLID principy. Jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval do v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B a k pl\u00E1nov\u00E1n\u00ED sprint\u016F jsme pou\u017E\u00EDvali JIRU.")),
     From: "01/2017",
     To: "současnost",
     Name: "PROFI CREDIT Czech, a. s.",

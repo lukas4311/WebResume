@@ -1,9 +1,10 @@
 ﻿import * as React from 'react';
-import { IInterestsCardProps, InterestsCard } from './InterestsCard'
+import { InterestsCard } from './InterestsCard'
+import { IInterestsCardProps } from "./IInterestsCardProps";
 import SvgIcons from './SvgIcons'
 
-export default class AboutMeComponent extends React.Component<any, any>{
-    constructor(props: any) {
+export default class AboutMeComponent extends React.Component<{}, any>{
+    constructor(props: {}) {
         super(props);
         let interestsObjects: Array<IInterestsCardProps> = new Array<IInterestsCardProps>();
         interestsObjects.push({ svgIcon: SvgIcons.familyIcon, title: "Rodina" }, { svgIcon: SvgIcons.programmingIcon, title: "Programování" },

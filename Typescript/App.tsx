@@ -3,10 +3,7 @@ import * as ReactDOM from 'react-dom';
 import LeftMenuComponent from "./LeftMenu"
 import ContentCardComponent from "./ContentCard"
 import { Tabs } from './Tabs'
-
-interface AppState {
-    activeTab: Tabs;
-}
+import { AppState } from './AppState';
 
 class AppComponent extends React.Component<{}, AppState> {
     showMessage = true;

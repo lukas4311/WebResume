@@ -1,14 +1,7 @@
 import * as React from 'react'
 import ProgressLine from "./ProgressLine";
-
-interface ISkill {
-    name: string;
-    ratingPercent: number;
-}
-
-class SkillComponentState{
-    skills: Array<ISkill>
-}
+import { ISkill } from './ISkill';
+import { SkillComponentState } from './SkillComponentState';
 
 export default class SkillsComponent extends React.Component<any, SkillComponentState>{
     constructor(props: any) {
