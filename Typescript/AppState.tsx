@@ -1,4 +1,4 @@
-﻿import { Tabs } from './Tabs';
+﻿import { Tabs } from './Models/Tabs';
 
 export interface AppState {
     activeTab: Tabs;

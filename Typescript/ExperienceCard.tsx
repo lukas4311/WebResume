@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Modal } from './Modal'
 import { IModalProps } from "./IModalProps";
-import { IExperienceCardProps } from './IExperienceCardProps';
+import { IExperienceCardProps } from './Models/IExperienceCardProps';
 
 export class ExperienceCardComponent extends React.Component<IExperienceCardProps, any>{
     constructor(props: IExperienceCardProps) {

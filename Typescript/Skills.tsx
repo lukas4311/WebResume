@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ProgressLine from "./ProgressLine";
-import { ISkill } from './ISkill';
+import { ISkill } from './Models/ISkill';
 import { SkillComponentState } from './SkillComponentState';
 
 export default class SkillsComponent extends React.Component<any, SkillComponentState>{
@@ -35,9 +35,9 @@ export default class SkillsComponent extends React.Component<any, SkillComponent
                 <h1 className="text-left text-5xl mt-6">Skills</h1>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
                     Svoje dovednosti se snažím neustále rozšiřovat a vylepšovat.
-                    Často sleduji nerůznější přednášky a čtu blogy známých programátorů, ze kterých čerpu nové znalosti.
-                    Nově nabyté dovednosti se snažím zkoušet v praxi a to ať už v pracovních projektech nebo v soukromých testovacích projektech.
-                    Mám rád práci v týmu, protože můžu předávat svoje znalosti a poznatky dalším a zároveň čerpat ty jejich.
+                    Často sleduji nerůznější přednášky a čtu blogy známých i ne tak neznámých vývojářů, od kterých čerpu nové znalosti.
+                    Nově nabyté dovednosti se snažím zkoušet v praxi a to ať už v soukromých testovacích projektech nebo i pracovních projektech,
+                    pokud to situace dovoluje. Zároveň mám rád práci v týmu, protože můžu předávat svoje znalosti a poznatky dalším a zároveň čerpat ty jejich.
                 </section>
                 <div className="flex mt-6">
                     <div className="w-1/2">

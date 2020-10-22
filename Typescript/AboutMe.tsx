@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { InterestsCard } from './InterestsCard'
-import { IInterestsCardProps } from "./IInterestsCardProps";
-import SvgIcons from './SvgIcons'
+import { IInterestsCardProps } from "./Models/IInterestsCardProps";
+import SvgIcons from './Icons/SvgIcons'
 
 export default class AboutMeComponent extends React.Component<{}, any>{
     constructor(props: {}) {
@@ -25,10 +25,8 @@ export default class AboutMeComponent extends React.Component<{}, any>{
                     <span>29y</span>
                 </div>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
-                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí a zájmem o kryptoměny a ekonomiku. 
-                    Baví mě poznávat nové technologie a zkoušet je v praxi. 
-                    Neustále se snažím na sobě pracovat
-                    ,vylpešovat a rozšiřovat svoje dovednosti.
+                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí. 
+                    Baví mě poznávat nové technologie a zkoušet je v praxi. Neustále se na sobě pracuji, vylpešuji a rozšiřuji svoje dovednosti.
                 </section>
                 <section className="mt-8 pb-8 border-b border-white">
                     <h2 className="text-xl">Kontakty</h2>

@@ -108,7 +108,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const InterestsCard_1 = __webpack_require__(/*! ./InterestsCard */ "./Typescript/InterestsCard.tsx");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
+const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
 class AboutMeComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -125,7 +125,7 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED a z\u00E1jmem o kryptom\u011Bny a ekonomiku. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se sna\u017E\u00EDm na sob\u011B pracovat ,vylpe\u0161ovat a roz\u0161i\u0159ovat svoje dovednosti."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se na sob\u011B pracuji, vylpe\u0161uji a roz\u0161i\u0159uji svoje dovednosti."),
             React.createElement("section", { className: "mt-8 pb-8 border-b border-white" },
                 React.createElement("h2", { className: "text-xl" }, "Kontakty"),
                 React.createElement("div", { className: "flex justify-around" },
@@ -172,7 +172,7 @@ const React = __importStar(__webpack_require__(/*! react */ "react"));
 const ReactDOM = __importStar(__webpack_require__(/*! react-dom */ "react-dom"));
 const LeftMenu_1 = __importDefault(__webpack_require__(/*! ./LeftMenu */ "./Typescript/LeftMenu.tsx"));
 const ContentCard_1 = __importDefault(__webpack_require__(/*! ./ContentCard */ "./Typescript/ContentCard.tsx"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
 class AppComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -232,7 +232,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
 const WorkAndSchool_1 = __importDefault(__webpack_require__(/*! ./WorkAndSchool */ "./Typescript/WorkAndSchool.tsx"));
@@ -400,232 +400,10 @@ exports.ExperinceCardSliderComponent = ExperinceCardSliderComponent;
 
 /***/ }),
 
-/***/ "./Typescript/InterestsCard.tsx":
-/*!**************************************!*\
-  !*** ./Typescript/InterestsCard.tsx ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-class InterestsCard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (React.createElement("div", { className: "p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center shadows duration-500" },
-            this.props.svgIcon,
-            React.createElement("p", null, this.props.title)));
-    }
-}
-exports.InterestsCard = InterestsCard;
-
-
-/***/ }),
-
-/***/ "./Typescript/LeftMenu.tsx":
-/*!*********************************!*\
-  !*** ./Typescript/LeftMenu.tsx ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
-class LeftMenuComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.initIcons();
-        this.state = { activeTab: 'personalInfo' };
-        this.tabClick = this.tabClick.bind(this);
-    }
-    initIcons() {
-        this.icons = [
-            { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
-        ];
-    }
-    tabClick(tabCode, _) {
-        if (tabCode != Tabs_1.Tabs.DownloadResume) {
-            this.props.setNewActiveTab(tabCode);
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-                document.getElementById("menu").style.display = "none";
-            }
-        }
-    }
-    render() {
-        return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
-            React.createElement("a", { href: item.href, className: "tabLink inline-block", onClick: (e) => this.tabClick(item.tabCode, e), target: item.target, download: item.download }, item.svgIcon),
-            React.createElement("span", { className: "text-white leading-none block opacity-0 duration-500" }, item.title))))));
-    }
-}
-exports.default = LeftMenuComponent;
-
-
-/***/ }),
-
-/***/ "./Typescript/Modal.tsx":
-/*!******************************!*\
-  !*** ./Typescript/Modal.tsx ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-exports.Modal = function (props) {
-    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
-    return (React.createElement("div", { className: showHideClassName },
-        React.createElement("div", { className: "modal-main text-black flex flex-col" },
-            React.createElement("div", { className: "ml-auto mr-4" },
-                React.createElement("button", { onClick: props.handleClose }, "X")),
-            React.createElement("div", null, props.children))));
-};
-
-
-/***/ }),
-
-/***/ "./Typescript/ProgressLine.tsx":
-/*!*************************************!*\
-  !*** ./Typescript/ProgressLine.tsx ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
-    {
-        percentage: "0",
-        color: "white"
-    }
-] }) => {
-    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
-        return "0";
-    }));
-    react_1.useEffect(() => {
-        requestAnimationFrame(() => {
-            setWidths(visualParts.map(item => {
-                return item.percentage;
-            }));
-        });
-    }, [visualParts]);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
-        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
-            return (react_1.default.createElement("div", { key: index, style: {
-                    width: widths[index]
-                }, className: "progressVisualPart h-4" }));
-        }))));
-};
-exports.default = ProgressLine;
-
-
-/***/ }),
-
-/***/ "./Typescript/Skills.tsx":
-/*!*******************************!*\
-  !*** ./Typescript/Skills.tsx ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
-class SkillsComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
-                { name: "Javascript", ratingPercent: 80 }, { name: "Typescript", ratingPercent: 80 }, { name: "HTML", ratingPercent: 80 }, { name: "CSS", ratingPercent: 80 },
-                { name: "Sass", ratingPercent: 80 }, { name: "WCF", ratingPercent: 70 }, { name: "WPF", ratingPercent: 85 }, { name: "ReactJs", ratingPercent: 65 },
-                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }] };
-    }
-    renderProgressBarForSkill(item, index) {
-        return (React.createElement("div", null,
-            React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
-                    {
-                        percentage: `${item.ratingPercent}%`,
-                        color: "#20639B"
-                    }
-                ] })));
-    }
-    render() {
-        return (React.createElement("div", { className: "text-white px-12" },
-            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills"),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Svoje dovednosti se sna\u017E\u00EDm neust\u00E1le roz\u0161i\u0159ovat a vylep\u0161ovat. \u010Casto sleduji ner\u016Fzn\u011Bj\u0161\u00ED p\u0159edn\u00E1\u0161ky a \u010Dtu blogy zn\u00E1m\u00FDch program\u00E1tor\u016F, ze kter\u00FDch \u010Derpu nov\u00E9 znalosti. Nov\u011B nabyt\u00E9 dovednosti se sna\u017E\u00EDm zkou\u0161et v praxi a to a\u0165 u\u017E v pracovn\u00EDch projektech nebo v soukrom\u00FDch testovac\u00EDch projektech. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich."),
-            React.createElement("div", { className: "flex mt-6" },
-                React.createElement("div", { className: "w-1/2" },
-                    React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
-                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
-                React.createElement("div", { className: "w-1/2" }))));
-    }
-}
-exports.default = SkillsComponent;
-
-
-/***/ }),
-
-/***/ "./Typescript/SvgIcons.tsx":
-/*!*********************************!*\
-  !*** ./Typescript/SvgIcons.tsx ***!
-  \*********************************/
+/***/ "./Typescript/Icons/SvgIcons.tsx":
+/*!***************************************!*\
+  !*** ./Typescript/Icons/SvgIcons.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -783,10 +561,130 @@ exports.default = SvgIcons;
 
 /***/ }),
 
-/***/ "./Typescript/Tabs.ts":
-/*!****************************!*\
-  !*** ./Typescript/Tabs.ts ***!
-  \****************************/
+/***/ "./Typescript/InterestsCard.tsx":
+/*!**************************************!*\
+  !*** ./Typescript/InterestsCard.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+class InterestsCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (React.createElement("div", { className: "p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center shadows duration-500" },
+            this.props.svgIcon,
+            React.createElement("p", null, this.props.title)));
+    }
+}
+exports.InterestsCard = InterestsCard;
+
+
+/***/ }),
+
+/***/ "./Typescript/LeftMenu.tsx":
+/*!*********************************!*\
+  !*** ./Typescript/LeftMenu.tsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
+const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
+class LeftMenuComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.initIcons();
+        this.state = { activeTab: 'personalInfo' };
+        this.tabClick = this.tabClick.bind(this);
+    }
+    initIcons() {
+        this.icons = [
+            { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
+        ];
+    }
+    tabClick(tabCode, _) {
+        if (tabCode != Tabs_1.Tabs.DownloadResume) {
+            this.props.setNewActiveTab(tabCode);
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+    }
+    render() {
+        return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
+            React.createElement("a", { href: item.href, className: "tabLink inline-block", onClick: (e) => this.tabClick(item.tabCode, e), target: item.target, download: item.download }, item.svgIcon),
+            React.createElement("span", { className: "text-white leading-none block opacity-0 duration-500" }, item.title))))));
+    }
+}
+exports.default = LeftMenuComponent;
+
+
+/***/ }),
+
+/***/ "./Typescript/Modal.tsx":
+/*!******************************!*\
+  !*** ./Typescript/Modal.tsx ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+exports.Modal = function (props) {
+    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
+    return (React.createElement("div", { className: showHideClassName },
+        React.createElement("div", { className: "modal-main text-black flex flex-col" },
+            React.createElement("div", { className: "ml-auto mr-4" },
+                React.createElement("button", { onClick: props.handleClose }, "X")),
+            React.createElement("div", null, props.children))));
+};
+
+
+/***/ }),
+
+/***/ "./Typescript/Models/Tabs.ts":
+/*!***********************************!*\
+  !*** ./Typescript/Models/Tabs.ts ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -801,6 +699,108 @@ var Tabs;
     Tabs[Tabs["DownloadResume"] = 3] = "DownloadResume";
     Tabs[Tabs["WorkEducation"] = 4] = "WorkEducation";
 })(Tabs = exports.Tabs || (exports.Tabs = {}));
+
+
+/***/ }),
+
+/***/ "./Typescript/ProgressLine.tsx":
+/*!*************************************!*\
+  !*** ./Typescript/ProgressLine.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
+    {
+        percentage: "0",
+        color: "white"
+    }
+] }) => {
+    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
+        return "0";
+    }));
+    react_1.useEffect(() => {
+        requestAnimationFrame(() => {
+            setWidths(visualParts.map(item => {
+                return item.percentage;
+            }));
+        });
+    }, [visualParts]);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
+        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
+            return (react_1.default.createElement("div", { key: index, style: {
+                    width: widths[index]
+                }, className: "progressVisualPart h-4" }));
+        }))));
+};
+exports.default = ProgressLine;
+
+
+/***/ }),
+
+/***/ "./Typescript/Skills.tsx":
+/*!*******************************!*\
+  !*** ./Typescript/Skills.tsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
+class SkillsComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
+                { name: "Javascript", ratingPercent: 80 }, { name: "Typescript", ratingPercent: 80 }, { name: "HTML", ratingPercent: 80 }, { name: "CSS", ratingPercent: 80 },
+                { name: "Sass", ratingPercent: 80 }, { name: "WCF", ratingPercent: 70 }, { name: "WPF", ratingPercent: 85 }, { name: "ReactJs", ratingPercent: 65 },
+                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }] };
+    }
+    renderProgressBarForSkill(item, index) {
+        return (React.createElement("div", null,
+            React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
+                    {
+                        percentage: `${item.ratingPercent}%`,
+                        color: "#20639B"
+                    }
+                ] })));
+    }
+    render() {
+        return (React.createElement("div", { className: "text-white px-12" },
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills"),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Svoje dovednosti se sna\u017E\u00EDm neust\u00E1le roz\u0161i\u0159ovat a vylep\u0161ovat. \u010Casto sleduji ner\u016Fzn\u011Bj\u0161\u00ED p\u0159edn\u00E1\u0161ky a \u010Dtu blogy zn\u00E1m\u00FDch i ne tak nezn\u00E1m\u00FDch v\u00FDvoj\u00E1\u0159\u016F, od kter\u00FDch \u010Derpu nov\u00E9 znalosti. Nov\u011B nabyt\u00E9 dovednosti se sna\u017E\u00EDm zkou\u0161et v praxi a to a\u0165 u\u017E v soukrom\u00FDch testovac\u00EDch projektech nebo i pracovn\u00EDch projektech, pokud to situace dovoluje. Z\u00E1rove\u0148 m\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich."),
+            React.createElement("div", { className: "flex mt-6" },
+                React.createElement("div", { className: "w-1/2" },
+                    React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
+                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
+                React.createElement("div", { className: "w-1/2" }))));
+    }
+}
+exports.default = SkillsComponent;
 
 
 /***/ }),

@@ -1,4 +1,4 @@
-﻿import { ISkill } from './ISkill';
+﻿import { ISkill } from './Models/ISkill';
 export class SkillComponentState {
     skills: Array<ISkill>;
 }

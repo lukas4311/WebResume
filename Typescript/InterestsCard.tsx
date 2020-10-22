@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { IInterestsCardProps } from './IInterestsCardProps';
+import { IInterestsCardProps } from './Models/IInterestsCardProps';
 
 export class InterestsCard extends React.Component<IInterestsCardProps, any>{
     constructor(props: IInterestsCardProps) {

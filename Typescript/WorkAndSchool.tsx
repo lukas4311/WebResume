@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { IExperienceCardProps } from "./IExperienceCardProps";
+import { IExperienceCardProps } from "./Models/IExperienceCardProps";
 import { ExperinceCardSliderComponent } from './ExperienceCardSlider'
 import { useMediaQuery } from 'react-responsive'
 
@@ -53,11 +53,11 @@ const proficreditDevelopmentLeaderWork: IExperienceCardProps = {
         <div>
             <p>
                 S novou pozicí přišla nová zodpovědnost. Po rozšíření IT oddělení a rozdělení na malé teamy jsem se stal development leaderem jednoho z nich.
-                I s novou pozicí jsem se primárně věnoval programování projektů, které jsem v teamu měli na starost. Vyvíjeli jsme primárně ASP NET Core MVC, 
+                I s novou pozicí jsem se primárně věnoval programování projektů, které jsem v teamu měli na starost. Vyvíjeli jsme primárně ASP NET Core MVC,
                 ASP NET Core WebApi a WPF. Pod ruma nám prošla spousta velých jako nové REST API pomocí technologie ASP .NET Core WebAPI nové moduly pro náš interní systém
-                nebo přepis klientského portálu do .NET Core. Mimo to jsem se začal věnovat code review pro programátory v našem teamu a snažil jsem se hlídat, aby kód který odpoštěl náš 
-                tým byl čistý a spolňoval SOLID principy. Jako developement leader jsem měl možnost rozhodovat o architektuře aplikace a použité technologii. 
-                Také jsem se více zapojoval do vývoje našich core projektů a diskuze o těchto projektech. V našem teamu probíhal vývoj plně agilně a k plánování sprintů 
+                nebo přepis klientského portálu do .NET Core. Mimo to jsem se začal věnovat code review pro programátory v našem teamu a snažil jsem se hlídat, aby kód který odpoštěl náš
+                tým byl čistý a spolňoval SOLID principy. Jako developement leader jsem měl možnost rozhodovat o architektuře aplikace a použité technologii.
+                Také jsem se více zapojoval do vývoje našich core projektů a diskuze o těchto projektech. V našem teamu probíhal vývoj plně agilně a k plánování sprintů
                 jsme používali JIRU.
             </p>
         </div>,

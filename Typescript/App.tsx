@@ -2,7 +2,7 @@
 import * as ReactDOM from 'react-dom';
 import LeftMenuComponent from "./LeftMenu"
 import ContentCardComponent from "./ContentCard"
-import { Tabs } from './Tabs'
+import { Tabs } from './Models/Tabs'
 import { AppState } from './AppState';
 
 class AppComponent extends React.Component<{}, AppState> {
