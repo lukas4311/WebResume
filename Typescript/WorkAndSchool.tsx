@@ -62,10 +62,28 @@ const proficreditDevelopmentLeaderWork: IExperienceCardProps = {
             </p>
         </div>,
     From: "01/2017",
-    To: "současnost",
+    To: "09/2020",
     Name: "PROFI CREDIT Czech, a. s.",
     Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
     Position: "Developement leader"
+};
+
+const dakoSoftwareDeveloper: IExperienceCardProps = {
+    Description: "",
+    DescriptionHtml:
+        <div>
+            <p>
+                Mojí hlavní pracovní náplní je vývoj aplikací hlavně za pomoci technologie ASP.NET Core a to primárně WebApi, ale také MVC.
+                Vyvíjím hlavně úplně nový interní portál, kterýslouží jako vizuální stránka pro obsluhu nejrůznějších akcí. Tím pádem se také 
+                mnohem více věnuji vývoji frontendu a tam využívám framework ReactJs a programovací jazyk Typescript. Mimo to jsem se také věnoval 
+                nastavení branch stategy našeho GIT repository, které by nám vyhovovalo a základnímu nastavení DevOps pipeline pro automatické buildy.
+            </p>
+        </div>,
+    From: "09/2020",
+    To: "současnost",
+    Name: "DAKO-CZ, a.s.",
+    Technologies: ["ASP.NET Core", "Web API", "ReactJs", "Typescript", "HTML5", "CSS3", "GIT", "SignalR", "DevOps"],
+    Position: "Software developer"
 };
 
 const highSchool: IExperienceCardProps = {
@@ -90,6 +108,8 @@ const WorkAndSchoolComponent = (props: {}) => {
     const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
     const isTablet = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' })
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })
+    const cards = [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork, dakoSoftwareDeveloper];
+    const education = [highSchool, university];
 
     return (
         <div className="text-white px-12">
@@ -98,17 +118,17 @@ const WorkAndSchoolComponent = (props: {}) => {
                 <div className="w-full">
                     <h2 className="text-2xl">Zkušenosti</h2>
                     <div className="flex mt-4">
-                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
-                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
-                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork]} />}
+                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={cards} />}
+                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={cards} />}
+                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={cards} />}
                     </div>
                 </div>
                 <div className="w-full mt-12">
                     <h2 className="text-2xl">Vzdělání</h2>
                     <div className="flex mt-4">
-                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={[highSchool, university]} />}
-                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={[highSchool, university]} />}
-                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={[highSchool, university]} />}
+                        {isDesktop && <ExperinceCardSliderComponent maxItemsCount={3} cards={education} />}
+                        {isTablet && <ExperinceCardSliderComponent maxItemsCount={2} cards={education} />}
+                        {isMobile && <ExperinceCardSliderComponent maxItemsCount={1} cards={education} />}
                     </div>
                 </div>
             </div>

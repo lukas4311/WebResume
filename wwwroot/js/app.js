@@ -858,10 +858,20 @@ const proficreditDevelopmentLeaderWork = {
     DescriptionHtml: React.createElement("div", null,
         React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Pod ruma n\u00E1m pro\u0161la spousta vel\u00FDch jako nov\u00E9 REST API pomoc\u00ED technologie ASP .NET Core WebAPI nov\u00E9 moduly pro n\u00E1\u0161 intern\u00ED syst\u00E9m nebo p\u0159epis klientsk\u00E9ho port\u00E1lu do .NET Core. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a sna\u017Eil jsem se hl\u00EDdat, aby k\u00F3d kter\u00FD odpo\u0161t\u011Bl n\u00E1\u0161 t\u00FDm byl \u010Dist\u00FD a spol\u0148oval SOLID principy. Jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval do v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B a k pl\u00E1nov\u00E1n\u00ED sprint\u016F jsme pou\u017E\u00EDvali JIRU.")),
     From: "01/2017",
-    To: "současnost",
+    To: "09/2020",
     Name: "PROFI CREDIT Czech, a. s.",
     Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
     Position: "Developement leader"
+};
+const dakoSoftwareDeveloper = {
+    Description: "",
+    DescriptionHtml: React.createElement("div", null,
+        React.createElement("p", null, "Moj\u00ED hlavn\u00ED pracovn\u00ED n\u00E1pln\u00ED je v\u00FDvoj aplikac\u00ED hlavn\u011B za pomoci technologie ASP.NET Core a to prim\u00E1rn\u011B WebApi, ale tak\u00E9 MVC. Vyv\u00EDj\u00EDm hlavn\u011B \u00FApln\u011B nov\u00FD intern\u00ED port\u00E1l, kter\u00FDslou\u017E\u00ED jako vizu\u00E1ln\u00ED str\u00E1nka pro obsluhu nejr\u016Fzn\u011Bj\u0161\u00EDch akc\u00ED. T\u00EDm p\u00E1dem se tak\u00E9 mnohem v\u00EDce v\u011Bnuji v\u00FDvoji frontendu a tam vyu\u017E\u00EDv\u00E1m framework ReactJs a programovac\u00ED jazyk Typescript. Mimo to jsem se tak\u00E9 v\u011Bnoval nastaven\u00ED branch stategy na\u0161eho GIT repository, kter\u00E9 by n\u00E1m vyhovovalo a z\u00E1kladn\u00EDmu nastaven\u00ED DevOps pipeline pro automatick\u00E9 buildy.")),
+    From: "09/2020",
+    To: "současnost",
+    Name: "DAKO-CZ, a.s.",
+    Technologies: ["ASP.NET Core", "Web API", "ReactJs", "Typescript", "HTML5", "CSS3", "GIT", "SignalR", "DevOps"],
+    Position: "Software developer"
 };
 const highSchool = {
     Description: undefined,
@@ -883,21 +893,23 @@ const WorkAndSchoolComponent = (props) => {
     const isMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 640px)' });
     const isTablet = react_responsive_1.useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' });
     const isDesktop = react_responsive_1.useMediaQuery({ query: '(min-width: 1024px)' });
+    const cards = [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork, dakoSoftwareDeveloper];
+    const education = [highSchool, university];
     return (React.createElement("div", { className: "text-white px-12" },
         React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
         React.createElement("div", { className: "flex flex-col" },
             React.createElement("div", { className: "w-full" },
                 React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
                 React.createElement("div", { className: "flex mt-4" },
-                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
-                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
-                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }))),
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: cards }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: cards }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: cards }))),
             React.createElement("div", { className: "w-full mt-12" },
                 React.createElement("h2", { className: "text-2xl" }, "Vzd\u011Bl\u00E1n\u00ED"),
                 React.createElement("div", { className: "flex mt-4" },
-                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [highSchool, university] }),
-                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [highSchool, university] }),
-                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [highSchool, university] }))))));
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: education }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: education }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: education }))))));
 };
 exports.default = WorkAndSchoolComponent;
 
