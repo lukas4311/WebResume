@@ -1,9 +1,10 @@
 ﻿import * as React from 'react';
-import { IInterestsCardProps, InterestsCard } from './InterestsCard'
-import SvgIcons from './SvgIcons'
+import { InterestsCard } from './InterestsCard'
+import { IInterestsCardProps } from "./Models/IInterestsCardProps";
+import SvgIcons from './Icons/SvgIcons'
 
-export default class AboutMeComponent extends React.Component<any, any>{
-    constructor(props: any) {
+export default class AboutMeComponent extends React.Component<{}, any>{
+    constructor(props: {}) {
         super(props);
         let interestsObjects: Array<IInterestsCardProps> = new Array<IInterestsCardProps>();
         interestsObjects.push({ svgIcon: SvgIcons.familyIcon, title: "Rodina" }, { svgIcon: SvgIcons.programmingIcon, title: "Programování" },
@@ -24,8 +25,8 @@ export default class AboutMeComponent extends React.Component<any, any>{
                     <span>29y</span>
                 </div>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
-                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí v .NETu. Baví mě poznávat nové technologie a zkoušet je v praxi. Neustále se snažím na sobě pracovat
-                    ,vylpešovat s rozšiřovat svoje dovednosti.
+                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí. 
+                    Baví mě poznávat nové technologie a zkoušet je v praxi. Neustále se na sobě pracuji, vylpešuji a rozšiřuji svoje dovednosti.
                 </section>
                 <section className="mt-8 pb-8 border-b border-white">
                     <h2 className="text-xl">Kontakty</h2>

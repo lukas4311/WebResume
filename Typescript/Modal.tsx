@@ -1,8 +1,5 @@
 import * as React from 'react';
-
-export interface IModalProps {
-    handleClose(): void; show: boolean; children: React.ReactNode;
-}
+import { IModalProps } from './IModalProps';
 
 export let Modal = function (props: IModalProps) {
     const showHideClassName = props.show ? "modal display-block" : "modal display-none";

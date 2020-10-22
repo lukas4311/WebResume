@@ -1,12 +1,8 @@
 ﻿import * as React from 'react';
+import { IInterestsCardProps } from './Models/IInterestsCardProps';
 
-export interface IInterestsCardProps {
-    svgIcon: JSX.Element;
-    title: string;
-}
-
-export class InterestsCard extends React.Component<any, any>{
-    constructor(props: any) {
+export class InterestsCard extends React.Component<IInterestsCardProps, any>{
+    constructor(props: IInterestsCardProps) {
         super(props);
     }
 

@@ -11,6 +11,10 @@ html {
     cursor: none;
 }
 
+body{
+    overflow:hidden;
+}
+
 #photoDiv {
     background-image: url(../image/PhotoTrim.jpg);
     background-size: cover;

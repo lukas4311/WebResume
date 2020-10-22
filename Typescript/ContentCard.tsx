@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { Tabs } from './Tabs'
+import { Tabs } from './Models/Tabs'
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import AboutMeComponent from "./AboutMe"
 import WorkAndSchoolComponent from "./WorkAndSchool"

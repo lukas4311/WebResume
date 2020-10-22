@@ -108,7 +108,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const InterestsCard_1 = __webpack_require__(/*! ./InterestsCard */ "./Typescript/InterestsCard.tsx");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
+const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
 class AboutMeComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -125,7 +125,7 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED v .NETu. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se sna\u017E\u00EDm na sob\u011B pracovat ,vylpe\u0161ovat s roz\u0161i\u0159ovat svoje dovednosti."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se na sob\u011B pracuji, vylpe\u0161uji a roz\u0161i\u0159uji svoje dovednosti."),
             React.createElement("section", { className: "mt-8 pb-8 border-b border-white" },
                 React.createElement("h2", { className: "text-xl" }, "Kontakty"),
                 React.createElement("div", { className: "flex justify-around" },
@@ -172,7 +172,7 @@ const React = __importStar(__webpack_require__(/*! react */ "react"));
 const ReactDOM = __importStar(__webpack_require__(/*! react-dom */ "react-dom"));
 const LeftMenu_1 = __importDefault(__webpack_require__(/*! ./LeftMenu */ "./Typescript/LeftMenu.tsx"));
 const ContentCard_1 = __importDefault(__webpack_require__(/*! ./ContentCard */ "./Typescript/ContentCard.tsx"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
 class AppComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -232,7 +232,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const AboutMe_1 = __importDefault(__webpack_require__(/*! ./AboutMe */ "./Typescript/AboutMe.tsx"));
 const WorkAndSchool_1 = __importDefault(__webpack_require__(/*! ./WorkAndSchool */ "./Typescript/WorkAndSchool.tsx"));
@@ -277,58 +277,38 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const Modal_1 = __webpack_require__(/*! ./Modal */ "./Typescript/Modal.tsx");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
 class ExperienceCardComponent extends React.Component {
     constructor(props) {
         super(props);
         this.showDescription = () => {
-            this.setState({ showDescriptionModal: true });
+            if (this.props.Description != undefined)
+                this.setState({ showDescriptionModal: true });
         };
         this.hideDescription = () => {
             this.setState({ showDescriptionModal: false });
         };
-        this.showTechnologies = () => {
-            this.setState({ showTechnologiesModal: true });
-        };
-        this.hideTechnologies = () => {
-            this.setState({ showTechnologiesModal: false });
-        };
         this.showDescription = this.showDescription.bind(this);
         this.hideDescription = this.hideDescription.bind(this);
-        this.showTechnologies = this.showTechnologies.bind(this);
-        this.hideTechnologies = this.hideTechnologies.bind(this);
-        this.state = { showDescriptionModal: false, showTechnologiesModal: false };
+        this.state = { showDescriptionModal: false };
     }
     render() {
-        let iconsColumn;
-        if (this.props.Description != undefined || this.props.Technologies.length != 0) {
-            iconsColumn = (React.createElement("div", { className: "w-6 flex flex-col" },
-                this.props.Description != undefined ? React.createElement("a", { onClick: this.showDescription, className: "ml-auto inline-block cursor-pointer experienceCard" }, SvgIcons_1.default.descIcon) : "",
-                this.props.Technologies.length != 0 ? React.createElement("a", { onClick: this.showTechnologies, className: "ml-auto inline-block mt-auto cursor-pointer experienceCard" }, SvgIcons_1.default.techIcon) : ""));
-        }
         return (React.createElement("div", { className: "flex" },
             React.createElement(Modal_1.Modal, { show: this.state.showDescriptionModal, handleClose: this.hideDescription },
-                React.createElement("div", { className: "text-center" },
+                React.createElement("div", { className: "text-center p-6" },
                     React.createElement("h2", { className: "text-2xl text-center" }, "Popis pr\u00E1ce"),
-                    React.createElement("p", null, this.props.Description))),
-            React.createElement(Modal_1.Modal, { show: this.state.showTechnologiesModal, handleClose: this.hideTechnologies },
-                React.createElement("div", { className: "text-center" },
-                    React.createElement("h2", { className: "text-2xl text-center" }, "Pou\u017E\u00EDvan\u00E9 technologie"),
+                    this.props.DescriptionHtml,
+                    React.createElement("h2", { className: "text-2xl text-center pt-10" }, "Tech stack"),
                     this.props.Technologies.map((item, i) => React.createElement("span", { key: i, className: "px-2 py bg-blue-400 m-2 rounded-full inline-block leading-normal" }, item)))),
-            React.createElement("div", { className: "w-full" },
+            React.createElement("div", { className: "w-full", onClick: this.showDescription },
                 React.createElement("h3", { className: "text-lg text-center" }, this.props.Name),
                 React.createElement("span", { className: "inline-block" }, this.props.Position),
                 React.createElement("span", { className: "text-sm inline-block" },
                     this.props.From,
                     " - ",
-                    this.props.To)),
-            iconsColumn));
+                    this.props.To))));
     }
 }
 exports.ExperienceCardComponent = ExperienceCardComponent;
@@ -410,7 +390,7 @@ class ExperinceCardSliderComponent extends React.Component {
             showArrows ? React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft) : "",
             React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
-                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2`, key: i },
+                    React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2 shadows duration-500`, key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
             showArrows ? React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight) : ""));
     }
@@ -420,234 +400,10 @@ exports.ExperinceCardSliderComponent = ExperinceCardSliderComponent;
 
 /***/ }),
 
-/***/ "./Typescript/InterestsCard.tsx":
-/*!**************************************!*\
-  !*** ./Typescript/InterestsCard.tsx ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-class InterestsCard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (React.createElement("div", { className: "p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center shadows duration-500" },
-            this.props.svgIcon,
-            React.createElement("p", null, this.props.title)));
-    }
-}
-exports.InterestsCard = InterestsCard;
-
-
-/***/ }),
-
-/***/ "./Typescript/LeftMenu.tsx":
-/*!*********************************!*\
-  !*** ./Typescript/LeftMenu.tsx ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-const Tabs_1 = __webpack_require__(/*! ./Tabs */ "./Typescript/Tabs.ts");
-const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./SvgIcons */ "./Typescript/SvgIcons.tsx"));
-class LeftMenuComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.initIcons();
-        this.state = { activeTab: 'personalInfo' };
-        this.tabClick = this.tabClick.bind(this);
-    }
-    initIcons() {
-        this.icons = [
-            { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
-        ];
-    }
-    tabClick(tabCode, _) {
-        if (tabCode != Tabs_1.Tabs.DownloadResume) {
-            this.props.setNewActiveTab(tabCode);
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-                document.getElementById("menu").style.display = "none";
-            }
-        }
-    }
-    render() {
-        return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
-            React.createElement("a", { href: item.href, className: "tabLink inline-block", onClick: (e) => this.tabClick(item.tabCode, e), target: item.target, download: item.download }, item.svgIcon),
-            React.createElement("span", { className: "text-white leading-none block opacity-0 duration-500" }, item.title))))));
-    }
-}
-exports.default = LeftMenuComponent;
-
-
-/***/ }),
-
-/***/ "./Typescript/Modal.tsx":
-/*!******************************!*\
-  !*** ./Typescript/Modal.tsx ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-exports.Modal = function (props) {
-    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
-    return (React.createElement("div", { className: showHideClassName },
-        React.createElement("div", { className: "modal-main text-black flex flex-col" },
-            React.createElement("div", { className: "ml-auto mr-4" },
-                React.createElement("button", { onClick: props.handleClose }, "X")),
-            React.createElement("div", null, props.children))));
-};
-
-
-/***/ }),
-
-/***/ "./Typescript/ProgressLine.tsx":
-/*!*************************************!*\
-  !*** ./Typescript/ProgressLine.tsx ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
-    {
-        percentage: "0",
-        color: "white"
-    }
-] }) => {
-    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
-        return "0";
-    }));
-    react_1.useEffect(() => {
-        requestAnimationFrame(() => {
-            setWidths(visualParts.map(item => {
-                return item.percentage;
-            }));
-        });
-    }, [visualParts]);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
-        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
-            return (react_1.default.createElement("div", { key: index, style: {
-                    width: widths[index]
-                }, className: "progressVisualPart h-4" }));
-        }))));
-};
-exports.default = ProgressLine;
-
-
-/***/ }),
-
-/***/ "./Typescript/Skills.tsx":
-/*!*******************************!*\
-  !*** ./Typescript/Skills.tsx ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "react"));
-const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
-class SkillComponentState {
-}
-class SkillsComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
-                { name: "Javascript", ratingPercent: 80 }, { name: "Typescript", ratingPercent: 80 }, { name: "HTML", ratingPercent: 80 }, { name: "CSS", ratingPercent: 80 },
-                { name: "Sass", ratingPercent: 80 }, { name: "WCF", ratingPercent: 70 }, { name: "WPF", ratingPercent: 85 }, { name: "ReactJs", ratingPercent: 65 },
-                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }] };
-    }
-    renderProgressBarForSkill(item, index) {
-        return (React.createElement("div", null,
-            React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
-                    {
-                        percentage: `${item.ratingPercent}%`,
-                        color: "#20639B"
-                    }
-                ] })));
-    }
-    render() {
-        return (React.createElement("div", { className: "text-white px-12" },
-            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills"),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem nad\u0161en\u00FD .NET a MSSQL developer, kter\u00FD se sna\u017E\u00ED neust\u00E1le na sob\u011B makat. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. M\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich. Svoje v\u011Bdomosti se sna\u017E\u00EDm roz\u0161i\u0159ovat \u010Dten\u00EDm odborn\u00FDch knih a \u010Dl\u00E1nk\u016F."),
-            React.createElement("div", { className: "flex mt-6" },
-                React.createElement("div", { className: "w-1/2" },
-                    React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
-                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
-                React.createElement("div", { className: "w-1/2" }))));
-    }
-}
-exports.default = SkillsComponent;
-
-
-/***/ }),
-
-/***/ "./Typescript/SvgIcons.tsx":
-/*!*********************************!*\
-  !*** ./Typescript/SvgIcons.tsx ***!
-  \*********************************/
+/***/ "./Typescript/Icons/SvgIcons.tsx":
+/*!***************************************!*\
+  !*** ./Typescript/Icons/SvgIcons.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -805,10 +561,130 @@ exports.default = SvgIcons;
 
 /***/ }),
 
-/***/ "./Typescript/Tabs.ts":
-/*!****************************!*\
-  !*** ./Typescript/Tabs.ts ***!
-  \****************************/
+/***/ "./Typescript/InterestsCard.tsx":
+/*!**************************************!*\
+  !*** ./Typescript/InterestsCard.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+class InterestsCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (React.createElement("div", { className: "p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center shadows duration-500" },
+            this.props.svgIcon,
+            React.createElement("p", null, this.props.title)));
+    }
+}
+exports.InterestsCard = InterestsCard;
+
+
+/***/ }),
+
+/***/ "./Typescript/LeftMenu.tsx":
+/*!*********************************!*\
+  !*** ./Typescript/LeftMenu.tsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
+const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
+class LeftMenuComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.initIcons();
+        this.state = { activeTab: 'personalInfo' };
+        this.tabClick = this.tabClick.bind(this);
+    }
+    initIcons() {
+        this.icons = [
+            { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+            { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
+        ];
+    }
+    tabClick(tabCode, _) {
+        if (tabCode != Tabs_1.Tabs.DownloadResume) {
+            this.props.setNewActiveTab(tabCode);
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+    }
+    render() {
+        return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
+            React.createElement("a", { href: item.href, className: "tabLink inline-block", onClick: (e) => this.tabClick(item.tabCode, e), target: item.target, download: item.download }, item.svgIcon),
+            React.createElement("span", { className: "text-white leading-none block opacity-0 duration-500" }, item.title))))));
+    }
+}
+exports.default = LeftMenuComponent;
+
+
+/***/ }),
+
+/***/ "./Typescript/Modal.tsx":
+/*!******************************!*\
+  !*** ./Typescript/Modal.tsx ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+exports.Modal = function (props) {
+    const showHideClassName = props.show ? "modal display-block" : "modal display-none";
+    return (React.createElement("div", { className: showHideClassName },
+        React.createElement("div", { className: "modal-main text-black flex flex-col" },
+            React.createElement("div", { className: "ml-auto mr-4" },
+                React.createElement("button", { onClick: props.handleClose }, "X")),
+            React.createElement("div", null, props.children))));
+};
+
+
+/***/ }),
+
+/***/ "./Typescript/Models/Tabs.ts":
+/*!***********************************!*\
+  !*** ./Typescript/Models/Tabs.ts ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -823,6 +699,108 @@ var Tabs;
     Tabs[Tabs["DownloadResume"] = 3] = "DownloadResume";
     Tabs[Tabs["WorkEducation"] = 4] = "WorkEducation";
 })(Tabs = exports.Tabs || (exports.Tabs = {}));
+
+
+/***/ }),
+
+/***/ "./Typescript/ProgressLine.tsx":
+/*!*************************************!*\
+  !*** ./Typescript/ProgressLine.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
+    {
+        percentage: "0",
+        color: "white"
+    }
+] }) => {
+    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
+        return "0";
+    }));
+    react_1.useEffect(() => {
+        requestAnimationFrame(() => {
+            setWidths(visualParts.map(item => {
+                return item.percentage;
+            }));
+        });
+    }, [visualParts]);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
+        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
+            return (react_1.default.createElement("div", { key: index, style: {
+                    width: widths[index]
+                }, className: "progressVisualPart h-4" }));
+        }))));
+};
+exports.default = ProgressLine;
+
+
+/***/ }),
+
+/***/ "./Typescript/Skills.tsx":
+/*!*******************************!*\
+  !*** ./Typescript/Skills.tsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __importStar(__webpack_require__(/*! react */ "react"));
+const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */ "./Typescript/ProgressLine.tsx"));
+class SkillsComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
+                { name: "Javascript", ratingPercent: 80 }, { name: "Typescript", ratingPercent: 80 }, { name: "HTML", ratingPercent: 80 }, { name: "CSS", ratingPercent: 80 },
+                { name: "Sass", ratingPercent: 80 }, { name: "WCF", ratingPercent: 70 }, { name: "WPF", ratingPercent: 85 }, { name: "ReactJs", ratingPercent: 65 },
+                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }] };
+    }
+    renderProgressBarForSkill(item, index) {
+        return (React.createElement("div", null,
+            React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
+                    {
+                        percentage: `${item.ratingPercent}%`,
+                        color: "#20639B"
+                    }
+                ] })));
+    }
+    render() {
+        return (React.createElement("div", { className: "text-white px-12" },
+            React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Skills"),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Svoje dovednosti se sna\u017E\u00EDm neust\u00E1le roz\u0161i\u0159ovat a vylep\u0161ovat. \u010Casto sleduji ner\u016Fzn\u011Bj\u0161\u00ED p\u0159edn\u00E1\u0161ky a \u010Dtu blogy zn\u00E1m\u00FDch i ne tak nezn\u00E1m\u00FDch v\u00FDvoj\u00E1\u0159\u016F, od kter\u00FDch \u010Derpu nov\u00E9 znalosti. Nov\u011B nabyt\u00E9 dovednosti se sna\u017E\u00EDm zkou\u0161et v praxi a to a\u0165 u\u017E v soukrom\u00FDch testovac\u00EDch projektech nebo i pracovn\u00EDch projektech, pokud to situace dovoluje. Z\u00E1rove\u0148 m\u00E1m r\u00E1d pr\u00E1ci v t\u00FDmu, proto\u017Ee m\u016F\u017Eu p\u0159ed\u00E1vat svoje znalosti a poznatky dal\u0161\u00EDm a z\u00E1rove\u0148 \u010Derpat ty jejich."),
+            React.createElement("div", { className: "flex mt-6" },
+                React.createElement("div", { className: "w-1/2" },
+                    React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
+                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
+                React.createElement("div", { className: "w-1/2" }))));
+    }
+}
+exports.default = SkillsComponent;
 
 
 /***/ }),
@@ -849,7 +827,7 @@ const ExperienceCardSlider_1 = __webpack_require__(/*! ./ExperienceCardSlider */
 const react_responsive_1 = __webpack_require__(/*! react-responsive */ "./node_modules/react-responsive/dist/react-responsive.js");
 const erzasoftWork = {
     Description: "Programování a kódování webových stránek za pomoci jazyka C# a technologií ASP.NET MVC 5.",
-    DescriptionHtml: React.createElement("p", null, "V Erasoftu jsme se v\u011Bnovi v\u00FDvoji a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek za pomoci jazyka C# a technologi\u00ED ASP.NET MVC 5. Mimo tyto technologie jsem pou\u017E\u00EDval tak\u00E9 HTML5, Javascript, Sass pro k\u00F3dov\u00E1n\u00ED str\u00E1nek."),
+    DescriptionHtml: React.createElement("p", null, "V Erasoftu jsme se v\u011Bnovi v\u00FDvoji a k\u00F3dov\u00E1n\u00ED webov\u00FDch str\u00E1nek na m\u00FAru za pomoci jazyka C# a technologie ASP.NET MVC 5. Mimo tyto technologie jsem tak\u00E9 b\u011B\u017Ene pou\u017E\u00EDval tak\u00E9 HTML5, Javascript, Sass pro k\u00F3dov\u00E1n\u00ED str\u00E1nek."),
     From: "05/2013",
     To: "03/2014",
     Name: "Erzasoft s.r.o.",
@@ -858,17 +836,17 @@ const erzasoftWork = {
 };
 const trsWork = {
     Description: "Programování Windows Forms aplikací za pomoci jazyka C#",
-    DescriptionHtml: React.createElement("p", null, "Programov\u00E1n\u00ED Windows Forms aplikac\u00ED za pomoci jazyka C#"),
+    DescriptionHtml: React.createElement("p", null, "Zde jsem se v\u011Bnoval v\u00FDvoji Windows Forms aplikace za pomoci jazyka C#."),
     From: "03/2014",
     To: "12/2014",
     Name: "TRS s.r.o.",
-    Technologies: ["EntityFramework", "MS SQL", "Telerik (UI for ASP.NET MVC)", "Javascript", "HTML5", "CSS3", "Sass", "TFS", "Adobe Photoshop"],
+    Technologies: ["Windows Forms"],
     Position: "Software developer"
 };
 const proficreditSoftwareDeveloperWork = {
     Description: "Programování různých typů .NET aplikací. Primárně se jednalo o aplikace vytvořené pomocí technologie WPF a ASP.NET MVC 5 nebo Core. Apliakce pod sebou měly postavnou MSSQL.",
     DescriptionHtml: React.createElement("div", null,
-        React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Aplikace spolupracovaly s MSSQL datab\u00E1z\u00ED.")),
+        React.createElement("p", null, "Jako software developer jsem se pod\u00EDlel na v\u00FDvoji r\u016Fzn\u00FDch typ\u016F aplikac\u00ED na .NET platform\u011B. Prim\u00E1rn\u011B se jednalo o aplikace vytvo\u0159en\u00E9 pomoc\u00ED technologie ASP NET MVC 5, WPF a WCF. K verzov\u00E1n\u00ED zdrojov\u00E9ho k\u00F3du jsem vyu\u017E\u00EDvali TFS. Data jsem ukl\u00E1dali do MSSSQL datab\u00E1ze. M\u016Fj prvn\u00ED v\u011Bt\u0161\u00ED projekt byl klientsk\u00FD port\u00E1l, na kter\u00E9m jsem d\u011Blal vyv\u00EDjel jsem ho pomoci technologie ASP .NET MVC 5. Tento projekt jsem p\u0159ed sv\u00FDm odchodem p\u0159episoval do .NET Core. Tak\u00E9 jsme se pod\u00EDlel na v\u00FDvoji na\u0161eho SOAP API pomoc\u00ED WCF technologie. Mimo to se n\u00E1\u0161 t\u00FDm v\u011Bnoval v\u00FDvoji REST API za pomoci ASP NET Core WebAPI, co\u017E byl tak\u00E9 prvn\u00ED .NET Core projekt v na\u0161\u00ED firm\u011B, kter\u00FD se produk\u010Dn\u011B nasadil. Mimo to jsem se v\u011Bnoval v\u00FDvoji modul\u016F do na\u0161eho intern\u00EDho syst\u00E9mu napsan\u00E9ho v WPF techonologii a MVVM patternu.")),
     From: "01/2015",
     To: "01/2017",
     Name: "PROFI CREDIT Czech, a. s.",
@@ -878,12 +856,22 @@ const proficreditSoftwareDeveloperWork = {
 const proficreditDevelopmentLeaderWork = {
     Description: "Jako development leader jsem se stal členem malého týmu. Mojí rolí je kromě standartního vývoje, také v rámci možností rozhodovat o architektuře aplikace a použité technologii. Součástí mé práce se také stalo code review, které se snažím dělat pro programátory mého týmu.",
     DescriptionHtml: React.createElement("div", null,
-        React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval co v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B.")),
+        React.createElement("p", null, "S novou pozic\u00ED p\u0159i\u0161la nov\u00E1 zodpov\u011Bdnost. Po roz\u0161\u00ED\u0159en\u00ED IT odd\u011Blen\u00ED a rozd\u011Blen\u00ED na mal\u00E9 teamy jsem se stal development leaderem jednoho z nich. I s novou pozic\u00ED jsem se prim\u00E1rn\u011B v\u011Bnoval programov\u00E1n\u00ED projekt\u016F, kter\u00E9 jsem v teamu m\u011Bli na starost. Vyv\u00EDjeli jsme prim\u00E1rn\u011B ASP NET Core MVC, ASP NET Core WebApi a WPF. Pod ruma n\u00E1m pro\u0161la spousta vel\u00FDch jako nov\u00E9 REST API pomoc\u00ED technologie ASP .NET Core WebAPI nov\u00E9 moduly pro n\u00E1\u0161 intern\u00ED syst\u00E9m nebo p\u0159epis klientsk\u00E9ho port\u00E1lu do .NET Core. Mimo to jsem se za\u010Dal v\u011Bnovat code review pro program\u00E1tory v na\u0161em teamu a sna\u017Eil jsem se hl\u00EDdat, aby k\u00F3d kter\u00FD odpo\u0161t\u011Bl n\u00E1\u0161 t\u00FDm byl \u010Dist\u00FD a spol\u0148oval SOLID principy. Jako developement leader jsem m\u011Bl mo\u017Enost rozhodovat o architektu\u0159e aplikace a pou\u017Eit\u00E9 technologii. Tak\u00E9 jsem se v\u00EDce zapojoval do v\u00FDvoje na\u0161ich core projekt\u016F a diskuze o t\u011Bchto projektech. V na\u0161em teamu prob\u00EDhal v\u00FDvoj pln\u011B agiln\u011B a k pl\u00E1nov\u00E1n\u00ED sprint\u016F jsme pou\u017E\u00EDvali JIRU.")),
     From: "01/2017",
-    To: "současnost",
+    To: "09/2020",
     Name: "PROFI CREDIT Czech, a. s.",
     Technologies: ["JIRA", "ASP.NET Core", "Web API", "Javascript", "HTML5", "CSS3", "Team foundation server", "WCF", "WinService", "PHP"],
     Position: "Developement leader"
+};
+const dakoSoftwareDeveloper = {
+    Description: "",
+    DescriptionHtml: React.createElement("div", null,
+        React.createElement("p", null, "Moj\u00ED hlavn\u00ED pracovn\u00ED n\u00E1pln\u00ED je v\u00FDvoj aplikac\u00ED hlavn\u011B za pomoci technologie ASP.NET Core a to prim\u00E1rn\u011B WebApi, ale tak\u00E9 MVC. Vyv\u00EDj\u00EDm hlavn\u011B \u00FApln\u011B nov\u00FD intern\u00ED port\u00E1l, kter\u00FDslou\u017E\u00ED jako vizu\u00E1ln\u00ED str\u00E1nka pro obsluhu nejr\u016Fzn\u011Bj\u0161\u00EDch akc\u00ED. T\u00EDm p\u00E1dem se tak\u00E9 mnohem v\u00EDce v\u011Bnuji v\u00FDvoji frontendu a tam vyu\u017E\u00EDv\u00E1m framework ReactJs a programovac\u00ED jazyk Typescript. Mimo to jsem se tak\u00E9 v\u011Bnoval nastaven\u00ED branch stategy na\u0161eho GIT repository, kter\u00E9 by n\u00E1m vyhovovalo a z\u00E1kladn\u00EDmu nastaven\u00ED DevOps pipeline pro automatick\u00E9 buildy.")),
+    From: "09/2020",
+    To: "současnost",
+    Name: "DAKO-CZ, a.s.",
+    Technologies: ["ASP.NET Core", "Web API", "ReactJs", "Typescript", "HTML5", "CSS3", "GIT", "SignalR", "DevOps"],
+    Position: "Software developer"
 };
 const highSchool = {
     Description: undefined,
@@ -905,21 +893,23 @@ const WorkAndSchoolComponent = (props) => {
     const isMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 640px)' });
     const isTablet = react_responsive_1.useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' });
     const isDesktop = react_responsive_1.useMediaQuery({ query: '(min-width: 1024px)' });
+    const cards = [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork, dakoSoftwareDeveloper];
+    const education = [highSchool, university];
     return (React.createElement("div", { className: "text-white px-12" },
         React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
         React.createElement("div", { className: "flex flex-col" },
             React.createElement("div", { className: "w-full" },
                 React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
                 React.createElement("div", { className: "flex mt-4" },
-                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
-                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }),
-                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork] }))),
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: cards }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: cards }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: cards }))),
             React.createElement("div", { className: "w-full mt-12" },
                 React.createElement("h2", { className: "text-2xl" }, "Vzd\u011Bl\u00E1n\u00ED"),
                 React.createElement("div", { className: "flex mt-4" },
-                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: [highSchool, university] }),
-                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: [highSchool, university] }),
-                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: [highSchool, university] }))))));
+                    isDesktop && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 3, cards: education }),
+                    isTablet && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 2, cards: education }),
+                    isMobile && React.createElement(ExperienceCardSlider_1.ExperinceCardSliderComponent, { maxItemsCount: 1, cards: education }))))));
 };
 exports.default = WorkAndSchoolComponent;
 

@@ -1,16 +1,7 @@
 ﻿import * as React from 'react';
-import { Tabs } from './Tabs';
-import SvgIcons from './SvgIcons';
-
-interface Icon {
-    tabCode?: Tabs;
-    svgIcon: JSX.Element;
-    itemClass: string;
-    href: string;
-    download: string;
-    target: string;
-    title: string;
-}
+import { Tabs } from './Models/Tabs';
+import SvgIcons from './Icons/SvgIcons';
+import { Icon } from './Models/Icon';
 
 export default class LeftMenuComponent extends React.Component<any, any>{
     icons: Array<Icon>;

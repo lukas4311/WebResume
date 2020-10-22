@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import { IExperienceCardProps, ExperienceCardComponent } from './ExperienceCard'
+import { ExperienceCardComponent } from './ExperienceCard'
+import { IExperienceCardProps } from "./Models/IExperienceCardProps";
 
 const iconSize: string = '30px';
 
@@ -81,7 +82,7 @@ export class ExperinceCardSliderComponent extends React.Component<IExperinceCard
                     <CSSTransition key={this.animationDirection} timeout={timeout} classNames="pageSlider" mountOnEnter={false} unmountOnExit={true}>
                         <div className={this.animationDirection}>
                             {this.state.cardsToShow.map((card: IExperienceCardProps, i: number) => (
-                                <div className={`w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2`} key={i}>
+                                <div className={`w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2 shadows duration-500`} key={i}>
                                     <ExperienceCardComponent {...card} />
                                 </div>
                             ))}
