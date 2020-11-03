@@ -125,7 +125,9 @@ class AboutMeComponent extends React.Component {
                 React.createElement("span", null, "Developer"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", null, "29y")),
-            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" }, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED. Bav\u00ED m\u011B pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Neust\u00E1le se na sob\u011B pracuji, vylpe\u0161uji a roz\u0161i\u0159uji svoje dovednosti."),
+            React.createElement("section", { className: "description mt-8 pb-8 border-b border-white text-justify" },
+                React.createElement("p", null, "Jsem full stack .NET a MSSQL developer s v\u00EDce ne\u017E 6 letou prax\u00ED. V\u00EDce jist\u00FD si jsem sice na backendu, ale r\u00E1d pracuji i na frontendu. Tam vyu\u017E\u00EDv\u00E1m Typescript spole\u010Dn\u011B s frameworkem ReactJs. Na stylov\u00E1n\u00ED vyu\u017E\u00EDv\u00E1m CSS framework Tailwind CSS. Bav\u00ED m\u011B neust\u00E1le pozn\u00E1vat nov\u00E9 technologie a zkou\u0161et je v praxi. Po\u0159\u00E1d se na sob\u011B pracuji, vylep\u0161uji a roz\u0161i\u0159uji svoje dovednosti."),
+                React.createElement("p", null, "Mimo programov\u00E1n\u00ED jsem podsledn\u00ED dobou na\u0161el zal\u00EDben\u00ED v kryptom\u011Bn\u00E1ch resp. v Bitcoinu a obecn\u011B se r\u00E1d vzd\u011Bl\u00E1v\u00E1m v oblasti ekonomie akciov\u00FDch trh\u016F a pen\u011Bz.")),
             React.createElement("section", { className: "mt-8 pb-8 border-b border-white" },
                 React.createElement("h2", { className: "text-xl" }, "Kontakty"),
                 React.createElement("div", { className: "flex justify-around" },
@@ -866,7 +868,7 @@ const proficreditDevelopmentLeaderWork = {
 const dakoSoftwareDeveloper = {
     Description: "",
     DescriptionHtml: React.createElement("div", null,
-        React.createElement("p", null, "Moj\u00ED hlavn\u00ED pracovn\u00ED n\u00E1pln\u00ED je v\u00FDvoj aplikac\u00ED hlavn\u011B za pomoci technologie ASP.NET Core a to prim\u00E1rn\u011B WebApi, ale tak\u00E9 MVC. Vyv\u00EDj\u00EDm hlavn\u011B \u00FApln\u011B nov\u00FD intern\u00ED port\u00E1l, kter\u00FDslou\u017E\u00ED jako vizu\u00E1ln\u00ED str\u00E1nka pro obsluhu nejr\u016Fzn\u011Bj\u0161\u00EDch akc\u00ED. T\u00EDm p\u00E1dem se tak\u00E9 mnohem v\u00EDce v\u011Bnuji v\u00FDvoji frontendu a tam vyu\u017E\u00EDv\u00E1m framework ReactJs a programovac\u00ED jazyk Typescript. Mimo to jsem se tak\u00E9 v\u011Bnoval nastaven\u00ED branch stategy na\u0161eho GIT repository, kter\u00E9 by n\u00E1m vyhovovalo a z\u00E1kladn\u00EDmu nastaven\u00ED DevOps pipeline pro automatick\u00E9 buildy.")),
+        React.createElement("p", null, "Moj\u00ED hlavn\u00ED pracovn\u00ED n\u00E1pln\u00ED je v\u00FDvoj aplikac\u00ED prim\u00E1rn\u011B za pomoci technologie ASP.NET Core a to prim\u00E1rn\u011B WebApi, ale tak\u00E9 MVC. Vyv\u00EDj\u00EDme hlavn\u011B \u00FApln\u011B nov\u00FD intern\u00ED port\u00E1l, kter\u00FDslou\u017E\u00ED jako vizu\u00E1ln\u00ED str\u00E1nka pro obsluhu nejr\u016Fzn\u011Bj\u0161\u00EDch akc\u00ED. T\u00EDm p\u00E1dem se tak\u00E9 mnohem v\u00EDce v\u011Bnuji v\u00FDvoji frontendu a tam vyu\u017E\u00EDv\u00E1m framework ReactJs a Typescript. Mimo to jsem se tak\u00E9 v\u011Bnoval nastaven\u00ED branch stategy na\u0161eho GIT repository, kter\u00E9 by n\u00E1m vyhovovalo a z\u00E1kladn\u00EDmu nastaven\u00ED DevOps pipeline pro automatick\u00E9 buildy.")),
     From: "09/2020",
     To: "současnost",
     Name: "DAKO-CZ, a.s.",
@@ -893,8 +895,8 @@ const WorkAndSchoolComponent = (props) => {
     const isMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 640px)' });
     const isTablet = react_responsive_1.useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' });
     const isDesktop = react_responsive_1.useMediaQuery({ query: '(min-width: 1024px)' });
-    const cards = [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork, dakoSoftwareDeveloper];
-    const education = [highSchool, university];
+    const cards = [dakoSoftwareDeveloper, proficreditDevelopmentLeaderWork, proficreditSoftwareDeveloperWork, trsWork, erzasoftWork];
+    const education = [university, highSchool];
     return (React.createElement("div", { className: "text-white px-12" },
         React.createElement("h1", { className: "text-left text-5xl mt-6" }, "Praxe a vzd\u011Bl\u00E1n\u00ED"),
         React.createElement("div", { className: "flex flex-col" },

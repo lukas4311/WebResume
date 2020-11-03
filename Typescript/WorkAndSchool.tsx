@@ -73,9 +73,9 @@ const dakoSoftwareDeveloper: IExperienceCardProps = {
     DescriptionHtml:
         <div>
             <p>
-                Mojí hlavní pracovní náplní je vývoj aplikací hlavně za pomoci technologie ASP.NET Core a to primárně WebApi, ale také MVC.
-                Vyvíjím hlavně úplně nový interní portál, kterýslouží jako vizuální stránka pro obsluhu nejrůznějších akcí. Tím pádem se také 
-                mnohem více věnuji vývoji frontendu a tam využívám framework ReactJs a programovací jazyk Typescript. Mimo to jsem se také věnoval 
+                Mojí hlavní pracovní náplní je vývoj aplikací primárně za pomoci technologie ASP.NET Core a to primárně WebApi, ale také MVC.
+                Vyvíjíme hlavně úplně nový interní portál, kterýslouží jako vizuální stránka pro obsluhu nejrůznějších akcí. Tím pádem se také
+                mnohem více věnuji vývoji frontendu a tam využívám framework ReactJs a Typescript. Mimo to jsem se také věnoval
                 nastavení branch stategy našeho GIT repository, které by nám vyhovovalo a základnímu nastavení DevOps pipeline pro automatické buildy.
             </p>
         </div>,
@@ -108,8 +108,8 @@ const WorkAndSchoolComponent = (props: {}) => {
     const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
     const isTablet = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' })
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })
-    const cards = [erzasoftWork, trsWork, proficreditSoftwareDeveloperWork, proficreditDevelopmentLeaderWork, dakoSoftwareDeveloper];
-    const education = [highSchool, university];
+    const cards = [dakoSoftwareDeveloper, proficreditDevelopmentLeaderWork, proficreditSoftwareDeveloperWork, trsWork, erzasoftWork];
+    const education = [university, highSchool];
 
     return (
         <div className="text-white px-12">

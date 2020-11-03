@@ -25,8 +25,12 @@ export default class AboutMeComponent extends React.Component<{}, any>{
                     <span>29y</span>
                 </div>
                 <section className="description mt-8 pb-8 border-b border-white text-justify">
-                    Jsem full stack .NET a MSSQL developer s více než 6 letou praxí. 
-                    Baví mě poznávat nové technologie a zkoušet je v praxi. Neustále se na sobě pracuji, vylpešuji a rozšiřuji svoje dovednosti.
+                    <p>
+                        Jsem full stack .NET a MSSQL developer s více než 6 letou praxí. Více jistý si jsem sice na backendu, ale rád pracuji i na frontendu.
+                        Tam využívám Typescript společně s frameworkem ReactJs. Na stylování využívám CSS framework Tailwind CSS.
+                        Baví mě neustále poznávat nové technologie a zkoušet je v praxi. Pořád se na sobě pracuji, vylepšuji a rozšiřuji svoje dovednosti.
+                    </p>
+                    <p>Mimo programování jsem podslední dobou našel zalíbení v kryptoměnách resp. v Bitcoinu a obecně se rád vzdělávám v oblasti ekonomie akciových trhů a peněz.</p>
                 </section>
                 <section className="mt-8 pb-8 border-b border-white">
                     <h2 className="text-xl">Kontakty</h2>
@@ -39,7 +43,7 @@ export default class AboutMeComponent extends React.Component<{}, any>{
                             {SvgIcons.mailIcon}
                             <a className="text-white block" href="mailto:salficky.job@gmail.com">salficky.job@gmail.com</a>
                         </div>
-                        <div className="text-center"> 
+                        <div className="text-center">
                             {SvgIcons.linkedInIcon}
                             <a className="text-white block" href="http://www.linkedin.com/in/salfickylukas">LinkedIn</a>
                         </div>
