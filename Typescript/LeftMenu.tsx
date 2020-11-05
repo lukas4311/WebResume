@@ -2,14 +2,8 @@
 import { Tabs } from './Models/Tabs';
 import SvgIcons from './Icons/SvgIcons';
 import { Icon } from './Models/Icon';
-
-class LeftMenuComponentState {
-    activeTab: string;
-}
-
-class LeftMenuComponentProps {
-    setNewActiveTab: (tabCode: Tabs) => void;
-}
+import { LeftMenuComponentProps } from './LeftMenuComponentProps';
+import { LeftMenuComponentState } from './LeftMenuComponentState';
 
 export default class LeftMenuComponent extends React.Component<LeftMenuComponentProps, LeftMenuComponentState>{
     icons: Array<Icon>;

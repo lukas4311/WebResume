@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-class ProgressLineProps {
-    label: string;
-    backgroundColor?: string;
-    visualParts: [{
-        percentage: string,
-        color: string
-    }];
-}
+import { ProgressLineProps } from "./ProgressLineProps";
 
 const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [{ percentage: "0", color: "white" }] }: ProgressLineProps) => {
     const [widths, setWidths] = useState(visualParts.map(() => "0"));
