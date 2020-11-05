@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { IInterestsCardProps } from './Models/IInterestsCardProps';
 
-export class InterestsCard extends React.Component<IInterestsCardProps, any>{
+export class InterestsCard extends React.Component<IInterestsCardProps, {}>{
     constructor(props: IInterestsCardProps) {
         super(props);
     }

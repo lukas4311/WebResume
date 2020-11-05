@@ -618,6 +618,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tabs.ts");
 const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
+class LeftMenuComponentState {
+}
+class LeftMenuComponentProps {
+}
 class LeftMenuComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -639,7 +643,6 @@ class LeftMenuComponent extends React.Component {
         };
         this.initIcons();
         this.state = { activeTab: 'personalInfo' };
-        this.tabClick = this.tabClick.bind(this);
     }
     render() {
         return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },

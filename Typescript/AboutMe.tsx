@@ -2,8 +2,9 @@
 import { InterestsCard } from './InterestsCard'
 import { IInterestsCardProps } from "./Models/IInterestsCardProps";
 import SvgIcons from './Icons/SvgIcons'
+import { AboutMeComponentState } from './AboutMeComponentState';
 
-export default class AboutMeComponent extends React.Component<{}, any>{
+export default class AboutMeComponent extends React.Component<{}, AboutMeComponentState>{
     constructor(props: {}) {
         super(props);
         let interestsObjects: Array<IInterestsCardProps> = new Array<IInterestsCardProps>();

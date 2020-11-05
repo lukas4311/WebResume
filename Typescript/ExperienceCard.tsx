@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { ExperienceCardComponentState } from './ExperienceCardComponentState';
 import { Modal } from './Modal'
 import { IExperienceCardProps } from './Models/IExperienceCardProps';
 
-export class ExperienceCardComponent extends React.Component<IExperienceCardProps, any>{
+export class ExperienceCardComponent extends React.Component<IExperienceCardProps, ExperienceCardComponentState>{
     constructor(props: IExperienceCardProps) {
         super(props);
         this.showDescription = this.showDescription.bind(this);

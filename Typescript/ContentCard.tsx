@@ -6,7 +6,7 @@ import WorkAndSchoolComponent from "./WorkAndSchool"
 import SkillsComponent from './Skills'
 import { IContentCardComponentProps } from './IContentCardComponentProps';
 
-export default class ContentCardComponent extends React.Component<IContentCardComponentProps, any>{
+export default class ContentCardComponent extends React.Component<IContentCardComponentProps, {}>{
     constructor(props: IContentCardComponentProps) {
         super(props);
     }

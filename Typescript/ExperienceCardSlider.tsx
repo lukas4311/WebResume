@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { ExperienceCardComponent } from './ExperienceCard'
+import { ExperinceCardSliderComponentState } from './ExperinceCardSliderComponentState';
 import SvgIcons from './Icons/SvgIcons';
 import { IExperinceCardSliderComponent } from './IExperinceCardSliderComponent';
 import { IExperienceCardProps } from "./Models/IExperienceCardProps";
 
-export class ExperinceCardSliderComponent extends React.Component<IExperinceCardSliderComponent, any>{
+export class ExperinceCardSliderComponent extends React.Component<IExperinceCardSliderComponent, ExperinceCardSliderComponentState>{
     private itemsCount: number;
     private maxItems: number;
     private animationDirection: string = 'flex left';
