@@ -334,26 +334,39 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const react_transition_group_1 = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 const ExperienceCard_1 = __webpack_require__(/*! ./ExperienceCard */ "./Typescript/ExperienceCard.tsx");
-const iconSize = '30px';
-const arrowLeft = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
-    React.createElement("path", { d: "M7.701,14.276l9.586-9.585c0.879-0.878,2.317-0.878,3.195,0l0.801,0.8c0.878,0.877,0.878,2.316,0,3.194  L13.968,16l7.315,7.315c0.878,0.878,0.878,2.317,0,3.194l-0.801,0.8c-0.878,0.879-2.316,0.879-3.195,0l-9.586-9.587  C7.229,17.252,7.02,16.62,7.054,16C7.02,15.38,7.229,14.748,7.701,14.276z" }));
-const arrowRight = React.createElement("svg", { id: "Layer_1", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32", width: iconSize },
-    React.createElement("path", { d: "M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z" }));
+const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "./Typescript/Icons/SvgIcons.tsx"));
 class ExperinceCardSliderComponent extends React.Component {
     constructor(props) {
         super(props);
         this.animationDirection = 'flex left';
+        this.clickLeft = () => {
+            let newIndex = this.state.actualIndex - 1;
+            this.animationDirection = 'flex left ' + newIndex;
+            if (newIndex < 0)
+                newIndex = this.itemsCount - 1;
+            this.setState((s, _) => ({ actualIndex: newIndex }));
+            this.showCards(newIndex);
+        };
+        this.clickRight = () => {
+            let newIndex = this.state.actualIndex + 1;
+            this.animationDirection = 'flex right ' + newIndex;
+            if (newIndex > this.itemsCount - 1)
+                newIndex = 0;
+            this.setState((s, _) => ({ actualIndex: newIndex }));
+            this.showCards(newIndex);
+        };
         this.itemsCount = props.cards.length;
         this.maxItems = props.maxItemsCount;
         if (this.itemsCount < this.maxItems)
             this.maxItems = this.itemsCount;
         this.state = { actualIndex: 0, cardsToShow: Array() };
-        this.clickLeft = this.clickLeft.bind(this);
-        this.clickRight = this.clickRight.bind(this);
     }
     componentDidMount() {
         this.showCards(0);
@@ -369,32 +382,16 @@ class ExperinceCardSliderComponent extends React.Component {
         }
         this.setState({ cardsToShow: cardsToShow });
     }
-    clickLeft() {
-        let newIndex = this.state.actualIndex - 1;
-        this.animationDirection = 'flex left ' + newIndex;
-        if (newIndex < 0)
-            newIndex = this.itemsCount - 1;
-        this.setState((s, _) => ({ actualIndex: newIndex }));
-        this.showCards(newIndex);
-    }
-    clickRight() {
-        let newIndex = this.state.actualIndex + 1;
-        this.animationDirection = 'flex right ' + newIndex;
-        if (newIndex > this.itemsCount - 1)
-            newIndex = 0;
-        this.setState((s, _) => ({ actualIndex: newIndex }));
-        this.showCards(newIndex);
-    }
     render() {
         const timeout = { enter: 800, exit: 400 };
         let showArrows = this.props.cards.length > this.maxItems;
         return (React.createElement("div", { className: "flex items-center w-full" },
-            showArrows ? React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, arrowLeft) : "",
+            showArrows ? React.createElement("div", { onClick: this.clickLeft, className: "w-8" }, SvgIcons_1.default.arrowLeft) : "",
             React.createElement(react_transition_group_1.TransitionGroup, { component: "div", className: "app border-t border-white pt-4 w-full overflow-hidden" },
                 React.createElement(react_transition_group_1.CSSTransition, { key: this.animationDirection, timeout: timeout, classNames: "pageSlider", mountOnEnter: false, unmountOnExit: true },
                     React.createElement("div", { className: this.animationDirection }, this.state.cardsToShow.map((card, i) => (React.createElement("div", { className: `w-1/${this.props.maxItemsCount} page p-2 bg-buttonsGray rounded-lg m-2 shadows duration-500`, key: i },
                         React.createElement(ExperienceCard_1.ExperienceCardComponent, Object.assign({}, card)))))))),
-            showArrows ? React.createElement("div", { className: "w-8", onClick: this.clickRight }, arrowRight) : ""));
+            showArrows ? React.createElement("div", { className: "w-8", onClick: this.clickRight }, SvgIcons_1.default.arrowRight) : ""));
     }
 }
 exports.ExperinceCardSliderComponent = ExperinceCardSliderComponent;
@@ -558,6 +555,10 @@ SvgIcons.chartSvg = react_1.default.createElement("svg", { className: "menuIcon"
             react_1.default.createElement("rect", { x: "5.051", y: "7.786", width: "16.313", height: "5.373" }),
             react_1.default.createElement("rect", { x: "5.051", y: "14.002", width: "13.76", height: "5.376" }),
             react_1.default.createElement("rect", { x: "5.051", y: "20.289", width: "16.688", height: "5.374" }))));
+SvgIcons.arrowLeft = react_1.default.createElement("svg", { id: "arrowLeftIcon", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32" },
+    react_1.default.createElement("path", { d: "M7.701,14.276l9.586-9.585c0.879-0.878,2.317-0.878,3.195,0l0.801,0.8c0.878,0.877,0.878,2.316,0,3.194  L13.968,16l7.315,7.315c0.878,0.878,0.878,2.317,0,3.194l-0.801,0.8c-0.878,0.879-2.316,0.879-3.195,0l-9.586-9.587  C7.229,17.252,7.02,16.62,7.054,16C7.02,15.38,7.229,14.748,7.701,14.276z" }));
+SvgIcons.arrowRight = react_1.default.createElement("svg", { id: "arrowRightIcon", className: "cursor-pointer fill-current text-white hover:text-mainBlue duration-500 ease-in-out", version: "1.1", viewBox: "0 0 32 32" },
+    react_1.default.createElement("path", { d: "M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z" }));
 exports.default = SvgIcons;
 
 

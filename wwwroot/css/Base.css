@@ -217,3 +217,9 @@ body {
   -webkit-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 6px 11px -4px rgba(0, 0, 0, 0.75); }
+
+#arrowLeft {
+  width: 30px; }
+
+#arrowRight {
+  width: 30px; }

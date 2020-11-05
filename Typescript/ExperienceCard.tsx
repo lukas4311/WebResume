@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Modal } from './Modal'
-import { IModalProps } from "./IModalProps";
 import { IExperienceCardProps } from './Models/IExperienceCardProps';
 
 export class ExperienceCardComponent extends React.Component<IExperienceCardProps, any>{
@@ -11,16 +10,16 @@ export class ExperienceCardComponent extends React.Component<IExperienceCardProp
         this.state = { showDescriptionModal: false };
     }
 
-    showDescription = () => {
+    private showDescription = () => {
         if (this.props.Description != undefined)
             this.setState({ showDescriptionModal: true });
     };
 
-    hideDescription = () => {
+    private hideDescription = () => {
         this.setState({ showDescriptionModal: false });
     };
 
-    render() {
+    public render() {
         return (
             <div className="flex">
                 <Modal show={this.state.showDescriptionModal} handleClose={this.hideDescription}>
