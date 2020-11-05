@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-type ProgressLineProps = {
-    label: string,
-    backgroundColor?: string,
+class ProgressLineProps {
+    label: string;
+    backgroundColor?: string;
     visualParts: [{
         percentage: string,
         color: string
-    }]
+    }];
 }
 
-const ProgressLine = ({
-    label,
-    backgroundColor = "#e5e5e5",
-    visualParts = [
-        {
-            percentage: "0",
-            color: "white"
-        }
-    ]
-}: ProgressLineProps) => {
-    const [widths, setWidths] = useState(
-        visualParts.map(() => {
-            return "0";
-        })
-    );
+const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [{ percentage: "0", color: "white" }] }: ProgressLineProps) => {
+    const [widths, setWidths] = useState(visualParts.map(() => "0"));
 
     useEffect(() => {
         requestAnimationFrame(() => {
@@ -39,9 +26,9 @@ const ProgressLine = ({
         <>
             <div className="progressLabel h-4">{label}</div>
             <div className="flex h-4 mb-4 mt-2 shadow" style={{ backgroundColor }}>
-                {visualParts.map((item, index) => {                    
+                {visualParts.map((_, index) => {
                     return (
-                        <div                           
+                        <div
                             key={index}
                             style={{
                                 width: widths[index]

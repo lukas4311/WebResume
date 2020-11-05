@@ -13,7 +13,7 @@ export default class AboutMeComponent extends React.Component<{}, any>{
         this.state = { interests: interestsObjects };
     }
 
-    render() {
+    public render() {
         return (
             <div className="text-white px-12">
                 <h1 className="text-left text-5xl mt-6">O mě</h1>

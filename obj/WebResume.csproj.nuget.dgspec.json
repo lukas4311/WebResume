@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VSProjects\\VS2019\\WebResume\\WebResume.csproj": {}
+    "C:\\VsProjects\\WebResume\\WebResume.csproj": {}
   },
   "projects": {
-    "D:\\VSProjects\\VS2019\\WebResume\\WebResume.csproj": {
+    "C:\\VsProjects\\WebResume\\WebResume.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VSProjects\\VS2019\\WebResume\\WebResume.csproj",
+        "projectUniqueName": "C:\\VsProjects\\WebResume\\WebResume.csproj",
         "projectName": "WebResume",
-        "projectPath": "D:\\VSProjects\\VS2019\\WebResume\\WebResume.csproj",
-        "packagesPath": "C:\\Users\\Me\\.nuget\\packages\\",
-        "outputPath": "D:\\VSProjects\\VS2019\\WebResume\\obj\\",
+        "projectPath": "C:\\VsProjects\\WebResume\\WebResume.csproj",
+        "packagesPath": "C:\\Users\\lukas.salficky\\.nuget\\packages\\",
+        "outputPath": "C:\\VsProjects\\WebResume\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "\\\\dako-cz.cz\\users\\DAK\\Profiles\\lukas.salficky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

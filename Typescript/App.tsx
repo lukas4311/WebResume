@@ -6,19 +6,16 @@ import { Tabs } from './Models/Tabs'
 import { AppState } from './AppState';
 
 class AppComponent extends React.Component<{}, AppState> {
-    showMessage = true;
-
     constructor(props: {}) {
         super(props);
         this.state = { activeTab: Tabs.PersonalInfo }
-        this.tabClick = this.tabClick.bind(this);
     }
 
-    tabClick(tab: Tabs) {
+    private tabClick = (tab: Tabs) => {
         this.setState({ activeTab: tab });
     }
 
-    render() {
+    public render() {
         return (
             <React.Fragment>
                 <div className="flex h-full min-h-full float-left w-full lg:float-none">

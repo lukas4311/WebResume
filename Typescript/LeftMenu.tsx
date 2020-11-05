@@ -14,7 +14,7 @@ export default class LeftMenuComponent extends React.Component<any, any>{
         this.tabClick = this.tabClick.bind(this);
     }
 
-    initIcons() {
+    private initIcons = () => {
         this.icons = [
             { title: "O mě", tabCode: Tabs.PersonalInfo, svgIcon: SvgIcons.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
             { title: "Zkušenosti", tabCode: Tabs.WorkEducation, svgIcon: SvgIcons.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
@@ -23,12 +23,10 @@ export default class LeftMenuComponent extends React.Component<any, any>{
         ];
     }
 
-    tabClick(tabCode: Tabs, _: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-
+    private tabClick = (tabCode: Tabs, _: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         if (tabCode != Tabs.DownloadResume) {
             this.props.setNewActiveTab(tabCode);
-            if(window.matchMedia('(max-width: 1024px)').matches)
-            {
+            if (window.matchMedia('(max-width: 1024px)').matches) {
                 document.getElementById("menu").style.display = "none";
             }
         }

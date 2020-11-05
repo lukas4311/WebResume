@@ -104,7 +104,7 @@ const university: IExperienceCardProps = {
     Position: undefined
 };
 
-const WorkAndSchoolComponent = (props: {}) => {
+const WorkAndSchoolComponent = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
     const isTablet = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' })
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })

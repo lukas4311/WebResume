@@ -178,12 +178,10 @@ const Tabs_1 = __webpack_require__(/*! ./Models/Tabs */ "./Typescript/Models/Tab
 class AppComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.showMessage = true;
+        this.tabClick = (tab) => {
+            this.setState({ activeTab: tab });
+        };
         this.state = { activeTab: Tabs_1.Tabs.PersonalInfo };
-        this.tabClick = this.tabClick.bind(this);
-    }
-    tabClick(tab) {
-        this.setState({ activeTab: tab });
     }
     render() {
         return (React.createElement(React.Fragment, null,
@@ -623,25 +621,25 @@ const SvgIcons_1 = __importDefault(__webpack_require__(/*! ./Icons/SvgIcons */ "
 class LeftMenuComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.initIcons = () => {
+            this.icons = [
+                { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+                { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+                { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
+                { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
+            ];
+        };
+        this.tabClick = (tabCode, _) => {
+            if (tabCode != Tabs_1.Tabs.DownloadResume) {
+                this.props.setNewActiveTab(tabCode);
+                if (window.matchMedia('(max-width: 1024px)').matches) {
+                    document.getElementById("menu").style.display = "none";
+                }
+            }
+        };
         this.initIcons();
         this.state = { activeTab: 'personalInfo' };
         this.tabClick = this.tabClick.bind(this);
-    }
-    initIcons() {
-        this.icons = [
-            { title: "O mě", tabCode: Tabs_1.Tabs.PersonalInfo, svgIcon: SvgIcons_1.default.personSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Zkušenosti", tabCode: Tabs_1.Tabs.WorkEducation, svgIcon: SvgIcons_1.default.workSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Skills", tabCode: Tabs_1.Tabs.Skills, svgIcon: SvgIcons_1.default.chartSvg, itemClass: '', href: undefined, download: undefined, target: undefined },
-            { title: "Stáhnout CV", tabCode: Tabs_1.Tabs.DownloadResume, svgIcon: SvgIcons_1.default.downloadSvg, itemClass: '', href: './assets/Salficky_CV.pdf', download: "Salficky_CV.pdf", target: "_blank" }
-        ];
-    }
-    tabClick(tabCode, _) {
-        if (tabCode != Tabs_1.Tabs.DownloadResume) {
-            this.props.setNewActiveTab(tabCode);
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-                document.getElementById("menu").style.display = "none";
-            }
-        }
     }
     render() {
         return (React.createElement("div", { className: "flex flex-col h-full justify-center" }, this.icons.map((item, i) => (React.createElement("div", { key: i, className: `text-center p-2 ${item.itemClass}` },
@@ -724,15 +722,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
-    {
-        percentage: "0",
-        color: "white"
-    }
-] }) => {
-    const [widths, setWidths] = react_1.useState(visualParts.map(() => {
-        return "0";
-    }));
+class ProgressLineProps {
+}
+const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [{ percentage: "0", color: "white" }] }) => {
+    const [widths, setWidths] = react_1.useState(visualParts.map(() => "0"));
     react_1.useEffect(() => {
         requestAnimationFrame(() => {
             setWidths(visualParts.map(item => {
@@ -742,7 +735,7 @@ const ProgressLine = ({ label, backgroundColor = "#e5e5e5", visualParts = [
     }, [visualParts]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: "progressLabel h-4" }, label),
-        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((item, index) => {
+        react_1.default.createElement("div", { className: "flex h-4 mb-4 mt-2 shadow", style: { backgroundColor } }, visualParts.map((_, index) => {
             return (react_1.default.createElement("div", { key: index, style: {
                     width: widths[index]
                 }, className: "progressVisualPart h-4" }));
@@ -778,12 +771,14 @@ const ProgressLine_1 = __importDefault(__webpack_require__(/*! ./ProgressLine */
 class SkillsComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
+        this.state = {
+            skills: [{ name: "C#", ratingPercent: 100 }, { name: "ASP .Net Core MVC", ratingPercent: 90 }, { name: "ASP .Net Core WebApi", ratingPercent: 90 },
                 { name: "Javascript", ratingPercent: 80 }, { name: "Typescript", ratingPercent: 80 }, { name: "HTML", ratingPercent: 80 }, { name: "CSS", ratingPercent: 80 },
                 { name: "Sass", ratingPercent: 80 }, { name: "WCF", ratingPercent: 70 }, { name: "WPF", ratingPercent: 85 }, { name: "ReactJs", ratingPercent: 65 },
-                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }] };
+                { name: "Git", ratingPercent: 60 }, { name: "TFS", ratingPercent: 60 }, { name: "JIRA", ratingPercent: 50 }]
+        };
     }
-    renderProgressBarForSkill(item, index) {
+    renderProgressBarForSkill(item) {
         return (React.createElement("div", null,
             React.createElement(ProgressLine_1.default, { label: item.name, backgroundColor: "white", visualParts: [
                     {
@@ -799,7 +794,7 @@ class SkillsComponent extends React.Component {
             React.createElement("div", { className: "flex mt-6" },
                 React.createElement("div", { className: "w-1/2" },
                     React.createElement("h2", { className: "text-2xl" }, "Zku\u0161enosti"),
-                    this.state.skills.map((item, i) => this.renderProgressBarForSkill(item, i))),
+                    this.state.skills.map((item) => this.renderProgressBarForSkill(item))),
                 React.createElement("div", { className: "w-1/2" }))));
     }
 }
@@ -892,7 +887,7 @@ const university = {
     Technologies: [],
     Position: undefined
 };
-const WorkAndSchoolComponent = (props) => {
+const WorkAndSchoolComponent = () => {
     const isMobile = react_responsive_1.useMediaQuery({ query: '(max-width: 640px)' });
     const isTablet = react_responsive_1.useMediaQuery({ query: '(min-width: 641px) and (max-width: 1023px)' });
     const isDesktop = react_responsive_1.useMediaQuery({ query: '(min-width: 1024px)' });

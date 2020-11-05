@@ -4,17 +4,14 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import AboutMeComponent from "./AboutMe"
 import WorkAndSchoolComponent from "./WorkAndSchool"
 import SkillsComponent from './Skills'
+import { IContentCardComponentProps } from './IContentCardComponentProps';
 
-interface IProps {
-    tabCode: Tabs;
-}
-
-export default class ContentCardComponent extends React.Component<IProps, any>{
-    constructor(props: IProps) {
+export default class ContentCardComponent extends React.Component<IContentCardComponentProps, any>{
+    constructor(props: IContentCardComponentProps) {
         super(props);
     }
 
-    render() {
+    public render() {
         let content = null;
 
         if (this.props.tabCode == Tabs.WorkEducation) {

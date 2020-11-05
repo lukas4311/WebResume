@@ -6,7 +6,7 @@ export class InterestsCard extends React.Component<IInterestsCardProps, any>{
         super(props);
     }
 
-    render() {
+    public render() {
         return (
             <div className="p-2 lg:p-6 rounded-lg bg-buttonsGray w-full sm:w-1/4 m-2 lg:m-6 text-center shadows duration-500">
                 {this.props.svgIcon}
